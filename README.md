@@ -1,4 +1,4 @@
-# Library System
+# Text Based Adventure
  
 Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.com/DavidRHannah), [James Liu](https://github.com/jliu0411), [Bestin Watts](https://github.com/BestinMW) 
 
@@ -10,7 +10,11 @@ Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.c
  > * What are the features that the project provides?
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
- This project is important to us because it involves the usage of an API, which is a valuable tool in the industry, as well as using data structures and algorithms learned from CS010 series for practical purposes. We will be using C++ and CMake to program the project as well as [libcpr](https://github.com/libcpr/example-cmake-fetch-content), an API to integrate with google books. The input of our project will use the command line, where the user can log in to an existing account, create a new account, access their checked out books, debt, and any available books in the library, as well as search for books using parameters like genre, length, author, etc. The project will provide the ability for users to store information on books they check out, as well as search for available books using the product using the API.
+
+ * this project is interesting to us as we feel like we could implement lots of ideas and be creative with the story and structure of our game, while also using skills we've learned in past classes to make the game more complex and enjoyable
+ * we will be using C++ and CMake to develop the project
+ * the input of our project will be text based commands, which the program will interpret and display the results of to the user. For example, the player will be given a list of choices for actions when in combat, and after choosing that option, the effects of that option and the enemy's response will be displayed.
+ * the project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
 
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
