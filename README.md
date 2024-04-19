@@ -11,10 +11,10 @@ Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.c
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
 
- * this project is interesting to us as we feel like we could implement lots of ideas and be creative with the story and structure of our game, while also using skills we've learned in past classes to make the game more complex and enjoyable
- * we will be using C++ and CMake to develop the project
- * the input of our project will be text based commands, which the program will interpret and display the results of to the user. For example, the player will be given a list of choices for actions when in combat, and after choosing that option, the effects of that option and the enemy's response will be displayed.
- * the project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
+ * This project is interesting to us because we can implement new ideas and be creative with the story and structure of our game, while also using skills we've learned in past classes to make the game more complex and enjoyable.
+ * We will be using C++ and CMake to develop the project.
+ * The input of our project will be text based commands, which the program will interpret and display the results of to the user. For example, when the player is in combat, they will be able to choose an action that affects the enemy's response and what will be displayed.
+ * The project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
 
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
