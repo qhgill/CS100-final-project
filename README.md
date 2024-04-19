@@ -1,4 +1,4 @@
-# \Library System\
+# Library System
  
 Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.com/DavidRHannah), [James Liu](https://github.com/jliu0411), [Bestin Watts](https://github.com/BestinMW) 
 
