@@ -3,20 +3,11 @@
 Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.com/DavidRHannah), [James Liu](https://github.com/jliu0411), [Bestin Watts](https://github.com/BestinMW), [Bruce Riazi](https://github.com/r-bruce)
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > * What will be the input/output of your project?
- > * What are the features that the project provides?
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
-
  * This project is interesting to us because we can implement new ideas and be creative with the story and structure of our game, while also using skills we've learned in past classes to make the game more complex and enjoyable.
  * We will be using C++ and CMake to develop the project.
  * The program will prompt the user with options based on their current situation. input for these options will either be a single character or a line of characters. the program will then read in the user's input and find the corresponding functions to call for that scenario. After the state of the game changes based on those functions, a display function will be called do output relevant information to the player.
  * The project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
