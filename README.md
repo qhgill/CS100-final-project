@@ -24,6 +24,7 @@ Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.c
 
 ### Navigation Diagram
 The user begins at the Start Menu Screen which prompts the user to start the game, which takes the user to the character selection screen, after selecting a character they will arrive at the in game menu, where they can enter the travel screen. This screen will be displayed in between combat encounters and key locations, and the user can re-open the in game menu from this screen whenever they wish. When coming across a combat encounter, they will be moved to the combat screen for the duration of the encounter, and returned to the travel screen when the encounter is over. When arriving at a key location, the user can enter and exit the location screen from the travel screen. The user can also open the menu screen when viewing the location screen. From the in game menu, the user can also view their inventory or choose to quit the game, which will display the inventory screen or return to the start menu respectively.
+
 ![Screen Navigation Diagram](./readmeImages/screenNavigation.PNG)
 
 ### Screen Layouts
