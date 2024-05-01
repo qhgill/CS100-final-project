@@ -31,7 +31,17 @@ The user begins at the Start Menu Screen which prompts the user to start the gam
 > Include the layout of each of your screens. The layout should describe the screenâ€™s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 ## Class Diagram
- Description placeholder
+ * The User class handles information and functions related directly to the current user, such as keeping track of current equipment, current level, progress through the story, character class, and other user-related information. It can be thought of as an aggregation of objects under other classes with additional information and functionality that allow it to handle the user's overall progress and information.
+
+ * The screen class handles displaying information to the user and navigating between screens/game states. The screen class itself is abstract and requires each inheriting class to override the displayScreen() function, each subclass handles a specific game state/screen such as combat, main menu, etc.
+
+ * The enemy class is an abstract object class that handles information for enemies the user encounters, the subclass is divided into boss and non-boss enemy types, which will behave slightly differently but have a lot of overlapping functionality. 
+
+ * The item class handles information about items the player can find and equip throughout their play-through of the game, the parent class handles functionality that is common across all items such as base stats, while each subclass handles information specific to that item type. This class is associated with multiple other classes including the user and city classes.
+
+ * The character class handles information specific to the character the user picks like base stats and spells, as well as being used by the user class in it's functions. Each subclass differs from the parent class primarily by which spell classes it uses.
+
+ * The spell class is a component class of the character class, and handles information about specific spells regarding each class.
 
  ![Class Diagram](./readmeImages/classdiagramdraft2.drawio.png)
  
