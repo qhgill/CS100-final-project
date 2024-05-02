@@ -30,6 +30,38 @@ The user begins at the Start Menu Screen which prompts the user to start the gam
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screenâ€™s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
+The overall screen layout has an ASCII image at the top either showing the title of the page or an image for context, below it relevent information about the current state of the game is displayed, and below that options are listed for the player to choose from
+
+![startscreen](./readmeImages/startscreen.PNG)
+
+* the starting screen displays the title of the game and a quick summary of the story, as well as prompting the user to continue
+
+![charselect](./readmeImages/characterselect.PNG)
+
+* the character select screen displays the options the player has to choose from for character class, and prompts the user to input a character corresponding to one of the choices to choose a character
+
+![menuscreen](./readmeImages/menuscreen.PNG)
+
+* the menu screen displays "menu" as well as all of the options available while in the menu screen: returning to the game, quitting the game, or opening inventory
+
+![travel](./readmeImages/travelscreen.PNG)
+
+* the travel screen is meant to provide downtime for the player in between combat encounters, on the travelling screen the user will be given some context as to what they are doing and options to continue to the next encounter or open their menu
+
+![combat](./readmeImages/combatscreen.PNG)
+
+* the combat screen is entered whenever the player comes across a combat encounter, it displays information about their opponent, information about the last move made, and displays the options the user has to take action during the encounter, at the end of the combat encounter, a summary of progress and rewards is given, and the option to continue is shown
+
+![city](./readmeImages/cityscreen.PNG)
+
+* the city screen serves as a space in between each section of the game and as a place for the user to do things like buy and sell equipment that aren't available in other places, making each city a place where key non-combat decisions are made, as well as a way for the backend to track the player's macro progress through the game. the city screen will display the name of the city, a short block of context, and prompt the user to choose an action while in the city
+
+![inventory](./readmeImages/inventoryscreen.PNG)
+
+* the inventory screen is accessible through the menu screen and serves as a place for the user to view their current stats and equipped items, as well as any additional items they may have gotten through combat encounters. the screen displays this information above options the user can make while in the inventory screen. If the player chooses to equip an item, these options will change to allow the player to equip a specific item from their inventory
+
+
+
 ## Class Diagram
  * The User class handles information and functions related directly to the current user, such as keeping track of current equipment, current level, progress through the story, character class, and other user-related information. It can be thought of as an aggregation of objects under other classes with additional information and functionality that allow it to handle the user's overall progress and information.
 
