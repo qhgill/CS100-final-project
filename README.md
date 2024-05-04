@@ -71,7 +71,7 @@ The overall screen layout has an ASCII image at the top either showing the title
 
  * The spell class is a component class of the character class, and handles information about specific spells regarding each class.
 
- ![Class Diagram](./readmeImages/classdiagramdraft2.drawio.png)
+ ![Class Diagram](./readmeImages/phase2classdiagramv3.drawio.png)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
