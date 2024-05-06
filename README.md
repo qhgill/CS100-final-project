@@ -8,17 +8,6 @@ Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.c
  * The program will prompt the user with options based on their current situation. input for these options will either be a single character or a line of characters. the program will then read in the user's input and find the corresponding functions to call for that scenario. After the state of the game changes based on those functions, a display function will be called do output relevant information to the player.
  * The project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
 
- > ## Phase II
- > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column (aka Sprint Backlog).
- >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
- > * Schedule two check-ins using Calendly. Both time slots should be during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
 ## User Interface Specification
 ### Navigation Diagram
 The user begins at the Start Menu Screen which prompts the user to start the game, which takes the user to the character selection screen, after selecting a character they will arrive at the in game menu, where they can enter the travel screen. This screen will be displayed in between combat encounters and key locations, and the user can re-open the in game menu from this screen whenever they wish. When coming across a combat encounter, they will be moved to the combat screen for the duration of the encounter, and returned to the travel screen when the encounter is over. When arriving at a key location, the user can enter and exit the location screen from the travel screen. The user can also open the menu screen when viewing the location screen. From the in game menu, the user can also view their inventory or choose to quit the game, which will display the inventory screen or return to the start menu respectively.
@@ -61,7 +50,7 @@ The overall screen layout has an ASCII image at the top either showing the title
 ## Class Diagram
  * The User class handles information and functions related directly to the current user, such as keeping track of current equipment, current level, progress through the story, character class, and other user-related information. It can be thought of as an aggregation of objects under other classes with additional information and functionality that allow it to handle the user's overall progress and information.
 
- * The screen class handles displaying information to the user and navigating between screens/game states. The screen class itself is abstract and requires each inheriting class to override the displayScreen() function, each subclass handles a specific game state/screen such as combat, main menu, etc.
+ * The screen class handles displaying information to the user and navigating between screens/game states. The screen class itself is abstract and requires each inheriting class to override the displayScreen() and processOption() function, each subclass handles a specific game state/screen such as combat, main menu, etc.
 
  * The enemy class is an abstract object class that handles information for enemies the user encounters, the subclass is divided into boss and non-boss enemy types, which will behave slightly differently but have a lot of overlapping functionality. 
 
@@ -71,7 +60,7 @@ The overall screen layout has an ASCII image at the top either showing the title
 
  * The spell class is a component class of the character class, and handles information about specific spells regarding each class.
 
- ![Class Diagram](./readmeImages/phase2classdiagramv3.drawio.png)
+ ![Class Diagram](./readmeImages/Final-Project-Class-Diagram-final-phase2-version.drawio.png)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
