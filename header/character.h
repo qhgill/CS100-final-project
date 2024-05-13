@@ -1,9 +1,10 @@
 #include <string>
 using std::string;
 
-class spellStub{
-    int placeholder;
-    void doSpell();
+class spell{ //stub
+    public:
+        void doSpell();
+        spell(){}
 };
 
 class Character {
@@ -13,15 +14,16 @@ class Character {
         int basePhysicalResist;
         int baseMagicResist;
         string className;
-        spellStub firstSpell;
-        spellStub secondSpell;
-        spellStub thirdSpell;
+        spell* firstSpell;
+        spell* secondSpell;
+        spell* thirdSpell;
     public:
+        Character(int, int, int, int, string, spell*, spell*, spell*);
         Character();
         int getBaseHP();
         int getBaseDamage();
         int getBasePhysicalResist();
         int getBaseMagicResist();
         string getClassName();
-        void useSpell(spellStub);
+        void useSpell(spell*);
 };
