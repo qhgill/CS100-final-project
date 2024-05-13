@@ -12,12 +12,21 @@ class enemy
         int magicResist;
         int physicalResist;
 
-        bool isdead = false;
+        bool isdead;
 
         string name;
-        // City cityName;
+        City cityName;
+
     public:
-        enemy();
+        enemy(int level_, 
+              int health_, 
+              int maxHealth_, 
+              int damage_, 
+              int magicResist_, 
+              int physicalResist_,
+              string name_,
+              City cityName_);
+              
         int getLevel() {return level;}
         int getHealth() {return health;}
         int getMaxHealth() {return maxHealth;}
@@ -26,7 +35,7 @@ class enemy
         int getPhysicalResist() {return physicalResist;}
         bool getStatus() {return isdead;}
         string getName() {return name;}
-        //City getCityName() {return cityName;}
+        City getCityName() {return cityName;}
 
         void dealDamage(int takeDamage) {health-=takeDamage;}
 
@@ -34,6 +43,6 @@ class enemy
 
         void killThis() {isdead=true;}
 
-        //virtual int calcTurn();
+        virtual int calcTurn();
 
 };
