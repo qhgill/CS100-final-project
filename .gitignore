@@ -17,4 +17,5 @@ CMakeCache.txt
 # Add all executables
 
 testing/runCharacterTests
+testing/runSpellTests
 lib/
