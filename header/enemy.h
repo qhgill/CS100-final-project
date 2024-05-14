@@ -2,7 +2,9 @@
 #include <string>
 using namespace std;
 
-class enemy
+class City;
+
+class Enemy
 {
     private:
         int level;
@@ -18,12 +20,13 @@ class enemy
         City cityName;
 
     public:
-        enemy(int level_, 
+        Enemy(int level_, 
               int health_, 
               int maxHealth_, 
               int damage_, 
               int magicResist_, 
               int physicalResist_,
+              bool isdead_,
               string name_,
               City cityName_);
               
@@ -46,3 +49,13 @@ class enemy
         virtual int calcTurn();
 
 };
+
+class City
+{
+    private:
+        string name;
+    
+    public:
+        City(string name_) : name(name_) {}
+};
+
