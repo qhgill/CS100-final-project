@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "header/item.h"
+#include "./item.h"
 
-class weapon: public item
+class weapon: public Item
 {
     private:
         int damage;

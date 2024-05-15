@@ -4,7 +4,7 @@
 using ::testing::Return;
 using ::testing::InSequence;
 
-class MockSpell: public spell{
+class MockSpell: public Spell{
     public:
      MOCK_METHOD(void, doSpell,());
 };
