@@ -1,6 +1,5 @@
-#include "header/weapon.h"
+#include "../header/weapon.h"
 
-weapon::weapon(int damage_, string damageType_, string weaponName_)
-: damage(damage_), damageType(damageType_), weaponName(weaponName_) 
-{}
+Weapon::Weapon(int damage_, string damageType_, Item* item1)
+: damage(damage_), damageType(damageType_), info(item1) {}
 
