@@ -11,3 +11,4 @@ link_directories(${LIBRARY_OUTPUT_PATH})
 
 add_subdirectory(source)
 add_subdirectory(testing)
+
