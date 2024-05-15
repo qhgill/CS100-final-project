@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "header/item.h"
+#include "./item.h"
 
 class weapon: public item
 {

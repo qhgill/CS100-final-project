@@ -1,11 +1,7 @@
+#pragma once
 #include <string>
+#include "./spell.h"
 using std::string;
-
-class spell{ //stub
-    public:
-        void doSpell();
-        spell(){}
-};
 
 class Character {
     protected:
@@ -14,16 +10,16 @@ class Character {
         int basePhysicalResist;
         int baseMagicResist;
         string className;
-        spell* firstSpell;
-        spell* secondSpell;
-        spell* thirdSpell;
+        Spell* firstSpell;
+        Spell* secondSpell;
+        Spell* thirdSpell;
     public:
-        Character(int, int, int, int, string, spell*, spell*, spell*);
+        Character(int, int, int, int, string, Spell*, Spell*, Spell*);
         Character();
         int getBaseHP();
         int getBaseDamage();
         int getBasePhysicalResist();
         int getBaseMagicResist();
         string getClassName();
-        void useSpell(spell*);
+        void useSpell(Spell*);
 };
