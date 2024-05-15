@@ -3,7 +3,7 @@
 using namespace std;
 #include "./item.h"
 
-class weapon: public item
+class weapon: public Item
 {
     private:
         int damage;
