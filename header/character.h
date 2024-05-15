@@ -21,5 +21,7 @@ class Character {
         int getBasePhysicalResist();
         int getBaseMagicResist();
         string getClassName();
-        void useSpell(Spell*);
+        Spell* getFirstSpell();
+        Spell* getSecondSpell();
+        Spell* getThirdSpell();
 };
