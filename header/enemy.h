@@ -1,8 +1,8 @@
+#pragma once 
 #include <iostream>
 #include <string>
 using namespace std;
-
-class City;
+#include "../source/screens/city.h"
 
 class Enemy
 {
@@ -48,14 +48,5 @@ class Enemy
 
         virtual int calcTurn();
 
-};
-
-class City
-{
-    private:
-        string name;
-    
-    public:
-        City(string name_) : name(name_) {}
 };
 
