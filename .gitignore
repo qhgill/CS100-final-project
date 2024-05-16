@@ -15,3 +15,5 @@ cmake_install.cmake
 CMakeCache.txt
 
 # Add all executables
+testing/runEnemyTests
+lib/
