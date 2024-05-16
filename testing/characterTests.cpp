@@ -4,9 +4,10 @@
 using ::testing::Return;
 using ::testing::InSequence;
 
-class MockSpell: public Spell{
+class SpellChildStub: public Spell{
     public:
-     MOCK_METHOD(void, doSpell,());
+        SpellChildStub(){}
+        void doSpell(User*, enemy*) {}
 };
 
 TEST(getterTests, getHpTest){
@@ -37,6 +38,27 @@ TEST(getterTests, getClassNameTest){
     Character char1(1,1,1,1,"class1", nullptr, nullptr, nullptr);
     string testName = char1.getClassName();
     EXPECT_EQ(testName, "class1");
+}
+
+TEST(getterTests, getFirstSpellTest){
+    Spell* spellTester = new SpellChildStub();
+    Character char1(1,1,1,1,"class1", spellTester, nullptr, nullptr);
+    Spell* returnTester = char1.getFirstSpell();
+    EXPECT_EQ(spellTester, returnTester);
+}
+
+TEST(getterTests, getSecondSpellTest){
+    Spell* spellTester = new SpellChildStub();
+    Character char1(1,1,1,1,"class1", nullptr, spellTester, nullptr);
+    Spell* returnTester = char1.getSecondSpell();
+    EXPECT_EQ(spellTester, returnTester);
+}
+
+TEST(getterTests, getThirdSpellTest){
+    Spell* spellTester = new SpellChildStub();
+    Character char1(1,1,1,1,"class1", nullptr, nullptr, spellTester);
+    Spell* returnTester = char1.getThirdSpell();
+    EXPECT_EQ(spellTester, returnTester);
 }
 
 int main(int argc, char **argv) {

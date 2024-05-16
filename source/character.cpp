@@ -19,6 +19,12 @@ int Character::getBaseMagicResist(){
 string Character::getClassName(){
     return className;
 }
-void Character::useSpell(Spell* spellToUse){
-    spellToUse->doSpell();
+Spell* Character::getFirstSpell(){
+    return firstSpell;
+}
+Spell* Character::getSecondSpell(){
+    return secondSpell;
+}
+Spell* Character::getThirdSpell(){
+    return thirdSpell;
 }

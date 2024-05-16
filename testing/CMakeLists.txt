@@ -4,6 +4,7 @@ project(finalProject)
 add_executable(runCharacterTests
     characterTests.cpp
     ../source/character.cpp
+    ../source/spell.cpp
 )
 
 add_executable(runSpellTests
