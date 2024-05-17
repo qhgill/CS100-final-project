@@ -20,6 +20,7 @@ testing/runEnemyTests
 testing/runCharacterTests
 testing/runSpellTests
 testing/runScreenTests
+testing/runItemTests
 testing/runRogueTests
 testing/runWeaponTests
 lib/
