@@ -18,7 +18,7 @@ add_executable(runScreenTests
 )
 add_executable(runItemTests
     ../source/item.cpp
-    trinketTests.cpp
+    armorTests.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
