@@ -19,5 +19,6 @@ CMakeCache.txt
 testing/runCharacterTests
 testing/runSpellTests
 testing/runScreenTests
+testing/runItemTests
 testing/runRogueTests
 lib/

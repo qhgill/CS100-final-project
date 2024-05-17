@@ -21,6 +21,10 @@ add_executable(runScreenTests
     ../source/screen.cpp
     ../source/city.cpp
 )
+add_executable(runItemTests
+    ../source/item.cpp
+    armorTests.cpp
+)
 
 add_executable(runRogueTests
     rogueTests.cpp
@@ -35,6 +39,6 @@ add_executable(runRogueTests
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
+target_link_libraries(runItemTests gmock gtest gtest_main)
 target_link_libraries(runWeaponTests gmock gtest gtest_main)
-
 target_link_libraries(runRogueTests gtest gtest_main)
