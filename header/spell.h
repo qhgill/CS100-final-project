@@ -4,7 +4,7 @@
 #include "enemy.h"
 
 class Spell {
-    private:
+    protected:
         std::string* spellClass;
         int spellLevelThreshold;
     public:
