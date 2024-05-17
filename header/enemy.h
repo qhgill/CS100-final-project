@@ -3,7 +3,7 @@
 #include <string>
 #include "./screens/city.h"
 using namespace std;
-#include "../source/screens/city.h"
+#include "../screens/city.h"
 
 class Enemy
 {
