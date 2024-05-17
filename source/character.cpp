@@ -1,4 +1,4 @@
-#include "./character.h"
+#include "../header/character.h"
 #include <string>
 using std::string;
 

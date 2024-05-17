@@ -33,7 +33,12 @@ add_executable(runUserTests
     ../source/weapon.cpp
     ../source/armor.cpp
     ../source/trinket.cpp
-    ../source/city.cpp
+    ../source/character.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
     ../source/statsManager.cpp
 )
 
