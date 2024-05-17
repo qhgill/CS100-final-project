@@ -1,3 +1,4 @@
+#pragma once 
 #include <iostream>
 #include <string>
 using namespace std;
@@ -23,6 +24,7 @@ class Enemy
               int damage_, 
               int magicResist_, 
               int physicalResist_,
+              bool isdead_,
               string name_);
               
         int getLevel() {return level;}
@@ -43,3 +45,4 @@ class Enemy
         //virtual int calcTurn();
 
 };
+
