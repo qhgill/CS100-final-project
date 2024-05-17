@@ -7,6 +7,7 @@ class Item {
         string name;
         int level;
     public:
+        Item();
         Item(string name, int level);
         string getName() {return name;}
         int getLevel() {return level;}
