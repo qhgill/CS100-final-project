@@ -27,7 +27,18 @@ add_executable(runRogueTests
     ../source/cutthroat.cpp
 )
 
+add_executable(runUserTests
+    userTests.cpp
+    ../source/user.cpp
+    ../source/weapon.cpp
+    ../source/armor.cpp
+    ../source/trinket.cpp
+    ../source/city.cpp
+    ../source/statsManager.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
 target_link_libraries(runRogueTests gtest gtest_main)
+target_link_libraries(runUserTests gtest gtest_main)

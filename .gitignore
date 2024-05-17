@@ -20,4 +20,5 @@ testing/runCharacterTests
 testing/runSpellTests
 testing/runScreenTests
 testing/runRogueTests
+testing/runUserTests
 lib/

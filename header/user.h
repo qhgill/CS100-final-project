@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
 
-class User{
+class User
+{
+    private:
     
+    public:
+        int getLevel();
 };
