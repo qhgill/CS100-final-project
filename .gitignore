@@ -16,9 +16,12 @@ CMakeCache.txt
 
 # Add all executables
 
+testing/runEnemyTests
 testing/runCharacterTests
 testing/runSpellTests
 testing/runScreenTests
+testing/runItemTests
 testing/runRogueTests
+testing/runWeaponTests
 testing/runUserTests
 lib/

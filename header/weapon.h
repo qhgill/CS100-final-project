@@ -1,20 +1,19 @@
 #include <iostream>
 #include <string>
+#include "item.h"
 using namespace std;
-#include "./item.h"
 
 class Weapon: public Item
 {
     private:
         int damage;
         string damageType;
-        string weaponName;
 
     public:
-        Weapon(int damage_, string damageType_, string weaponName_);
+        Weapon():damage(0), damageType(0) {}
+        Weapon(int damage_, string damageType_);
         int getDamage() {return damage;}
         string getDamageType() {return damageType;}
-        string getWeaponName() {return weaponName;}
         int calcDamage(int level) {return level*damage;}
 
 };
