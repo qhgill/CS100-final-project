@@ -21,4 +21,5 @@ testing/runCharacterTests
 testing/runSpellTests
 testing/runScreenTests
 testing/runRogueTests
+testing/runWeaponTests
 lib/

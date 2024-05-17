@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "../screens/city.h"
 
 class Enemy
 {
