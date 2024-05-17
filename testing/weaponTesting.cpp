@@ -3,20 +3,17 @@
 #include "../header/weapon.h"
 
 TEST(weaponGetterTests, getDamageTest){
-    Item* item1 = new Item("spear");
-    Weapon char1(1, "physical", item1);
+    Weapon char1(1, "physical");
     EXPECT_EQ(char1.getDamage(), 1);
 }
 
 TEST(weaponGetterTests, getDamageTypeTest){
-    Item* item1 = new Item("spear");
-    Weapon char1(1, "physical", item1);
+    Weapon char1(1, "physical");
     EXPECT_EQ(char1.getDamageType(), "physical");
 }
 
 TEST(weaponGetterTests, getDamageTypeTest){
-    Item* item1 = new Item("spear");
-    Weapon char1(1, "physical", item1);
+    Weapon char1(1, "physical");
     EXPECT_EQ(char1.calcDamage(2), 2);
 }
 
