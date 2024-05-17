@@ -5,7 +5,7 @@
 
 TEST(getterTests, getNameTest) {
     Trinket trink("necklace", 5, 5);
-    int testName = trink.getName();
+    string testName = trink.getName();
 
     EXPECT_EQ(testName, "necklace");
 }
@@ -22,7 +22,7 @@ TEST(calcTest, calcValueTest) {
     Trinket trink("necklace", 5, 5);
     int testValue = trink.calcValue();
 
-    EXPECT_EQ(testLevel, 25);
+    EXPECT_EQ(testValue, 25);
 }
 
 

@@ -17,8 +17,8 @@ add_executable(runScreenTests
     ../source/city.cpp
 )
 add_executable(runItemTests
-    trinketTests.cpp
     ../source/item.cpp
+    trinketTests.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
