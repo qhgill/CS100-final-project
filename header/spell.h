@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "./statsManager.h"
-#include "./enemy.h"
+#include "statsManager.h"
+#include "enemy.h"
 
 class Spell {
     private:
