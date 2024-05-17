@@ -2,16 +2,6 @@
 #include <string>
 using namespace std;
 
-class Item
-{
-    private:
-        string name;
-    public:
-        Item():name(""){}
-        Item(string name_):name(name_){}
-        string getName() {return name;}
-};
-
 class Weapon: public Item
 {
     private:
