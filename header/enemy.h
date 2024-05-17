@@ -18,7 +18,6 @@ class Enemy
         bool isdead;
 
         string name;
-        City cityName;
 
     public:
         Enemy(int level_, 
@@ -28,8 +27,7 @@ class Enemy
               int magicResist_, 
               int physicalResist_,
               bool isdead_,
-              string name_,
-              City cityName_);
+              string name_);
               
         int getLevel() {return level;}
         int getHealth() {return health;}
@@ -39,7 +37,6 @@ class Enemy
         int getPhysicalResist() {return physicalResist;}
         bool getStatus() {return isdead;}
         string getName() {return name;}
-        City getCityName() {return cityName;}
 
         void dealDamage(int takeDamage) {health-=takeDamage;}
 

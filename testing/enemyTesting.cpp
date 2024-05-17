@@ -1,79 +1,53 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include "../header/enemy.h"
-#include "../header/screen/city.h"
-#include "../header/user.h"
 
 TEST(enemyGetterTests, getLevelTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getLevel(), 1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getLevel(), 1);
 }
 
 TEST(enemyGetterTests, getHealthTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getHealth(), 1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getHealth(), 1);
 }
 
 TEST(enemyGetterTests, getMaxHealthTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getMaxHealth(), 1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getMaxHealth(), 1);
 }
 
 TEST(enemyGetterTests, getDamageTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getDamage(), 1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getDamage(), 1);
 }
 
 TEST(enemyGetterTests, getMagicResistTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getMagicResist(), 1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getMagicResist(), 1);
 }
 
 TEST(enemyGetterTests, getPhysicalResistTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getPhysicalResist(), 1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getPhysicalResist(), 1);
 }
 
 TEST(enemyGetterTests, getStatusTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_TRUE(!(char1.getStatus()));
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_TRUE(!(monster1.getStatus()));
 }
 
 TEST(enemyGetterTests, getNameTest)
 {
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getName(), "Bill");
-}
-
-TEST(enemyGetterTests, getCityTest)
-{
-    //User user1, User class is not done
-    City city1("Mushrooms", user1);
-    Enemy char1(1, 1, 1, 1, 1, 1, false, "Bill", city1);
-    EXPECT_EQ(char1.getCityName(), city1);
+    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    EXPECT_EQ(monster1.getName(), "Bill");
 }
 
 int main(int argc, char **argv) {
