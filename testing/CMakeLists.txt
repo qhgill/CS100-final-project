@@ -17,6 +17,17 @@ add_executable(runScreenTests
     ../source/city.cpp
 )
 
+add_executable(runRogueTests
+    rogueTests.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/rogue.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
+target_link_libraries(runRogueTests gtest gtest_main)

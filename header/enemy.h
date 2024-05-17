@@ -1,9 +1,8 @@
 #include <iostream>
 #include <string>
-#include "./screens/city.h"
 using namespace std;
 
-class enemy
+class Enemy
 {
     private:
         int level;
@@ -16,17 +15,15 @@ class enemy
         bool isdead;
 
         string name;
-        City cityName;
 
     public:
-        enemy(int level_, 
+        Enemy(int level_, 
               int health_, 
               int maxHealth_, 
               int damage_, 
               int magicResist_, 
               int physicalResist_,
-              string name_,
-              City cityName_);
+              string name_);
               
         int getLevel() {return level;}
         int getHealth() {return health;}
@@ -36,7 +33,6 @@ class enemy
         int getPhysicalResist() {return physicalResist;}
         bool getStatus() {return isdead;}
         string getName() {return name;}
-        City getCityName() {return cityName;}
 
         void dealDamage(int takeDamage) {health-=takeDamage;}
 
@@ -44,6 +40,6 @@ class enemy
 
         void killThis() {isdead=true;}
 
-        virtual int calcTurn();
+        //virtual int calcTurn();
 
 };
