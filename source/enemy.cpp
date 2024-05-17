@@ -1,4 +1,4 @@
-#include "header/enemy.h"
+#include "../header/enemy.h"
 
 Enemy::Enemy(int level_, 
               int health_, 

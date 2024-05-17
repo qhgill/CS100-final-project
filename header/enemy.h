@@ -1,7 +1,6 @@
 #pragma once 
 #include <iostream>
 #include <string>
-#include "./screens/city.h"
 using namespace std;
 #include "../screens/city.h"
 
@@ -44,7 +43,7 @@ class Enemy
 
         void killThis() {isdead=true;}
 
-        virtual int calcTurn();
+        //virtual int calcTurn();
 
 };
 

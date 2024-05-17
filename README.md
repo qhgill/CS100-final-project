@@ -7,6 +7,7 @@ Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.c
  * We will be using C++ and CMake to develop the project.
  * The program will prompt the user with options based on their current situation. input for these options will either be a single character or a line of characters. the program will then read in the user's input and find the corresponding functions to call for that scenario. After the state of the game changes based on those functions, a display function will be called do output relevant information to the player.
  * The project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
+ * the player will play as a prince being sent by his father to take down his enemies, and will travel to each enemy and fight their subordinates along the way, at the end of the game, the player will discover that not everything is as it seems(a twist!)
 
 ## User Interface Specification
 ### Navigation Diagram
@@ -60,7 +61,7 @@ The overall screen layout has an ASCII image at the top either showing the title
 
  * The spell class is a component class of the character class, and handles information about specific spells regarding each class.
 
- ![Class Diagram](./readmeImages/Final-Project-Class-Diagram-final-phase2-version.drawio.png)
+ ![Class Diagram](./readmeImages/Final-Project-Class-Diagramphpase3v2.drawio.png)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
@@ -81,7 +82,13 @@ The overall screen layout has an ASCII image at the top either showing the title
  > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
  > * What tasks you are planning for this next sprint.
-
+   
+ Phase 3 changes(need to update description when final phase 3 class diagram is in):
+   * split user class into user and stats manager
+   * split non-boss enemy class
+   * split boss enemy class
+   * created higher level game module
+   * non SOLID changes to make everything work cohesively
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
