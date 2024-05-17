@@ -1,10 +1,10 @@
-#ifndef SPELL_H
-#define SPELL_H
+#pragma once
 #include <string>
-#include "./user.h"
-#include "./enemy.h"
+#include "statsManager.h"
+#include "enemy.h"
+
 class Spell {
-    private:
+    protected:
         std::string* spellClass;
         int spellLevelThreshold;
     public:
@@ -16,9 +16,5 @@ class Spell {
         std::string getSpellClass() const;
         int getSpellLevelThreshold() const;
 
-        void setSpellClass(const std::string& sc);
-        void setSpellLevelThreshold(int slt);
-
-        virtual void doSpell(User*, enemy*) = 0;
+        virtual void doSpell(StatsManager*, Enemy*) = 0;
 };
-#endif // SPELL_H

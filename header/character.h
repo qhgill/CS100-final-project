@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "./spell.h"
+#include "spell.h"
 using std::string;
 
 class Character {

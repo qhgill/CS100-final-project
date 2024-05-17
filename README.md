@@ -82,12 +82,13 @@ The overall screen layout has an ASCII image at the top either showing the title
  > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
  > * What tasks you are planning for this next sprint.
-    Phase 3 changes(need to update description when final phase 3 class diagram is in):
-    * split user class into user and stats manager
-    * split non-boss enemy class
-    * split boss enemy class
-    * created higher level game module
-    * non SOLID changes to make everything work cohesively
+   
+ Phase 3 changes(need to update description when final phase 3 class diagram is in):
+   * split user class into user and stats manager
+   * split non-boss enemy class
+   * split boss enemy class
+   * created higher level game module
+   * non SOLID changes to make everything work cohesively
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 

@@ -1,21 +1,20 @@
 #include "../header/spell.h"
 
-//Constructor
 Spell::Spell()
 {
-    spellClass = new std::string("");
-    spellLevelThreshold = -1;
+    this->spellClass = new std::string("");
+    this->spellLevelThreshold = -1;
 }
 
 Spell::Spell(const std::string& sc, int slt)
 {
-    spellClass = new std::string(sc);
-    spellLevelThreshold = slt;
+    this->spellClass = new std::string(sc);
+    this->spellLevelThreshold = slt;
 }
 
 Spell::~Spell()
 {
-    delete spellClass;
+    delete this->spellClass;
 }
 
 std::string Spell::getSpellClass() const
@@ -25,15 +24,5 @@ std::string Spell::getSpellClass() const
 
 int Spell::getSpellLevelThreshold() const
 {
-    return spellLevelThreshold;
-}
-
-void Spell::setSpellClass(const std::string& sc)
-{
-    *spellClass = sc;
-}
-
-void Spell::setSpellLevelThreshold(int slt)
-{
-    spellLevelThreshold = slt;
+    return this->spellLevelThreshold;
 }
