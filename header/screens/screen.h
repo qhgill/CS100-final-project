@@ -9,6 +9,7 @@ class Screen {
         User* currentUser;
     public:
         Screen(string dispFile, User* cUser);
+        void displayFromFile();
         virtual Screen* processOption(int) = 0;
         virtual void displayScreen() = 0;
 };
