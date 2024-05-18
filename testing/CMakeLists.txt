@@ -10,6 +10,7 @@ add_executable(runEnemyTests
 add_executable(runWeaponTests
     weaponTesting.cpp
     ../source/weapon.cpp
+    ../source/item.cpp
 )
 
 add_executable(runCharacterTests
@@ -46,14 +47,8 @@ add_executable(runRogueTests
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
-
-
 target_link_libraries(runEnemyTests gmock gtest gtest_main)
-
-
-
 target_link_libraries(runItemTests gmock gtest gtest_main)
-
-target_link_libraries(runWeaponTests gmock gtest gtest_main)
+target_link_libraries(runWeaponTests gtest gtest_main)
 target_link_libraries(runRogueTests gtest gtest_main)
 

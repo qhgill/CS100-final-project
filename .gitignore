@@ -23,4 +23,5 @@ testing/runScreenTests
 testing/runItemTests
 testing/runRogueTests
 testing/runWeaponTests
+testing/runUserTests
 lib/
