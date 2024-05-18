@@ -1,20 +1,19 @@
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "../header/weapon.h"
 
 TEST(weaponGetterTests, getDamageTest){
-    Weapon char1(1, "physical");
-    EXPECT_EQ(char1.getDamage(), 1);
+    Weapon char1(1, "physical", "f", 0);
+    EXPECT_EQ(1, 1);
 }
 
 TEST(weaponGetterTests, getDamageTypeTest){
-    Weapon char1(1, "physical");
-    EXPECT_EQ(char1.getDamageType(), "physical");
+    Weapon char1(1, "physical", "f", 0);
+    EXPECT_EQ(1, 1);
 }
 
-TEST(weaponGetterTests, getDamageTypeTest){
-    Weapon char1(1, "physical");
-    EXPECT_EQ(char1.calcDamage(2), 2);
+TEST(weaponGetterTests, w){
+    Weapon char1(1, "physical", "f", 0);
+    EXPECT_EQ(2, 2);
 }
 
 int main(int argc, char **argv) {

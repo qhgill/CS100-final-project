@@ -5,12 +5,12 @@ User::User()
     level = 1;
     xp = 0;
     encounterCount = 0;
-    inventory = new std::vector<Item*>;
-    equippedWeapon = new Weapon(1, "Physical", "Fists");
-    equippedArmor = new Armor; // update with constructor once implemented
-    equippedTrinket = new Trinket; // update with constructor once implemented
-    character = new Rogue();
-    userStats = new StatsManager();
+    inventory = nullptr;
+    equippedWeapon = new Weapon(1, "Physical", "Fists", 0);
+    equippedArmor = new Armor("Wood", 0, 0, 0, 0);
+    equippedTrinket = new Trinket("Necklace", 0, 0);
+    character = nullptr;
+    userStats = nullptr;
 }
 User::User(int lvl, int exp, int eCount, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm)
 {
