@@ -12,5 +12,4 @@ class Item {
         string getName() {return name;}
         int getLevel() {return level;}
         virtual int calcValue() = 0;
-
 };
