@@ -14,8 +14,8 @@ class Character {
         Spell* secondSpell;
         Spell* thirdSpell;
     public:
-        Character(int, int, int, int, string, Spell*, Spell*, Spell*);
         Character();
+        Character(int hp, int dmg, int pr, int mr, string cname, Spell* s1, Spell* s2, Spell* s3);
         int getBaseHP();
         int getBaseDamage();
         int getBasePhysicalResist();
