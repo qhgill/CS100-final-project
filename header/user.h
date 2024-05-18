@@ -8,6 +8,7 @@
 #include "statsManager.h"
 #include "character.h"
 #include "rogue.h"
+
 class User
 {
     private:
@@ -23,17 +24,17 @@ class User
     public:
         User();
         User(int lvl, int exp, int eCount, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm);
-        
         ~User();
-
+        
         int getLevel() const;
         int getXp() const;
-        void levelUp();
-        std::vector<Item*> getInventory() const; 
-        void equipItem(const Item* i);
         int getEncounterCount() const;
+        std::vector<Item*>* getInventory(); 
+        Character* getCharacterClass(); 
+        StatsManager* getStatsManager();
+
+        void levelUp();
+        void equipItem(const Item* i);
         void resetEncounterCount();
         void incrementEncounterCount();
-        Character getCharacterClass() const; 
-        StatsManager getStatsManager() const;
 };

@@ -6,9 +6,9 @@ User::User()
     xp = 0;
     encounterCount = 0;
     inventory = nullptr;
-    equippedWeapon = new Weapon(1, "Physical", "Fists", 0);
-    equippedArmor = new Armor("Wood", 0, 0, 0, 0);
-    equippedTrinket = new Trinket("Necklace", 0, 0);
+    equippedWeapon = nullptr;
+    equippedArmor = nullptr;
+    equippedTrinket = nullptr;
     character = nullptr;
     userStats = nullptr;
 }
@@ -33,52 +33,49 @@ User::~User()
     delete character;
     delete userStats;
 }
+
 int User::getLevel() const
 {
-    return 0;
+    return this->level;
 }
-
 int User::getXp() const
 {
-    return 0;
+    return this->xp;
+}
+int User::getEncounterCount() const
+{
+    return this->encounterCount;
+} 
+std::vector<Item*>* User::getInventory()
+{
+    return this->inventory;
+}
+Character* User::getCharacterClass() 
+{
+    return this->character;
+}
+StatsManager* User::getStatsManager() 
+{
+    return this->userStats;
 }
 
 void User::levelUp()
 {
+    this->level++;
     return;
 }
-
-std::vector<Item*> User::getInventory() const
-{
-    return std::vector<Item*>(NULL);
-}
-
 void User::equipItem(const Item* i)
 {
+    // Implementation needed
     return;
 }
-
-int User::getEncounterCount() const
-{
-    return 0;
-} 
-
 void User::resetEncounterCount()
 {
+    this->encounterCount = 0;
     return;
 }
-
 void User::incrementEncounterCount()
 {
+    this->encounterCount++;
     return;
-}
-
-Character User::getCharacterClass() const
-{
-    return Character();
-}
-
-StatsManager User::getStatsManager() const
-{
-    return StatsManager();
 }
