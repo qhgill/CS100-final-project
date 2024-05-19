@@ -27,18 +27,6 @@ add_executable(runScreenTests
     screensTest.cpp
     ../source/screen.cpp
     ../source/city.cpp
-    ../source/user.cpp
-    ../source/item.cpp
-    ../source/weapon.cpp
-    ../source/armor.cpp
-    ../source/trinket.cpp
-    ../source/character.cpp
-    ../source/rogue.cpp
-    ../source/spell.cpp
-    ../source/backstab.cpp
-    ../source/pickpocket.cpp
-    ../source/cutthroat.cpp
-    ../source/statsManager.cpp
 )
 add_executable(runItemTests
     ../source/item.cpp
