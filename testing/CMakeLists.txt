@@ -70,6 +70,15 @@ add_executable(runStatsManagerTests
     ../source/spell.cpp
 )
 
+add_executable(runGameTests
+    gameTesting.cpp
+    ../source/game.cpp
+    ../source/user.cpp
+    ../source/screen.cpp
+    ../source/character.cpp
+    ../source/startMenu.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -79,3 +88,4 @@ target_link_libraries(runWeaponTests gtest gtest_main)
 target_link_libraries(runRogueTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
+target_link_libraries(runGameTests gtest gtest_main)
