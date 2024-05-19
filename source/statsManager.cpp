@@ -7,8 +7,7 @@ void StatsManager::updateStats(Character* character, Weapon* weapon, Armor* armo
     this->maxHP = character->getBaseHP() + armor->getHealth() + (level * 10); // characterBaseHealth + armorHealthBonus + (userLevel * 10)
     this->currentHP = maxHP;
     this->currentDMG = character->getBaseDamage() + weapon->getDamage() + (level * 5); // characterBaseDamage + weaponDamage + (userLevel * 5)
-    this->currentMR = character->getBaseMagicResist() + armor->getMagRes(); // characterBaseMagicResist + armorMagicResistBonus
-    this->currentPR = character->getBasePhysicalResist() + armor->getPhyRes(); // characterBasePhysicalResist + armorPhysicalResistBonus
+    this->resetMRandPR(character, weapon, armor, trinket, level);
 }
 
 void StatsManager::resetMRandPR(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) {
