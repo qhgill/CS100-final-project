@@ -1,11 +1,22 @@
 #include "../header/screens/city.h"
 
-City::City(string dispFile, User* cUser): Screen(dispFile, cUser){}
+City::City(string dispFile, User* cUser): Screen(dispFile, cUser)
+{}
 
-Screen* City::processOption(int userOption){ //stub, implement later
+void displayPurchasableOptions()
+{
+
+    return;
+}
+
+Screen* City::processOption(int userOption, bool isRunning)
+{ 
+    //stub, implement later
     return this;
 }
 
-void City::displayScreen(){
+void City::displayScreen()
+{
     //stub, to implement
+    return;
 }

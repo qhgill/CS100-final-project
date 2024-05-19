@@ -1,0 +1,23 @@
+                    /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+                    \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                    /\ _____ ____      ___     _______ _     ___ _   _  ____  /\
+                    \/|_   _|  _ \    / \ \   / / ____| |   |_ _| \ | |/ ___| \/
+                    /\  | | | |_) |  / _ \ \ / /|  _| | |    | ||  \| | |  _  /\
+                    \/  | | |  _ <  / ___ \ V / | |___| |___ | || |\  | |_| | \/
+                    /\  |_| |_| \_\/_/   \_\_/  |_____|_____|___|_| \_|\____| /\
+                    \/                                                        \/
+                    /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+                    \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+__________________________________________________________________________________________________
+    
+    This is where context goes sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+__________________________________________________________________________________________________
+select one of the following:
+[1] continue to next encounter
+[2] open game menu
+

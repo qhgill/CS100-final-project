@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <fstream>
 #include "./user.h"
 using std::string;
 
@@ -8,8 +9,8 @@ class Screen {
         string filename;
         User* currentUser;
     public:
-        Screen(string dispFile, User* cUser);
+        Screen(string dispFile, User* user);
         void displayFromFile();
-        virtual Screen* processOption(int) = 0;
+        virtual Screen* processOption(int option, bool isRunning) = 0;
         virtual void displayScreen() = 0;
 };

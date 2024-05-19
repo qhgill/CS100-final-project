@@ -5,6 +5,6 @@
 class StartMenu: public Screen{
     public:
         StartMenu(string dispFile, User* cUser): Screen(dispFile, cUser){}
-        Screen* processOption(int);
-        void displayScreen();
+        Screen* processOption(int option, bool isRunning) override;
+        void displayScreen() override;
 };
