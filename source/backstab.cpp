@@ -6,7 +6,7 @@ BackStab::BackStab()
     this->spellLevelThreshold = 1;
 }
 
-void BackStab::doSpell(StatsManager* sm, Enemy* e)
-{
-    // do stuff;
-}
+// void BackStab::doSpell(StatsManager* sm, Enemy* e)
+// {
+//     // do stuff;
+// }

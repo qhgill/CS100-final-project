@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-using namespace std;
+using std::string;
 
 class Item {
     protected:

@@ -6,7 +6,7 @@ PickPocket::PickPocket()
     this->spellLevelThreshold = 2;
 }
 
-void PickPocket::doSpell(StatsManager* sm, Enemy* e)
-{
-    // do stuff;
-}
+// void PickPocket::doSpell(StatsManager* sm, Enemy* e)
+// {
+//     // do stuff;
+// }

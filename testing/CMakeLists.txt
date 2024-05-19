@@ -59,6 +59,17 @@ add_executable(runUserTests
     ../source/statsManager.cpp
 )
 
+add_executable(runStatsManagerTests
+    statsManagerTests.cpp
+    ../source/statsManager.cpp
+    ../source/item.cpp
+    ../source/weapon.cpp
+    ../source/armor.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+)
+
 add_executable(runGameTests
     gameTesting.cpp
     ../source/game.cpp
@@ -76,4 +87,5 @@ target_link_libraries(runItemTests gmock gtest gtest_main)
 target_link_libraries(runWeaponTests gtest gtest_main)
 target_link_libraries(runRogueTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
+target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)

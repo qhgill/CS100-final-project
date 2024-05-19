@@ -3,7 +3,7 @@
 
 TEST(userConstructorTests, overloadedConstructorTest){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -21,7 +21,7 @@ TEST(userConstructorTests, overloadedConstructorTest){
 
 TEST(userGetterTests, getUserLevel){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -34,7 +34,7 @@ TEST(userGetterTests, getUserLevel){
 
 TEST(userGetterTests, getUserXp){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -46,7 +46,7 @@ TEST(userGetterTests, getUserXp){
 
 TEST(userGetterTests, getUserEncounterCount){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -58,7 +58,7 @@ TEST(userGetterTests, getUserEncounterCount){
 
 TEST(userGetterTests, getUserInventory){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -70,7 +70,7 @@ TEST(userGetterTests, getUserInventory){
 
 TEST(userGetterTests, getUserCharacterClass){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -82,7 +82,7 @@ TEST(userGetterTests, getUserCharacterClass){
 
 TEST(userGetterTests, getUserStatsManager){
     std::vector<Item*>* i = new std::vector<Item*>;
-    Weapon* w = new Weapon(0,"", "", 0);
+    Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
     Character* c = new Character();
@@ -102,7 +102,7 @@ TEST(userMethodTests, levelUp){
 
 TEST(userMethodTests, equipItem){
     User u(1, 5, 10, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
-    Item* i = new Weapon(1, "Physical", "Sword", 2);
+    Item* i = new Weapon("sword", 1, 2, "physical");
     EXPECT_NO_THROW(u.equipItem(i);); // More thought needed
     delete i;
 }
