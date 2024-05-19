@@ -2,9 +2,14 @@
 #include "./screen.h"
 #include <string>
 
-class City: public Screen{
+class City: public Screen
+{
+    protected:
+        bool tavernUsed;
+        std::vector<Item*> tavernStock;
     public:
         City(string dispFile, User* cUser);
-        Screen* processOption(int);
-        void displayScreen();
+        void displayPurchasableOptions();
+        void displayScreen() override;
+        Screen* processOption(int choice, bool isRunning) override;
 };
