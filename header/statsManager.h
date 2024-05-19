@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-//#include "character.h"
+#include "character.h"
 #include "weapon.h"
 #include "armor.h"
 #include "trinket.h"
@@ -15,8 +15,8 @@ private:
     int currentPR;
 public:
     StatsManager();
-    //void updateStats(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level);
-    //void resetMRandPR(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level);
+    void updateStats(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level);
+    void resetMRandPR(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level);
     int getCurrentMR() const;
     int getCurrentPR() const;
     int getMaxHP() const;
