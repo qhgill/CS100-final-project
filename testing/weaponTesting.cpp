@@ -2,23 +2,23 @@
 #include "../header/weapon.h"
 
 TEST(weaponGetterTests, getDamageTest){
-    Weapon weapon(1, "Physical", "Fists", 2);
-    EXPECT_EQ(weapon.getDamage(), 1);
+    Weapon weapon("fists", 1, 10, "physical");;
+    EXPECT_EQ(weapon.getDamage(), 10);
 }
 
 TEST(weaponGetterTests, getDamageTypeTest){
-    Weapon weapon(1, "Physical", "Fists", 2);
-    EXPECT_STREQ(weapon.getDamageType().c_str(), string("Physical").c_str());
+    Weapon weapon("fists", 1, 10, "physical");;
+    EXPECT_STREQ(weapon.getDamageType().c_str(), string("physical").c_str());
 }
 
 TEST(weaponGetterTests, getWeaponNameTest){
-    Weapon weapon(1, "Physical", "Fists", 2);
-    EXPECT_EQ(weapon.getLevel(), 2);
+    Weapon weapon("fists", 1, 10, "physical");;
+    EXPECT_EQ(weapon.getLevel(), 1);
 }
 
 TEST(weaponGetterTests, getWeaponLevelTest){
-    Weapon weapon(1, "Physical", "Fists", 2);
-    EXPECT_EQ(weapon.calcDamage(2), 2);
+    Weapon weapon("fists", 1, 10, "physical");;
+    EXPECT_EQ(weapon.calcDamage(2), 20);
 }
 
 int main(int argc, char **argv) {

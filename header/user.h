@@ -5,9 +5,8 @@
 #include "weapon.h"
 #include "armor.h"
 #include "trinket.h"
-#include "statsManager.h"
 #include "character.h"
-#include "rogue.h"
+#include "statsManager.h"
 
 class User
 {

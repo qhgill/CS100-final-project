@@ -24,4 +24,5 @@ testing/runItemTests
 testing/runRogueTests
 testing/runWeaponTests
 testing/runUserTests
+testing/runStatsManagerTests
 lib/

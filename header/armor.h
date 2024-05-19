@@ -1,7 +1,7 @@
-#include <iostream>
+#pragma once
 #include <string>
-using namespace std;
-#include "./item.h"
+#include "item.h"
+using std::string;
 
 class Armor : public Item {
     private:
@@ -9,6 +9,7 @@ class Armor : public Item {
         int phyRes;
         int magRes;
     public:
+        Armor() : Item("", 0), health(0), phyRes(0), magRes(0) {};
         Armor(string name, int level, int health, int phyRes, int magRes) : health(health), phyRes(phyRes), magRes(magRes) {this->name = name; this->level = level;};
         int getHealth() {return health;};
         int getPhyRes() {return phyRes;};
