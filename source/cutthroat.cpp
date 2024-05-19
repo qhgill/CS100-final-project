@@ -6,7 +6,7 @@ CutThroat::CutThroat()
     this->spellLevelThreshold = 3;
 }
 
-void CutThroat::doSpell(StatsManager* sm, Enemy* e)
-{
-    // do stuff;
-}
+// void CutThroat::doSpell(StatsManager* sm, Enemy* e)
+// {
+//     // do stuff;
+// }
