@@ -3,18 +3,18 @@
 StatsManager::StatsManager()
     : maxHP(0), currentHP(0), currentDMG(0), currentMR(0), currentPR(0) {}
 
-// void StatsManager::updateStats(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) {
-//     this->maxHP = character->getBaseHP() + armor->getHealth() + (level * 10);
-//     this->currentHP = maxHP;
-//     this->currentDMG = character->getBaseDamage() + weapon->getDamage() + (level * 5);
-//     this->currentMR = character->getBaseMagicResist() + armor->getMagRes();
-//     this->currentPR = character->getBasePhysicalResist() + armor->getPhyRes();
-// }
+void StatsManager::updateStats(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) {
+    this->maxHP = character->getBaseHP() + armor->getHealth() + (level * 10);
+    this->currentHP = maxHP;
+    this->currentDMG = character->getBaseDamage() + weapon->getDamage() + (level * 5);
+    this->currentMR = character->getBaseMagicResist() + armor->getMagRes();
+    this->currentPR = character->getBasePhysicalResist() + armor->getPhyRes();
+}
 
-// void StatsManager::resetMRandPR(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) {
-//     this->currentMR = character->getBaseMagicResist() + armor->getMagRes();
-//     this->currentPR = character->getBasePhysicalResist() + armor->getPhyRes();
-// }
+void StatsManager::resetMRandPR(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) {
+    this->currentMR = character->getBaseMagicResist() + armor->getMagRes();
+    this->currentPR = character->getBasePhysicalResist() + armor->getPhyRes();
+}
 
 int StatsManager::getCurrentMR() const {
     return this->currentMR;
