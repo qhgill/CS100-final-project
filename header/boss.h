@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Boss {
+class Boss : public Enemy{
     public:
         Boss() : Enemy(0, 0, 0, 0, 0, 0, false, "") {};
         virtual void calculatephase1turn(statsManager*) = 0;
