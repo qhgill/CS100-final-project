@@ -7,33 +7,33 @@
 #include "trinket.h"
 #include "character.h"
 #include "statsManager.h"
+#include "encounterManager.h"
 
 class User
 {
     private:
         int level;
         int xp;
-        int encounterCount;
         std::vector<Item*>* inventory;
         Weapon* equippedWeapon;
         Armor* equippedArmor;
         Trinket* equippedTrinket;
         Character* character;
         StatsManager* userStats;
+        EncounterManager* encounters;
+
     public:
         User();
-        User(int lvl, int exp, int eCount, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm);
+        User(int lvl, int exp, EncounterManager* em, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm);
         ~User();
         
         int getLevel() const;
         int getXp() const;
-        int getEncounterCount() const;
         std::vector<Item*>* getInventory(); 
         Character* getCharacterClass(); 
         StatsManager* getStatsManager();
+        EncounterManager* getEncounterManager();
 
         void levelUp();
         void equipItem(const Item* i);
-        void resetEncounterCount();
-        void incrementEncounterCount();
 };
