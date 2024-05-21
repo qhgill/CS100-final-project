@@ -7,6 +7,7 @@
 #include "trinket.h"
 #include "character.h"
 #include "statsManager.h"
+#include "itemManager.h"
 
 class User
 {

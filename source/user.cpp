@@ -13,7 +13,7 @@ User::User()
     userStats = nullptr;
     userItems = nullptr;
 }
-User::User(int lvl, int exp, int eCount, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm, ItemManager* im)
+User::User(int lvl, int exp, int eCount, Character* cClass, StatsManager* sm, ItemManager* im)
 {
     level = lvl;
     xp = exp;
