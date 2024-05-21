@@ -20,10 +20,14 @@ void Inventory::displayScreen(){
     cout << "Equipped Armor: NEEDS FIX" << endl;
     cout << "Equipped Trinket: NEEDS FIX" << endl;
     cout << "Inventory: ";
-    for(unsigned i = 0; i < userInventory->size() - 1; i++){
-        cout << userInventory->at(i)->getName() << ", ";
+    if(userInventory->size() == 0){
+        cout << "empty" << endl;
+    } else {
+        for(unsigned i = 0; i < userInventory->size() - 1; i++){
+            cout << userInventory->at(i)->getName() << ", ";
+        }
+        cout << userInventory->at(userInventory->size()-1)->getName() << endl;
     }
-    cout << userInventory->at(userInventory->size()-1)->getName() << endl;
     cout << "-------------------------------------------" << endl;
     cout << "Select an option:" << endl;
     cout << "[1] Equip a different Weapon" << endl;
