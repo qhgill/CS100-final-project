@@ -14,15 +14,13 @@ class User
         int level;
         int xp;
         int encounterCount;
-        std::vector<Item*>* inventory;
-        Weapon* equippedWeapon;
-        Armor* equippedArmor;
-        Trinket* equippedTrinket;
+        
         Character* character;
         StatsManager* userStats;
+        ItemManager* userItems;
     public:
         User();
-        User(int lvl, int exp, int eCount, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm);
+        User(int lvl, int exp, int eCount, Character* cClass, StatsManager* sm, ItemManager* im);
         ~User();
         
         int getLevel() const;
@@ -31,9 +29,9 @@ class User
         std::vector<Item*>* getInventory(); 
         Character* getCharacterClass(); 
         StatsManager* getStatsManager();
+        ItemManager* getItemManager();
 
         void levelUp();
-        void equipItem(const Item* i);
         void resetEncounterCount();
         void incrementEncounterCount();
 };
