@@ -79,6 +79,14 @@ add_executable(runGameTests
     ../source/startMenu.cpp
 )
 
+add_executable(runTravelTests
+    travelTests.cpp
+    ../source/screen.cpp
+    ../source/user.cpp
+    ../source/travel.cpp
+    ../source/inGameMenu.cpp
+)
+
 add_executable(runInventoryTests
     inventoryTests.cpp
     ../source/screen.cpp
@@ -99,4 +107,3 @@ target_link_libraries(runRogueTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)
-target_link_libraries(runInventoryTests gtest gtest_main)
