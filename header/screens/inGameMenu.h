@@ -4,6 +4,7 @@
 
 class InGameMenu: public Screen{
     public:
-        Screen* processOption(int);
-        void displayScreen();
+        InGameMenu(string dispFile, User* user): Screen(dispFile, user) {}
+        Screen* processOption(int, bool){return this;}
+        void displayScreen(){}
 };
