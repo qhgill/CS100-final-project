@@ -31,6 +31,10 @@ int StatsManager::getCurrentHP() const {
     return this->currentHP;
 }
 
+int& StatsManager::getCurrentHP() {
+    return this->currentHP;
+}
+
 int StatsManager::getCurrentDMG() const {
     return this->currentDMG;
 }

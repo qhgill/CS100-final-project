@@ -21,6 +21,7 @@ public:
     int getCurrentPR() const;
     int getMaxHP() const;
     int getCurrentHP() const;
+    int& getCurrentHP();
     int getCurrentDMG() const;
     void takeDamage(int dmgAmount, const std::string& dmgType);
     void healSelf(int healAmount);
