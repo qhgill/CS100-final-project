@@ -27,4 +27,6 @@ testing/runUserTests
 testing/runGameTests
 testing/runStatsManagerTests
 testing/runTravelTests
+testing/runInventoryTests
+testing/runCityTests
 lib/

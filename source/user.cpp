@@ -5,12 +5,12 @@ User::User()
     level = 1;
     xp = 0;
     encounterCount = 0;
-    inventory = nullptr;
+    inventory = new vector<Item*>;
     equippedWeapon = nullptr;
     equippedArmor = nullptr;
     equippedTrinket = nullptr;
     character = nullptr;
-    userStats = nullptr;
+    userStats = new StatsManager();
 }
 User::User(int lvl, int exp, int eCount, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm)
 {

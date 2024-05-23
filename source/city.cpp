@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-City::City(string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false){}
+City::City(string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(nullptr), cityTrinket(nullptr), cityWeapon(nullptr){}
 
 Screen* City::processOption(int userOption, bool isRunning)
 { 
@@ -74,6 +74,10 @@ void City::displayScreen()
         cout << " (ALREADY PURCHASED)";
     }
     cout << endl;
-    cout << "[5] sell all uneqipped items in your inventory" << endl;
+    cout << "[5] sell all uneqipped items in your inventory";
+    if(currentUser->getInventory()->size() == 0){
+        cout << "(NO ITEMS TO SELL)";
+    }
+    cout << endl;
     cout << "[6] leave city" << endl;
 }
