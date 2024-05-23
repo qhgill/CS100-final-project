@@ -84,6 +84,14 @@ add_executable(runGameTests
     ../source/startMenu.cpp
 )
 
+add_executable(runTravelTests
+    travelTests.cpp
+    ../source/screen.cpp
+    ../source/user.cpp
+    ../source/travel.cpp
+    ../source/inGameMenu.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -95,3 +103,4 @@ target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)
 target_link_libraries(runEncounterManagerTests gtest gtest_main)
+target_link_libraries(runTravelTests gtest gtest_main)

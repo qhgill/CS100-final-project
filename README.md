@@ -7,7 +7,7 @@ Authors: [Quin Gill](https://github.com/qhgill), [David Hannah](https://github.c
  * We will be using C++ and CMake to develop the project.
  * The program will prompt the user with options based on their current situation. input for these options will either be a single character or a line of characters. the program will then read in the user's input and find the corresponding functions to call for that scenario. After the state of the game changes based on those functions, a display function will be called do output relevant information to the player.
  * The project will provide a character selection/creation system, a combat system for fighting enemies, and a movement system for the user to decide on the best course of action after every encounter. These systems will be used to structure a connected adventure the user can play through.
- * the player will play as a prince being sent by his father to take down his enemies, and will travel to each enemy and fight their subordinates along the way, at the end of the game, the player will discover that not everything is as it seems(a twist!)
+ * the player will play as a prince being sent by his father to take down his enemies, and will travel to each enemy and fight their subordinates along the way, at the end of the game, the player will discover their father betrayed them and fight him as the final boss.
 
 ## User Interface Specification
 ### Navigation Diagram
@@ -61,7 +61,7 @@ The overall screen layout has an ASCII image at the top either showing the title
 
  * The spell class is a component class of the character class, and handles information about specific spells regarding each class.
 
- ![Class Diagram](./readmeImages/Final-Project-Class-Diagramphase3v3.drawio%20(2).png)
+ ![Class Diagram](./readmeImages/Final-Project-Class-Diagramphase3v5.drawio.png)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
@@ -83,14 +83,16 @@ The overall screen layout has an ASCII image at the top either showing the title
  > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
  > * What tasks you are planning for this next sprint.
    
-Phase 3 changes to UML Diagram:
+# Phase 3 changes to UML Diagram:
   * We split the user class by making it a composition of other classes to reduce responsibilities
   * We split the non-boss enemy classes to add variety to the enemies we implement, each would implement their actions differently so by splitting into these subclasses we allow for extension later
   * split boss enemy class for a similar reason to splitting non-boss enemies, but because boss enemies are slightly different we split them seperately
-  * ccreated a game class to manage the game when it runs and remove excess responsibilities from other classes
+  * created a game class to manage the game when it runs and remove excess responsibilities from other classes
   * made some adjustments to how user, character, spell, and enemy works to make sure we didn't have circular dependencies and make things work with the rest of our changes
-SOLID Principles
-  * fix later
+# SOLID Principles
+  * Single responsibility principle: Our new class diagram adheres to the single responsibility principle by splitting classes up into compositions and inheritence structures that reduce the responsibilities of individual classes. For example, our User class used to have multiple responsibilities to keep track of, but now that responsibility has been split into multiple component classes to adhere to the SRP. Before our changes, classes like our Screen class and its subclasses as well as the spell class and its subclasses also followed this principle, as each screen subclass is only responsible for one screen the user sees, and each spell subclass is only responsible for one spell. 
+  * Interface Segregation principle: Our class diagram adheres to the Interface segregation principle through the boss subclass. Each boss has a set of seperate functions for different phases of a fight, differing slightly from regular enemies, as a result, we split the interface for bosses to have an extra class in between the enemy parent class and the lowest level of individual boss classes. This follows Interface Segregation principle because it means regular enemies are not forced to implement functions that only bosses need. 
+  * Liskov Substitution Principle: Our class diagram adheres to the Liskov Substitution principle through examples like our spell and enemy class. Although they are both abstract classes, any child class of these parent classes can replace one another. Our program uses spell pointers and enemy pointers to store different subclasses of each class, and due to the inheritence structure, any spell pointer can store any spell subclass, and any enemy pointer can store any enemy subclass. This is also the case for our screen subclasses, each screen subclass can replace each other within a pointer for the parent class.
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 

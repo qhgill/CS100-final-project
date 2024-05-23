@@ -1,9 +1,12 @@
 #pragma once
 #include "./screen.h"
+#include "./inGameMenu.h"
+#include <iostream>
 #include <string>
 
 class Travel: public Screen{
     public:
-        Screen* processOption(int);
+        Travel(string dispFile, User* user);
+        Screen* processOption(int, bool);
         void displayScreen();
 };
