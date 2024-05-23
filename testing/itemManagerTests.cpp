@@ -12,12 +12,9 @@ TEST(itemManagerConstructor, getterFunctionTests) {
 
     ItemManager* im = new ItemManager(i, w, a, t);
 
-    ASSERT_EQ(im->getInventory(), i);
-    ASSERT_EQ(im->getEquippedWeapon(), w);
-    ASSERT_EQ(im->getEquippedArmor(), a);
-    ASSERT_EQ(im->getEquippedTrinket(), t);
+    EXPECT_EQ(im->getInventory(), i);
+    EXPECT_EQ(im->getEquippedWeapon(), w);
+    EXPECT_EQ(im->getEquippedArmor(), a);
+    EXPECT_EQ(im->getEquippedTrinket(), t);
 }
 
-TEST() {
-
-}

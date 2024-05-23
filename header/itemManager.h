@@ -30,6 +30,4 @@ class ItemManager {
         Armor* getEquippedArmor() {return equippedArmor;};
         Trinket* getEquippedTrinket() {return equippedTrinket;};
         
-
-        void equipItem(const Item* i) {return;}; //need implementation
 };
