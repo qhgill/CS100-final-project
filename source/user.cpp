@@ -5,10 +5,6 @@ User::User()
     level = 1;
     xp = 0;
     encounterCount = 0;
-    inventory = nullptr;
-    equippedWeapon = nullptr;
-    equippedArmor = nullptr;
-    equippedTrinket = nullptr;
     character = nullptr;
     userStats = nullptr;
     userItems = nullptr;

@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include "./user.h"
@@ -19,10 +20,10 @@ class ItemManager {
         ItemManager(vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t) : inventory(inv), equippedWeapon(w), equippedArmor(a), equippedTrinket(t) {};
 
         ~ItemManager() {
-            delete inv;
-            delete w;
-            delete a;
-            delete t;
+            delete inventory;
+            delete equippedWeapon;
+            delete equippedArmor;
+            delete equippedTrinket;
         };
 
         vector<Item*>* getInventory() {return inventory;};
