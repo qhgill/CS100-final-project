@@ -69,6 +69,18 @@ add_executable(runStatsManagerTests
     ../source/spell.cpp
 )
 
+
+add_executable(runItemManagerTests
+    itemManagerTests.cpp
+    ../source/item.cpp
+    ../source/weapon.cpp
+    ../source/armor.cpp
+    ../source/trinket.cpp
+)
+add_executable(runEncounterManagerTests
+    encounterManagerTests.cpp
+)
+
 add_executable(runGameTests
     gameTesting.cpp
     ../source/game.cpp
@@ -99,6 +111,34 @@ add_executable(runCityTests
     ../source/character.cpp
 )
 
+add_executable(runInventoryTests
+    inventoryTests.cpp
+    ../source/screen.cpp
+    ../source/inventory.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/inGameMenu.cpp
+    ../source/character.cpp
+    ../source/item.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+)
+
+add_executable(runInventoryTests
+    inventoryTests.cpp
+    ../source/screen.cpp
+    ../source/inventory.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/inGameMenu.cpp
+    ../source/character.cpp
+    ../source/item.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -109,5 +149,8 @@ target_link_libraries(runRogueTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)
+target_link_libraries(runItemManagerTests gtest gtest_main)
+target_link_libraries(runEncounterManagerTests gtest gtest_main)
 target_link_libraries(runTravelTests gtest gtest_main)
+target_link_libraries(runInventoryTests gtest gtest_main)
 target_link_libraries(runCityTests gtest gtest_main)

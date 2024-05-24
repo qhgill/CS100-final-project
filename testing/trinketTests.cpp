@@ -10,6 +10,14 @@ TEST(getterTests, getNameTest) {
     EXPECT_EQ(testName, "necklace");
 }
 
+TEST(getterTests, getTypeTest) {
+    Trinket trink("necklace", 5, 5);
+    string testType = trink.getType();
+
+    EXPECT_EQ(testType, "trinket");
+}
+
+
 
 TEST(getterTests, getLevelTest) {
     Trinket trink("necklace", 5, 5);
