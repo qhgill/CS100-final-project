@@ -61,35 +61,16 @@ The overall screen layout has an ASCII image at the top either showing the title
 
  * The spell class is a component class of the character class, and handles information about specific spells regarding each class.
 
- ![Class Diagram](./readmeImages/Final-Project-Class-Diagramphase3v5.drawio.png)
- 
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ ![Class Diagram](./readmeImages/Final-Project-Class-Diagramphase3v6.drawio.png)
+
    
-# Phase 3 changes to UML Diagram:
+### Phase 3 changes to UML Diagram:
   * We split the user class by making it a composition of other classes to reduce responsibilities
   * We split the non-boss enemy classes to add variety to the enemies we implement, each would implement their actions differently so by splitting into these subclasses we allow for extension later
   * split boss enemy class for a similar reason to splitting non-boss enemies, but because boss enemies are slightly different we split them seperately
   * created a game class to manage the game when it runs and remove excess responsibilities from other classes
   * made some adjustments to how user, character, spell, and enemy works to make sure we didn't have circular dependencies and make things work with the rest of our changes
-# SOLID Principles
+### SOLID Principles
   * Single responsibility principle: Our new class diagram adheres to the single responsibility principle by splitting classes up into compositions and inheritence structures that reduce the responsibilities of individual classes. For example, our User class used to have multiple responsibilities to keep track of, but now that responsibility has been split into multiple component classes to adhere to the SRP. Before our changes, classes like our Screen class and its subclasses as well as the spell class and its subclasses also followed this principle, as each screen subclass is only responsible for one screen the user sees, and each spell subclass is only responsible for one spell. 
   * Interface Segregation principle: Our class diagram adheres to the Interface segregation principle through the boss subclass. Each boss has a set of seperate functions for different phases of a fight, differing slightly from regular enemies, as a result, we split the interface for bosses to have an extra class in between the enemy parent class and the lowest level of individual boss classes. This follows Interface Segregation principle because it means regular enemies are not forced to implement functions that only bosses need. 
   * Liskov Substitution Principle: Our class diagram adheres to the Liskov Substitution principle through examples like our spell and enemy class. Although they are both abstract classes, any child class of these parent classes can replace one another. Our program uses spell pointers and enemy pointers to store different subclasses of each class, and due to the inheritence structure, any spell pointer can store any spell subclass, and any enemy pointer can store any enemy subclass. This is also the case for our screen subclasses, each screen subclass can replace each other within a pointer for the parent class.

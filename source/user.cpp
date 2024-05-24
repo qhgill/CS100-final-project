@@ -4,16 +4,16 @@ User::User()
 {
     level = 1;
     xp = 0;
-    encounterCount = 0;
+    encounters = nullptr;
     character = nullptr;
     userStats = nullptr;
     userItems = nullptr;
 }
-User::User(int lvl, int exp, int eCount, Character* cClass, StatsManager* sm, ItemManager* im)
+User::User(int lvl, int exp, EncounterManager* em, Character* cClass, StatsManager* sm, ItemManager* im)
 {
     level = lvl;
     xp = exp;
-    encounterCount = eCount;
+    encounters = em;
     character = cClass;
     userStats = sm;
     userItems = im;
@@ -33,10 +33,7 @@ int User::getXp() const
 {
     return this->xp;
 }
-int User::getEncounterCount() const
-{
-    return this->encounterCount;
-} 
+
 std::vector<Item*>* User::getInventory()
 {
     return this->userItems->getInventory();
@@ -50,22 +47,18 @@ StatsManager* User::getStatsManager()
     return this->userStats;
 }
 
+
 ItemManager* User::getItemManager() {
     return this->userItems;
+}
+
+EncounterManager* User::getEncounterManager()
+{
+    return this->encounters;
 }
 
 void User::levelUp()
 {
     this->level++;
-    return;
-}
-void User::resetEncounterCount()
-{
-    this->encounterCount = 0;
-    return;
-}
-void User::incrementEncounterCount()
-{
-    this->encounterCount++;
     return;
 }
