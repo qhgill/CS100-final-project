@@ -113,4 +113,6 @@ target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)
 target_link_libraries(runEncounterManagerTests gtest gtest_main)
+target_link_libraries(runTravelTests gtest gtest_main)
+target_link_libraries(runInventoryTests gtest gtest_main)
 

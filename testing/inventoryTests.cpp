@@ -5,7 +5,7 @@
 TEST(inventoryTests, displayTest){
     vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,1, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_NO_THROW(inventory->displayScreen());
 }
@@ -13,7 +13,7 @@ TEST(inventoryTests, displayTest){
 TEST(inventoryTests, processOptionOne){
     vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,1, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_EQ(inventory->processOption(1, true), inventory);
 }
@@ -21,7 +21,7 @@ TEST(inventoryTests, processOptionOne){
 TEST(inventoryTests, processOptionTwo){
     vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,1, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_EQ(inventory->processOption(2, true), inventory);
 }
@@ -29,7 +29,7 @@ TEST(inventoryTests, processOptionTwo){
 TEST(inventoryTests, processOptionThree){
     vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,1, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_EQ(inventory->processOption(3, true), inventory);
 }

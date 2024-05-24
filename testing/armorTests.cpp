@@ -10,6 +10,12 @@ TEST(getterTests, getNameTest) {
     EXPECT_EQ(testName, "helmet");
 }
 
+TEST(getterTests, getTypeTest) {
+    Armor testArmor("helmet", 5, 5, 5, 5);
+    string testType = testArmor.getType();
+    EXPECT_EQ(testType, "armor");
+}
+
 
 TEST(getterTests, getLevelTest) {
     Armor testArmor("helmet", 5, 5, 5, 5);

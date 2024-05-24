@@ -9,7 +9,7 @@ class Weapon: public Item
         int damage;
         string damageType;
     public:
-        Weapon(): damage(0), damageType(0), Item("", 0) {}
+        Weapon(): damage(0), damageType(0), Item("", 0, "weapon") {}
         Weapon( string name, int level, int damage_, string damageType_ );
         int getDamage() { return damage; }
         string getDamageType() { return damageType; }
