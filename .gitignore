@@ -30,4 +30,5 @@ testing/runEncounterManagerTests
 testing/runInventoryTests
 testing/runTravelTests
 testing/runCityTests
+testing/runItemManagerTests
 lib/
