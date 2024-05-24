@@ -15,6 +15,7 @@ class User
     private:
         int level;
         int xp;
+        int gold;
         Character* character;
         StatsManager* userStats;
         ItemManager* userItems;
@@ -25,6 +26,8 @@ class User
         ~User();
         int getLevel() const;
         int getXp() const;
+        int& getGold();
+        int getGold() const;
         Character* getCharacterClass(); 
         StatsManager* getStatsManager();
         ItemManager* getItemManager();
