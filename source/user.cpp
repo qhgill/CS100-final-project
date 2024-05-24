@@ -4,6 +4,7 @@ User::User()
 {
     level = 1;
     xp = 0;
+    gold = 0;
     encounters = new EncounterManager();
     character = nullptr;
     userStats = new StatsManager();
@@ -13,6 +14,7 @@ User::User(int lvl, int exp, EncounterManager* em, Character* cClass, StatsManag
 {
     level = lvl;
     xp = exp;
+    gold = 0;
     encounters = em;
     character = cClass;
     userStats = sm;
@@ -32,6 +34,14 @@ int User::getLevel() const
 int User::getXp() const
 {
     return this->xp;
+}
+
+int& User::getGold(){
+    return gold;
+}
+
+int User::getGold() const{
+    return gold;
 }
 
 Character* User::getCharacterClass() 

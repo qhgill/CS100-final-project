@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-City::City(string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(nullptr), cityTrinket(nullptr), cityWeapon(nullptr){}
+City::City(string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(new Armor()), cityTrinket(new Trinket()), cityWeapon(new Weapon()){}
 
 Screen* City::processOption(int userOption, bool isRunning)
 { 
@@ -13,32 +13,56 @@ Screen* City::processOption(int userOption, bool isRunning)
             currentUser->getStatsManager()->getCurrentHP() = currentUser->getStatsManager()->getMaxHP();
         }
         return this;
-    } else if(userOption == 2){
+    } else if(userOption == 2 || currentUser->getGold() - cityWeapon->calcValue() < 0){
         if(cityWeapon == nullptr){
             return this;
         } else {
-            //fix when inventorymanager gets pushed
+            currentUser->getGold() -= cityWeapon->calcValue();
+            currentUser->getItemManager()->getWeaponInventory()->push_back(cityWeapon);
+            cityWeapon = nullptr;
             return this;
         }
     } else if(userOption == 3){
-        if(cityArmor == nullptr){
+        if(cityArmor == nullptr || currentUser->getGold() - cityArmor->calcValue() < 0){
             return this;
         } else {
-            //fix when inventorymanager gets pushed
+            currentUser->getGold() -= cityArmor->calcValue();
+            currentUser->getItemManager()->getArmorInventory()->push_back(cityArmor);
+            cityArmor = nullptr;
             return this;
         }
     } else if(userOption == 4){
-        if(cityTrinket == nullptr){
+        if(cityTrinket == nullptr || currentUser->getGold() - cityTrinket->calcValue() < 0){
             return this;
         } else {
-            //fix when inventorymanager gets pushed
+            currentUser->getGold() -= cityTrinket->calcValue();
+            currentUser->getItemManager()->getTrinketInventory()->push_back(cityTrinket);
+            cityTrinket = nullptr;
             return this;
         }
     } else if(userOption == 5){
-        if(currentUser->getInventory()->size() == 0){
+        ItemManager* userItemManager = currentUser->getItemManager();
+        vector<Weapon*>* userWeapons = userItemManager->getWeaponInventory();
+        vector<Armor*>* userArmor = userItemManager->getArmorInventory();
+        vector<Weapon*>* userTrinkets = userItemManager->getWeaponInventory();
+        if(userItemManager->getWeaponInventory()->size() == 0 && userItemManager->getArmorInventory()->size() == 0 && userItemManager->getTrinketInventory()->size() == 0){
             return this;
         } else {
-            //fix when inventorymanager gets pushed
+            for(int i = userWeapons->size() - 1; i >= 0; i--){
+                currentUser->getGold() += userWeapons->at(i)->calcValue();
+                delete userWeapons->at(i);
+                userWeapons->pop_back();
+            }
+            for(int i = userArmor->size() - 1; i >= 0; i--){
+                currentUser->getGold() += userArmor->at(i)->calcValue();
+                delete userWeapons->at(i);
+                userArmor->pop_back();
+            }
+            for(int i = userTrinkets->size() - 1; i >= 0; i--){
+                currentUser->getGold() += userTrinkets->at(i)->calcValue();
+                delete userTrinkets->at(i);
+                userTrinkets->pop_back();
+            }
             return this;
         }
     } else if(userOption == 6){
@@ -62,22 +86,45 @@ void City::displayScreen()
     cout << "[2] purchase City's weapon";
     if(cityWeapon == nullptr){
         cout << " (ALREADY PURCHASED)";
+    } else if (currentUser->getGold() - cityWeapon->calcValue() < 0){
+        cout << " (NOT ENOUGH GOLD)";
     }
     cout << endl;
     cout << "[3] purchase City's armor";
     if(cityArmor == nullptr){
         cout << " (ALREADY PURCHASED)";
+    } else if (currentUser->getGold() - cityArmor->calcValue() < 0){
+        cout << " (NOT ENOUGH GOLD)";
     }
     cout << endl;
     cout << "[4] purchase City's trinket";
     if(cityTrinket == nullptr){
         cout << " (ALREADY PURCHASED)";
+    } else if (currentUser->getGold() - cityTrinket->calcValue() < 0){
+        cout << " (NOT ENOUGH GOLD)";
     }
     cout << endl;
     cout << "[5] sell all uneqipped items in your inventory";
-    if(currentUser->getInventory()->size() == 0){
+    ItemManager* userItemManager = currentUser->getItemManager();
+    if(userItemManager->getWeaponInventory()->size() == 0 && userItemManager->getArmorInventory()->size() == 0 && userItemManager->getTrinketInventory()->size() == 0){
         cout << "(NO ITEMS TO SELL)";
-    }
+    } 
     cout << endl;
     cout << "[6] leave city" << endl;
+}
+
+Weapon* City::getCityWeapon(){
+    return cityWeapon;
+}
+
+Armor* City::getCityArmor(){
+    return cityArmor;
+}
+
+Trinket* City::getCityTrinket(){
+    return cityTrinket;
+}
+
+bool City::getTavernUsed(){
+    return tavernUsed;
 }

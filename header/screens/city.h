@@ -7,11 +7,15 @@ class City: public Screen
 {
     protected:
         bool tavernUsed;
-        Item* cityWeapon;
-        Item* cityTrinket;
-        Item* cityArmor;
+        Weapon* cityWeapon;
+        Trinket* cityTrinket;
+        Armor* cityArmor;
     public:
         City(string dispFile, User* cUser);
         void displayScreen() override;
         Screen* processOption(int choice, bool isRunning) override;
+        Weapon* getCityWeapon();
+        Armor* getCityArmor();
+        Trinket* getCityTrinket();
+        bool getTavernUsed();
 };

@@ -89,6 +89,10 @@ add_executable(runGameTests
     ../source/character.cpp
     ../source/startMenu.cpp
     ../source/statsManager.cpp
+    ../source/item.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
 )
 
 add_executable(runTravelTests
@@ -99,6 +103,10 @@ add_executable(runTravelTests
     ../source/inGameMenu.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
+    ../source/item.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
 )
 
 add_executable(runCityTests
@@ -109,20 +117,10 @@ add_executable(runCityTests
     ../source/city.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
-)
-
-add_executable(runInventoryTests
-    inventoryTests.cpp
-    ../source/screen.cpp
-    ../source/inventory.cpp
-    ../source/user.cpp
-    ../source/statsManager.cpp
-    ../source/inGameMenu.cpp
-    ../source/character.cpp
     ../source/item.cpp
-    ../source/trinket.cpp
-    ../source/armor.cpp
     ../source/weapon.cpp
+    ../source/armor.cpp
+    ../source/trinket.cpp
 )
 
 add_executable(runInventoryTests
