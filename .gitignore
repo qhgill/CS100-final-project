@@ -28,4 +28,5 @@ testing/runGameTests
 testing/runStatsManagerTests
 testing/runEncounterManagerTests
 testing/runTravelTests
+testing/runItemManagerTests
 lib/

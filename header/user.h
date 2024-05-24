@@ -7,6 +7,7 @@
 #include "trinket.h"
 #include "character.h"
 #include "statsManager.h"
+#include "itemManager.h"
 #include "encounterManager.h"
 
 class User
@@ -14,26 +15,19 @@ class User
     private:
         int level;
         int xp;
-        std::vector<Item*>* inventory;
-        Weapon* equippedWeapon;
-        Armor* equippedArmor;
-        Trinket* equippedTrinket;
         Character* character;
         StatsManager* userStats;
+        ItemManager* userItems;
         EncounterManager* encounters;
-
     public:
         User();
-        User(int lvl, int exp, EncounterManager* em, std::vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t, Character* cClass, StatsManager* sm);
+        User(int lvl, int exp, EncounterManager* em, Character* cClass, StatsManager* sm, ItemManager* im);
         ~User();
-        
         int getLevel() const;
         int getXp() const;
-        std::vector<Item*>* getInventory(); 
         Character* getCharacterClass(); 
         StatsManager* getStatsManager();
-        EncounterManager* getEncounterManager();
-
+        ItemManager* getItemManager();
         void levelUp();
-        void equipItem(const Item* i);
+        EncounterManager* getEncounterManager();
 };
