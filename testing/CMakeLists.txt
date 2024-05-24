@@ -107,6 +107,10 @@ add_executable(runInventoryTests
     ../source/statsManager.cpp
     ../source/inGameMenu.cpp
     ../source/character.cpp
+    ../source/item.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)

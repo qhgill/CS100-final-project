@@ -3,38 +3,50 @@
 #include "../header/screens/inventory.h"
 
 TEST(inventoryTests, displayTest){
-    vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    ItemManager* items = new ItemManager();
+    EncounterManager* encounters = new EncounterManager();
+    User* user = new User(1,1, encounters, nullptr, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_NO_THROW(inventory->displayScreen());
 }
 
 TEST(inventoryTests, processOptionOne){
-    vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    ItemManager* items = new ItemManager();
+    EncounterManager* encounters = new EncounterManager();
+    User* user = new User(1,1, encounters, nullptr, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_EQ(inventory->processOption(1, true), inventory);
 }
 
 TEST(inventoryTests, processOptionTwo){
-    vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    ItemManager* items = new ItemManager();
+    EncounterManager* encounters = new EncounterManager();
+    User* user = new User(1,1, encounters, nullptr, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_EQ(inventory->processOption(2, true), inventory);
 }
 
+
 TEST(inventoryTests, processOptionThree){
-    vector<Item*>* inv = new vector<Item*>;
     StatsManager* stats = new StatsManager();
-    User* user = new User(1,1,nullptr, inv, nullptr, nullptr, nullptr, nullptr, stats);
+    ItemManager* items = new ItemManager();
+    EncounterManager* encounters = new EncounterManager();
+    User* user = new User(1,1, encounters, nullptr, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
     EXPECT_EQ(inventory->processOption(3, true), inventory);
 }
 
-//more tests later, need to alter some stuff to make it more testable
+TEST(inventoryTests, processOptionFour){
+    StatsManager* stats = new StatsManager();
+    ItemManager* items = new ItemManager();
+    EncounterManager* encounters = new EncounterManager();
+    User* user = new User(1,1, encounters, nullptr, stats, items);
+    Screen* inventory = new Inventory("inventoryScreen.txt", user);
+    EXPECT_NE(inventory->processOption(3, true), inventory);
+}
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
