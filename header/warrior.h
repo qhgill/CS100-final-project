@@ -1,9 +1,12 @@
-#include <string>
+#pragma once
 #include "character.h"
-using std::string;
+#include "shatter.h"
+#include "slam.h"
+#include "bludgeon.h"
 
-class Warrior : public Character {
-    public:
-        Warrior();
-        Warrior(int, int, int, int, string, spell*, spell*, spell*);    
+class Warrior : public Character
+{
+public:
+    Warrior();
+    ~Warrior();
 };

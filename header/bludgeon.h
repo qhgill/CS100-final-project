@@ -1,8 +1,9 @@
-#include "./character.h"
-#include <string>
-using std::string;
+#pragma once
+#include "spell.h"
 
-class bludgeon : public spell{ //stub
+class Bludgeon : public Spell
+{
     public:
-        bludgeon() : spell (){}
+    Bludgeon();
+    void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) override;
 };

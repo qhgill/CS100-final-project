@@ -1,5 +1,6 @@
 #pragma once
 #include "./screen.h"
+#include "../header/screens/characterSelect.h"
 #include <string>
 
 class StartMenu: public Screen{

@@ -6,7 +6,9 @@ CutThroat::CutThroat()
     this->spellLevelThreshold = 3;
 }
 
-// void CutThroat::doSpell(StatsManager* sm, Enemy* e)
-// {
-//     // do stuff;
-// }
+void CutThroat::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)
+{
+         int level = e->getLevel();
+         e->dealDamage(10/level);
+         //deal physical and magic damage based on level and ignore resistances
+}

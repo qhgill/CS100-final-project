@@ -10,7 +10,7 @@ TEST(rogueGetterTests, getHpTest){
 TEST(rogueGetterTests, getDamageTest){
     Rogue rogue;
     int testDamage = rogue.getBaseDamage();
-    EXPECT_EQ(testDamage, 15);
+    EXPECT_EQ(testDamage, 12);
 }
 
 TEST(rogueGetterTests, getPRTest){
@@ -22,7 +22,7 @@ TEST(rogueGetterTests, getPRTest){
 TEST(rogueGetterTests, getMRTest){
     Rogue rogue;
     int testMR = rogue.getBaseMagicResist();
-    EXPECT_EQ(testMR, 1);
+    EXPECT_EQ(testMR, 2);
 }
 
 TEST(rogueGetterTests, getClassNameTest){

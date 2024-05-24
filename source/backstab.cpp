@@ -6,7 +6,9 @@ BackStab::BackStab()
     this->spellLevelThreshold = 1;
 }
 
-// void BackStab::doSpell(StatsManager* sm, Enemy* e)
-// {
-//     // do stuff;
-// }
+void BackStab::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)
+{
+         int overallDamage = e->getDamage();
+         e->dealDamage(10/overallDamage);
+         //deal flat physical damage based on overall damage
+}
