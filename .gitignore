@@ -26,6 +26,8 @@ testing/runWeaponTests
 testing/runUserTests
 testing/runGameTests
 testing/runStatsManagerTests
+testing/runEncounterManagerTests
 testing/runInventoryTests
 testing/runTravelTests
+testing/runCityTests
 lib/

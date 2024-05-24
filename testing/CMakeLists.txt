@@ -70,6 +70,11 @@ add_executable(runStatsManagerTests
     ../source/spell.cpp
 )
 
+add_executable(runEncounterManagerTests
+    encounterManagerTests.cpp
+
+)
+
 add_executable(runGameTests
     gameTesting.cpp
     ../source/game.cpp
@@ -107,3 +112,5 @@ target_link_libraries(runRogueTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)
+target_link_libraries(runEncounterManagerTests gtest gtest_main)
+
