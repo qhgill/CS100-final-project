@@ -7,7 +7,10 @@ Inventory::Inventory(string dispFile, User* cUser): Screen(dispFile, cUser){}
 void Inventory::displayScreen(){
     StatsManager* userStatsManager = currentUser->getStatsManager();
     ItemManager* userItemManager = currentUser->getItemManager();
-    //vector<Item*>* userInventory = userItemManager->getInventory();
+    vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();
+    vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
+    vector<Trinket*>* userTrinketInventory = userItemManager->getTrinketInventory();
+    
     Screen::displayFromFile();
     cout << endl;
     cout << "Level: " << currentUser->getLevel() << endl;
@@ -20,15 +23,34 @@ void Inventory::displayScreen(){
     cout << "Equipped Weapon: " << userItemManager->getEquippedWeapon()->getName() << endl;
     cout << "Equipped Armor: " << userItemManager->getEquippedArmor()->getName() << endl;
     cout << "Equipped Trinket: " << userItemManager->getEquippedTrinket()->getName() << endl;
-    cout << "Inventory: ";
-    // if(userInventory->size() == 0){
-    //     cout << "empty" << endl;
-    // } else {
-    //     for(unsigned i = 0; i < userInventory->size() - 1; i++){
-    //         cout << userInventory->at(i)->getName() << ", ";
-    //     }
-    //     cout << userInventory->at(userInventory->size()-1)->getName() << endl;
-    // }
+    cout << "Inventory: " << endl;
+    cout << "Weapons: ";
+    if(userWeaponInventory->size() == 0){
+        cout << "empty" << endl;
+    } else {
+        for(unsigned i = 0; i < userItemManager->getArmorInventory()->size() - 1; i++){
+            cout << userWeaponInventory->at(i)->getName() << ", ";
+        }
+        cout << userWeaponInventory->at(userWeaponInventory->size()-1)->getName() << endl;
+    }
+    cout << "Armor: ";
+    if(userArmorInventory->size() == 0){
+        cout << "empty" << endl;
+    } else {
+        for(unsigned i = 0; i < userArmorInventory->size() - 1; i++){
+            cout << userArmorInventory->at(i)->getName() << ", ";
+        }
+        cout << userArmorInventory->at(userArmorInventory->size()-1)->getName() << endl;
+    }
+    cout << "Trinkets: ";
+    if(userTrinketInventory->size() == 0){
+        cout << "empty" << endl;
+    } else {
+        for(unsigned i = 0; i < userTrinketInventory->size() - 1; i++){
+            cout << userTrinketInventory->at(i)->getName() << ", ";
+        }
+        cout << userTrinketInventory->at(userTrinketInventory->size()-1)->getName() << endl;
+    }
     cout << "-------------------------------------------" << endl;
     cout << "Select an option:" << endl;
     cout << "[1] Equip a different Weapon" << endl;
@@ -39,57 +61,38 @@ void Inventory::displayScreen(){
 
 Screen* Inventory::processOption(int option, bool isRunning){
     ItemManager* userItemManager = currentUser->getItemManager();
-    //vector<Item*>* userInventory = userItemManager->getInventory();
+    vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
+    vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();
+    vector<Trinket*>* userTrinketInventory = userItemManager->getTrinketInventory();
     if(option == 1){
-        // Item* userEquippedWeapon = userItemManager->getEquippedWeapon();
-        // if(userInventory->size() != 0){
-        //     int i = 0;
-        //     while(i < userInventory->size() && userInventory->at(i)->getType() != "weapon"){
-        //         i++;
-        //     }
-        //     if(i >= userInventory->size()){
-        //         return this;
-        //     } else {
-        //         Item* userOldWeapon = userEquippedWeapon;
-        //         currentUser->getItemManager()->getEquippedWeapon() = userInventory->at(i);
-        //         userInventory->erase(userInventory->begin() + i - 1);
-        //         userInventory->push_back(userOldWeapon);
-        //     }
-        // }
+        if(userWeaponInventory->size() == 0){
+            return this;
+        } else {
+            Weapon* oldWeapon = userItemManager->getEquippedWeapon();
+            userItemManager->getEquippedWeapon() = userWeaponInventory->at(0);
+            userWeaponInventory->erase(userWeaponInventory->begin());
+            userWeaponInventory->push_back(oldWeapon);
+        }
         return this;
     } else if(option == 2){
-        // Item* userEquippedArmor = userItemManager->getEquippedArmor();
-        // if(userInventory->size() != 0){
-        //     int i = 0;
-        //     while(i < userInventory->size() && userInventory->at(i)->getType() != "armor"){
-        //         i++;
-        //     }
-        //     if(i >= userInventory->size()){
-        //         return this;
-        //     } else {
-        //         Item* userOldArmor = userEquippedArmor;
-        //         userEquippedArmor = userInventory->at(i);
-        //         userInventory->erase(userInventory->begin() + i - 1);
-        //         userInventory->push_back(userOldArmor);
-        //     }
-        // }
+        if(userArmorInventory->size() == 0){
+            return this;
+        } else {
+            Armor* oldArmor = userItemManager->getEquippedArmor();
+            userItemManager->getEquippedArmor() = userArmorInventory->at(0);
+            userArmorInventory->erase(userArmorInventory->begin());
+            userArmorInventory->push_back(oldArmor);
+        }
         return this;
     } else if(option == 3){
-        // Item* userEquippedTrinket = userItemManager->getEquippedTrinket();
-        // if(userInventory->size() != 0){
-        //     int i = 0;
-        //     while(i < userInventory->size() && userInventory->at(i)->getType() != "trinket"){
-        //         i++;
-        //     }
-        //     if(i >= userInventory->size()){
-        //         return this;
-        //     } else {
-        //         Item* userOldTrinket = userEquippedTrinket;
-        //         userEquippedTrinket = userInventory->at(i);
-        //         userInventory->erase(userInventory->begin() + i - 1);
-        //         userInventory->push_back(userOldTrinket);
-        //     }
-        // }
+        if(userTrinketInventory->size() == 0){
+            return this;
+        } else {
+            Trinket* oldTrinket = userItemManager->getEquippedTrinket();
+            userItemManager->getEquippedTrinket() = userTrinketInventory->at(0);
+            userTrinketInventory->erase(userTrinketInventory->begin());
+            userTrinketInventory->push_back(oldTrinket);
+        }
         return this;
     } else if(option == 4){
         Screen* menuScreen = new InGameMenu("gameMenuScreen.txt", currentUser);

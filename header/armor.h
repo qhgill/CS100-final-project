@@ -9,7 +9,7 @@ class Armor : public Item {
         int phyRes;
         int magRes;
     public:
-        Armor() : Item("", 0, "armor"), health(0), phyRes(0), magRes(0) {};
+        Armor() : Item("a", 0, "armor"), health(0), phyRes(0), magRes(0) {};
         Armor(string name, int level, int health, int phyRes, int magRes) : Item(name, level, "armor"), health(health), phyRes(phyRes), magRes(magRes) {};
         int getHealth() {return health;};
         int getPhyRes() {return phyRes;};
