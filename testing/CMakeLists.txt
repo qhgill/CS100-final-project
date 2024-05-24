@@ -42,6 +42,26 @@ add_executable(runRogueTests
     ../source/cutthroat.cpp
 )
 
+add_executable(runWarriorTests
+    warriorTests.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/warrior.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+)
+
+add_executable(runMageTests
+    mageTests.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/mage.cpp
+    ../source/arcaneBlast.cpp
+    ../source/lifeLeech.cpp
+    ../source/incinerate.cpp
+)
+
 add_executable(runUserTests
     userTests.cpp
     ../source/user.cpp
@@ -76,6 +96,7 @@ add_executable(runItemManagerTests
     ../source/weapon.cpp
     ../source/armor.cpp
     ../source/trinket.cpp
+    ../source/character.cpp
 )
 add_executable(runEncounterManagerTests
     encounterManagerTests.cpp
@@ -144,6 +165,8 @@ target_link_libraries(runEnemyTests gmock gtest gtest_main)
 target_link_libraries(runItemTests gmock gtest gtest_main)
 target_link_libraries(runWeaponTests gtest gtest_main)
 target_link_libraries(runRogueTests gtest gtest_main)
+target_link_libraries(runWarriorTests gtest gtest_main)
+target_link_libraries(runMageTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)

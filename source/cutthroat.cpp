@@ -8,7 +8,7 @@ CutThroat::CutThroat()
 
 void CutThroat::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)
 {
-         int level = e->getLevel();
+         int level = playerLevel;
          e->dealDamage(10/level);
          //deal physical and magic damage based on level and ignore resistances
 }

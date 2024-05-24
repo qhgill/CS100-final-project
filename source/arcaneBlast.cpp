@@ -8,7 +8,7 @@ ArcaneBlast::ArcaneBlast()
 
 void ArcaneBlast::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)
 {
-         int level = e->getLevel();
+         int level = playerLevel;
          e->dealDamage(10/level);
          //deal flat magic damage based on level
 }
