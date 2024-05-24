@@ -9,26 +9,31 @@
 
 class ItemManager {
     private:
-        vector<Item*>* inventory;
-
+        vector<Weapon*>* weaponInventory;
+        vector<Armor*>* armorInventory;
+        vector<Trinket*>* trinketInventory;
         Weapon* equippedWeapon;
         Armor* equippedArmor;
         Trinket* equippedTrinket;
 
     public:
-        ItemManager() : inventory(nullptr), equippedWeapon(nullptr), equippedArmor(nullptr), equippedTrinket(nullptr) {};
-        ItemManager(vector<Item*>* inv, Weapon* w, Armor* a, Trinket* t) : inventory(inv), equippedWeapon(w), equippedArmor(a), equippedTrinket(t) {};
+        ItemManager() : weaponInventory(new vector<Weapon*>),armorInventory(new vector<Armor*>), trinketInventory(new vector<Trinket*>), equippedWeapon(new Weapon()), equippedArmor(new Armor()), equippedTrinket(new Trinket()) {};
+        ItemManager(vector<Weapon*>* weapons, vector<Armor*>* armors, vector<Trinket*>* trinkets, Weapon* w, Armor* a, Trinket* t) 
+            : weaponInventory(weapons), armorInventory(armors), trinketInventory(trinkets), equippedWeapon(w), equippedArmor(a), equippedTrinket(t) {};
 
         ~ItemManager() {
-            delete inventory;
+            delete weaponInventory;
+            delete armorInventory;
+            delete trinketInventory;
             delete equippedWeapon;
             delete equippedArmor;
             delete equippedTrinket;
         };
 
-        vector<Item*>* getInventory() {return inventory;};
-        Weapon* getEquippedWeapon() {return equippedWeapon;};
-        Armor* getEquippedArmor() {return equippedArmor;};
-        Trinket* getEquippedTrinket() {return equippedTrinket;};
-        
+        vector<Weapon*>* getWeaponInventory() {return weaponInventory;}
+        vector<Armor*>* getArmorInventory() {return armorInventory;}
+        vector<Trinket*>* getTrinketInventory() {return trinketInventory;}
+        Weapon*& getEquippedWeapon() {return equippedWeapon;}
+        Armor*& getEquippedArmor() {return equippedArmor;}
+        Trinket*& getEquippedTrinket() {return equippedTrinket;}
 };

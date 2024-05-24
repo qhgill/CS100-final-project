@@ -34,10 +34,6 @@ int User::getXp() const
     return this->xp;
 }
 
-std::vector<Item*>* User::getInventory()
-{
-    return this->userItems->getInventory();
-}
 Character* User::getCharacterClass() 
 {
     return this->character;

@@ -99,6 +99,20 @@ add_executable(runTravelTests
     ../source/inGameMenu.cpp
 )
 
+add_executable(runInventoryTests
+    inventoryTests.cpp
+    ../source/screen.cpp
+    ../source/inventory.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/inGameMenu.cpp
+    ../source/character.cpp
+    ../source/item.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -112,3 +126,5 @@ target_link_libraries(runGameTests gtest gtest_main)
 target_link_libraries(runItemManagerTests gtest gtest_main)
 target_link_libraries(runEncounterManagerTests gtest gtest_main)
 target_link_libraries(runTravelTests gtest gtest_main)
+target_link_libraries(runInventoryTests gtest gtest_main)
+
