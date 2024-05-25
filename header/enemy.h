@@ -1,7 +1,5 @@
 #pragma once 
-#include <iostream>
 #include <string>
-using namespace std;
 
 class Enemy
 {
@@ -12,11 +10,8 @@ class Enemy
         int damage;
         int magicResist;
         int physicalResist;
-
         bool isdead;
-
-        string name;
-
+        std::string name;
     public:
         Enemy(int level_, 
               int health_, 
@@ -25,7 +20,7 @@ class Enemy
               int magicResist_, 
               int physicalResist_,
               bool isdead_,
-              string name_);
+              std::string name_);
               
         int getLevel() {return level;}
         int getHealth() {return health;}
@@ -34,7 +29,7 @@ class Enemy
         int getMagicResist() {return magicResist;}
         int getPhysicalResist() {return physicalResist;}
         bool getStatus() {return isdead;}
-        string getName() {return name;}
+        std::string getName() {return name;}
 
         void dealDamage(int takeDamage) {health-=takeDamage;}
 
@@ -43,6 +38,4 @@ class Enemy
         void killThis() {isdead=true;}
 
         //virtual int calcTurn();
-
 };
-

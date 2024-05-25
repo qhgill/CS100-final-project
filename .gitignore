@@ -34,3 +34,6 @@ testing/runItemManagerTests
 testing/runInventoryTests
 testing/runCityTests
 lib/
+
+# Remove after cmake implementation
+testing/all_tests.sh

@@ -6,7 +6,7 @@
 
 class Rogue : public Character
 {
-public:
-    Rogue();
-    ~Rogue();
+    public:
+        Rogue();
+        ~Rogue();
 };
