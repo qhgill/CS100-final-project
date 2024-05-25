@@ -4,7 +4,7 @@ Armor::Armor()
 : Item("a", 0, "armor"), health(0), phyRes(0), magRes(0) 
 {}
 
-Armor::Armor(string name, int level, int health, int phyRes, int magRes) 
+Armor::Armor(std::string name, int level, int health, int phyRes, int magRes) 
 : Item(name, level, "armor"), health(health), phyRes(phyRes), magRes(magRes) 
 {}
 

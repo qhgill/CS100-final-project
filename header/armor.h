@@ -11,11 +11,9 @@ class Armor : public Item
     public:
         Armor();
         Armor(std::string name, int level, int health, int phyRes, int magRes);
-        
         int getHealth();
         int getPhyRes();
-        int getMagRes();
-        
+        int getMagRes();        
         int calcValue();
         int calcPhyDamage(int damageRecieved);
         int calcMagDamage(int damageRecieved);

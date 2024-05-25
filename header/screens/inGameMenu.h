@@ -1,10 +1,10 @@
 #pragma once
-#include "./screen.h"
 #include <string>
+#include "./screen.h"
 
 class InGameMenu: public Screen{
     public:
-        InGameMenu(string dispFile, User* user): Screen(dispFile, user) {}
+        InGameMenu(std::string dispFile, User* user): Screen(dispFile, user) {}
         Screen* processOption(int, bool){return this;}
         void displayScreen(){}
 };

@@ -4,5 +4,5 @@
 class ArcaneBlast : public Spell
 {
     public:
-        ArcaneBlast() : Spell(){}
+        ArcaneBlast();
 };

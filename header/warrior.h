@@ -6,5 +6,5 @@ class Warrior : public Character
 {
     public:
         Warrior();
-        Warrior(int, int, int, int, std::string, Spell*, Spell*, Spell*);    
+        Warrior(int, int, int, int, const std::string&, Spell*, Spell*, Spell*);    
 };

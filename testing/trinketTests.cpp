@@ -1,23 +1,19 @@
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
-#include "../header/item.h"
 #include "../header/trinket.h"
 
 TEST(getterTests, getNameTest) {
     Trinket trink("necklace", 5, 5);
-    string testName = trink.getName();
+    std::string testName = trink.getName();
 
     EXPECT_EQ(testName, "necklace");
 }
 
 TEST(getterTests, getTypeTest) {
     Trinket trink("necklace", 5, 5);
-    string testType = trink.getType();
+    std::string testType = trink.getType();
 
     EXPECT_EQ(testType, "trinket");
 }
-
-
 
 TEST(getterTests, getLevelTest) {
     Trinket trink("necklace", 5, 5);
@@ -32,7 +28,6 @@ TEST(calcTest, calcValueTest) {
 
     EXPECT_EQ(testValue, 25);
 }
-
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);

@@ -1,5 +1,4 @@
 #include "../header/game.h"
-using std::cin;
 
 Game::Game()
 {
@@ -12,7 +11,7 @@ void Game::runGame(){
     int userInput;
     while(isRunning){
         currentScreen->displayScreen();
-        cin >> userInput;
+        std::cin >> userInput;
         currentScreen = currentScreen->processOption(userInput, this->isRunning);
         if(currentScreen != previousScreen){
             delete previousScreen;

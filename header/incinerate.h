@@ -4,5 +4,5 @@
 class Incinerate : public Spell
 {
     public:
-        Incinerate() : Spell(){}
+        Incinerate();
 };

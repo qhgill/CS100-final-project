@@ -8,10 +8,10 @@ class Weapon: public Item
         int damage;
         std::string damageType;
     public:
-        Weapon(): damage(0), damageType("physical"), Item("a", 0, "weapon") {}
-        Weapon( std::string name, int level, int damage_, std::string damageType_ );
-        int getDamage() { return damage; }
-        std::string getDamageType() { return damageType; }
-        int calcDamage(int lvl) { return lvl*damage; }
-        virtual int calcValue() { return 0; }
+        Weapon();
+        Weapon( const std::string& name, int level, int damage_, const std::string& damageType_ );
+        int getDamage();
+        std::string getDamageType();
+        int calcDamage(int lvl);
+        virtual int calcValue();
 };

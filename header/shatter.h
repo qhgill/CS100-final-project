@@ -4,5 +4,5 @@
 class Shatter : public Spell
 {
     public:
-        Shatter() : Spell(){}
+        Shatter();
 };

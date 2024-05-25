@@ -4,6 +4,7 @@
 class BossPart3 : public Boss
 {
     public:
-        virtual void calculatephase1turn(StatsManager*) {return;};
-        virtual void calculatephase2turn(StatsManager*) {return;};
+        BossPart3(); 
+        virtual void calculatephase1turn(StatsManager*);
+        virtual void calculatephase2turn(StatsManager*);
 };

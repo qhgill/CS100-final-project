@@ -5,7 +5,7 @@
 class Boss : public Enemy
 {
     public:
-        Boss() : Enemy(0, 0, 0, 0, 0, 0, false, "") {};
+        Boss();
         virtual void calculatephase1turn(StatsManager*) = 0;
         virtual void calculatephase2turn(StatsManager*) = 0;
 };

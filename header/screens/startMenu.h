@@ -1,10 +1,10 @@
 #pragma once
-#include "./screen.h"
 #include <string>
+#include "./screen.h"
 
 class StartMenu: public Screen{
     public:
-        StartMenu(string dispFile, User* cUser): Screen(dispFile, cUser){}
+        StartMenu(std::string dispFile, User* cUser): Screen(dispFile, cUser){}
         Screen* processOption(int option, bool isRunning) override;
         void displayScreen() override;
 };

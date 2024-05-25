@@ -1,7 +1,5 @@
 #pragma once
 #include <string>
-#include "enemy.h"
-//#include "statsManager.h"
 
 class Spell 
 {
@@ -14,5 +12,4 @@ class Spell
         ~Spell();
         std::string getSpellClass() const;
         int getSpellLevelThreshold() const;
-        //virtual void doSpell(StatsManager*, Enemy*) = 0;
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class Item 
 {
@@ -9,8 +10,8 @@ class Item
     public:
         Item();
         Item(std::string name, int level, std::string type);
-        std::string getName() {return name;}
-        int getLevel() {return level;}
-        std::string getType() {return itemType;}
+        std::string getName();
+        int getLevel();
+        std::string getType();
         virtual int calcValue() = 0;
 };

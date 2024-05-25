@@ -33,7 +33,8 @@ testing/runCityTests
 testing/runItemManagerTests
 testing/runInventoryTests
 testing/runCityTests
+testing/runBossTests
 lib/
 
-# Remove after cmake implementation
+# Remove after implementation of cmake equivalent
 testing/all_tests.sh

@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
-#include "../header/game.h"
+#include "../header/item.h"
 
-TEST(gameTests, constructorTest){
-    EXPECT_NO_THROW({
-        Game game1 = Game();
-    });
+TEST(REPLACE_TEST_SUITE, REPLACE_TEST_NAME)
+{
+    // implement item tests
+    EXPECT_EQ(1, 0);
 }
 
 int main(int argc, char **argv) {

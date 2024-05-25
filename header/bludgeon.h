@@ -4,5 +4,5 @@
 class Bludgeon : public Spell
 {
     public:
-        Bludgeon() : Spell (){}
+        Bludgeon();
 };
