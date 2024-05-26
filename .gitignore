@@ -34,6 +34,7 @@ testing/runItemManagerTests
 testing/runInventoryTests
 testing/runCityTests
 testing/runBossTests
+testing/runOrcBossTests
 lib/
 
 # Remove after implementation of cmake equivalent

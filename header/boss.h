@@ -6,6 +6,7 @@ class Boss : public Enemy
 {
     public:
         Boss();
-        virtual void calculatephase1turn(StatsManager*) = 0;
-        virtual void calculatephase2turn(StatsManager*) = 0;
+        Boss(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isDead, const std::string& name);
+        virtual void calculatePhaseOneTurn(StatsManager*) = 0;
+        virtual void calculatePhaseTwoTurn(StatsManager*) = 0;
 };

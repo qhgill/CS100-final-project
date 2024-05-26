@@ -5,12 +5,12 @@ BossPart1::BossPart1()
 
 }
 
-void BossPart1::calculatephase1turn(StatsManager*) 
+void BossPart1::calculatePhaseOneTurn(StatsManager*) 
 {
     return;
 };
 
-void BossPart1::calculatephase2turn(StatsManager*) 
+void BossPart1::calculatePhaseTwoTurn(StatsManager*) 
 {
     return;
 };
