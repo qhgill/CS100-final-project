@@ -5,7 +5,6 @@
 class MockSpell: public Spell{
     public:
         MockSpell(const std::string& sc, int slt): Spell(sc, slt) {}
-        //MOCK_METHOD(void, doSpell, (StatsManager*, Enemy*));
 };
 
 TEST(getterTests, getSpellClass){

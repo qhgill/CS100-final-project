@@ -1,7 +1,10 @@
-#include <./boss.h>
+#pragma once
+#include "./boss.h"
 
-class BossPart2 : public Boss{
+class BossPart2 : public Boss
+{
     public:
-        virtual void calculatephase1turn(statsManager*) {return;};
-        virtual void calculatephase2turn(statsManager*) {return;};
+        BossPart2(); 
+        virtual void calculatePhaseOneTurn(StatsManager*);
+        virtual void calculatePhaseTwoTurn(StatsManager*);
 };

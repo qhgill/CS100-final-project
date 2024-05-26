@@ -1,14 +1,14 @@
 #pragma once
-#include "./screen.h"
-#include "./inGameMenu.h"
 #include <string>
 #include <iostream>
+#include "./screen.h"
+#include "./inGameMenu.h"
 
 class Inventory: public Screen
 {
     protected:
     public:
-        Inventory(string dispFile, User* cUser);
+        Inventory(std::string dispFile, User* cUser);
         void displayScreen() override;
         Screen* processOption(int option, bool isRunning) override;
 };

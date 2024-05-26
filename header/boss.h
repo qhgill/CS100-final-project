@@ -1,12 +1,12 @@
-#include <iostream>
+#pragma once
 #include "./enemy.h"
 #include "./statsManager.h"
 
-using namespace std;
-
-class Boss : public Enemy{
+class Boss : public Enemy
+{
     public:
-        Boss() : Enemy(0, 0, 0, 0, 0, 0, false, "") {};
-        virtual void calculatephase1turn(statsManager*) = 0;
-        virtual void calculatephase2turn(statsManager*) = 0;
+        Boss();
+        Boss(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isDead, const std::string& name);
+        virtual void calculatePhaseOneTurn(StatsManager*) = 0;
+        virtual void calculatePhaseTwoTurn(StatsManager*) = 0;
 };

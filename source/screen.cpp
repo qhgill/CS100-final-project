@@ -1,5 +1,8 @@
 #include "../header/screens/screen.h"
-Screen::Screen(string dispFile, User* user): filename(dispFile), currentUser(user){}
+
+Screen::Screen(std::string dispFile, User* user)
+: filename(dispFile), currentUser(user)
+{}
 
 void Screen::displayFromFile()
 {

@@ -7,7 +7,6 @@ using ::testing::InSequence;
 class SpellChildStub: public Spell{
     public:
         SpellChildStub(){}
-        //void doSpell(StatsManager*, Enemy*) {}
 };
 
 TEST(getterTests, getHpTest){
@@ -36,7 +35,7 @@ TEST(getterTests, getMRTest){
 
 TEST(getterTests, getClassNameTest){
     Character char1(1,1,1,1,"class1", nullptr, nullptr, nullptr);
-    string testName = char1.getClassName();
+    std::string testName = char1.getClassName();
     EXPECT_EQ(testName, "class1");
 }
 

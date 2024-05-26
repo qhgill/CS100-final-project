@@ -1,8 +1,8 @@
 #pragma once
-#include "./screen.h"
 #include <string>
+#include "./screen.h"
 
-class CharacaterSelect: public Screen{
+class CharacterSelect: public Screen{
     public:
         Screen* processOption(int);
         void displayScreen();

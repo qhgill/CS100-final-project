@@ -7,13 +7,13 @@ TEST(weaponGetterTests, getDamageTest){
 }
 TEST(weaponGetterTests, getTypeTest) {
     Weapon weapon("fists", 1, 10, "physical");
-    string testType = weapon.getType();
+    std::string testType = weapon.getType();
     EXPECT_EQ(testType, "weapon");
 }
 
 TEST(weaponGetterTests, getDamageTypeTest){
     Weapon weapon("fists", 1, 10, "physical");;
-    EXPECT_STREQ(weapon.getDamageType().c_str(), string("physical").c_str());
+    EXPECT_STREQ(weapon.getDamageType().c_str(), std::string("physical").c_str());
 }
 
 TEST(weaponGetterTests, getWeaponNameTest){

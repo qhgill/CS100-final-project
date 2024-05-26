@@ -1,17 +1,17 @@
 #pragma once
-#include <iostream>
-using std::string;
+#include <string>
 
-class Item {
+class Item 
+{
     protected:
-        string name;
-        string itemType;
+        std::string name;
+        std::string itemType;
         int level;
     public:
         Item();
-        Item(string name, int level, string type);
-        string getName() {return name;}
-        int getLevel() {return level;}
-        string getType() {return itemType;}
+        Item(std::string name, int level, std::string type);
+        std::string getName();
+        int getLevel();
+        std::string getType();
         virtual int calcValue() = 0;
 };

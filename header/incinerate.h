@@ -1,8 +1,8 @@
-#include "./character.h"
-#include <string>
-using std::string;
+#pragma once
+#include "./spell.h"
 
-class incinerate : public spell{ //stub
+class Incinerate : public Spell
+{
     public:
-        incinerate() : spell(){}
+        Incinerate();
 };

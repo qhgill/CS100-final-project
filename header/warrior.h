@@ -1,8 +1,10 @@
+#pragma once
 #include <string>
 #include "character.h"
-using std::string;
-class Warrior : public Character {
+
+class Warrior : public Character 
+{
     public:
         Warrior();
-        Warrior(int, int, int, int, string, spell*, spell*, spell*);    
+        Warrior(int, int, int, int, const std::string&, Spell*, Spell*, Spell*);    
 };

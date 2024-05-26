@@ -1,18 +1,17 @@
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "../header/item.h"
 #include "../header/armor.h"
 
 TEST(getterTests, getNameTest) {
     Armor testArmor("helmet", 5, 5, 5, 5);
-    string testName = testArmor.getName();
+    std::string testName = testArmor.getName();
 
     EXPECT_EQ(testName, "helmet");
 }
 
 TEST(getterTests, getTypeTest) {
     Armor testArmor("helmet", 5, 5, 5, 5);
-    string testType = testArmor.getType();
+    std::string testType = testArmor.getType();
     EXPECT_EQ(testType, "armor");
 }
 

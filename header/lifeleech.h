@@ -1,8 +1,8 @@
-#include "./character.h"
-#include <string>
-using std::string;
+#pragma once
+#include "./spell.h"
 
-class lifeleech : public spell{ //stub
+class LifeLeech : public Spell
+{
     public:
-        lifeleech() : spell(){}
+        LifeLeech();
 };

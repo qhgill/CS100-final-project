@@ -1,15 +1,13 @@
 #include "../header/screens/travel.h"
-using std::cout;
-using std::endl;
 
-Travel::Travel(string dispFile, User* user): Screen(dispFile,user){}
+Travel::Travel(std::string dispFile, User* user): Screen(dispFile,user){}
 
 void Travel::displayScreen(){
     Screen::displayFromFile();
-    cout << "--------------------------------" << endl;
-    cout << "Select an option: " << endl;
-    cout << "[1] continue to next encounter" << endl;
-    cout << "[2] open menu" << endl;
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "Select an option: " << std::endl;
+    std::cout << "[1] continue to next encounter" << std::endl;
+    std::cout << "[2] open menu" << std::endl;
 }
 
 Screen* Travel::processOption(int option, bool isRunning){

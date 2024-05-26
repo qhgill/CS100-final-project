@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include "../header/game.h"
 
-
 TEST(gameTests, constructorTest){
     EXPECT_NO_THROW({
         Game game1 = Game();

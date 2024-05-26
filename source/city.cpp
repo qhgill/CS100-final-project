@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-City::City(string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(new Armor()), cityTrinket(new Trinket()), cityWeapon(new Weapon()){}
+City::City(std::string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(new Armor()), cityTrinket(new Trinket()), cityWeapon(new Weapon()){}
 
 Screen* City::processOption(int userOption, bool isRunning)
 { 
@@ -42,9 +42,9 @@ Screen* City::processOption(int userOption, bool isRunning)
         }
     } else if(userOption == 5){
         ItemManager* userItemManager = currentUser->getItemManager();
-        vector<Weapon*>* userWeapons = userItemManager->getWeaponInventory();
-        vector<Armor*>* userArmor = userItemManager->getArmorInventory();
-        vector<Weapon*>* userTrinkets = userItemManager->getWeaponInventory();
+        std::vector<Weapon*>* userWeapons = userItemManager->getWeaponInventory();
+        std::vector<Armor*>* userArmor = userItemManager->getArmorInventory();
+        std::vector<Weapon*>* userTrinkets = userItemManager->getWeaponInventory();
         if(userItemManager->getWeaponInventory()->size() == 0 && userItemManager->getArmorInventory()->size() == 0 && userItemManager->getTrinketInventory()->size() == 0){
             return this;
         } else {

@@ -1,13 +1,11 @@
 #include <gtest/gtest.h>
 #include "../header/user.h"
 #include <../header/itemManager.h>
-//using std::vector;
-
 
 TEST(itemManagerConstructor, getterFunctionTests) {
-    vector<Weapon*>* weapons = new vector<Weapon*>;
-    vector<Armor*>* armors = new vector<Armor*>;
-    vector<Trinket*>* trinkets = new vector<Trinket*>;
+    std::vector<Weapon*>* weapons = new std::vector<Weapon*>;
+    std::vector<Armor*>* armors = new std::vector<Armor*>;
+    std::vector<Trinket*>* trinkets = new std::vector<Trinket*>;
     Weapon* w = new Weapon("",0, 0, "");
     Armor* a = new Armor("", 0,0,0,0);
     Trinket* t = new Trinket("",0,0);
