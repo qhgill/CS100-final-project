@@ -33,4 +33,6 @@ testing/runCityTests
 testing/runItemManagerTests
 testing/runInventoryTests
 testing/runCityTests
+testing/runMageTests
+testing/runWarriorTests
 lib/
