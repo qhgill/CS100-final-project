@@ -8,6 +8,10 @@ Combat::Combat(string dispFile, User* cUser)
     //enemy = new goblin;  need to update this when enemy subclasses are introduced
 }
 
+Combat::~Combat(){
+    delete enemy;
+}
+
 void Combat::displayScreen(){
     Screen::displayFromFile();
     cout << "you have entered a fight with a level" << enemy->getLevel() << " " << enemy->getName() << "!";
@@ -94,7 +98,7 @@ Screen* Combat::processOption(int option, bool isRunning){
         return this;
     } else {
         if(!enemy->getStatus()){
-            //reset player stats
+            //reset player stats, maybe go back to travel and reset health to what it was before instead of just killing all progress?
             return new StartMenu("startMenu.txt", currentUser);
         } else {
             //update player stats and inventory

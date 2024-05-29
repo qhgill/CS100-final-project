@@ -17,6 +17,9 @@ class Combat: public Screen{
         string rewardsStr;
     public:
         Combat(string dispFile, User* cUser);
+        ~Combat();
+        Combat(Combat&) = delete;
+        Combat operator=(Combat&) = delete;
         Screen* processOption(int, bool);
         void displayScreen();
 };
