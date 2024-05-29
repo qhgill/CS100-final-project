@@ -1,9 +1,22 @@
 #pragma once
 #include <string>
+#include <iostream>
 #include "./screen.h"
+#include "./startMenu.h"
+#include "./travel.h"
+#include "../enemy.h"
+using std::string;
 
 class Combat: public Screen{
+    private:
+        bool isBossFight;
+        bool inCombat;
+        Enemy* enemy;
+        string enemyLastMoveStr;
+        string userLastMoveStr;
+        string rewardsStr;
     public:
-        Screen* processOption(int);
+        Combat(string dispFile, User* cUser);
+        Screen* processOption(int, bool);
         void displayScreen();
 };
