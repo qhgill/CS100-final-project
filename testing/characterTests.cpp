@@ -7,7 +7,7 @@ using ::testing::InSequence;
 class SpellChildStub: public Spell{
     public:
         SpellChildStub(){}
-        //void doSpell(StatsManager*, Enemy*) {}
+        void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) {};
 };
 
 TEST(getterTests, getHpTest){

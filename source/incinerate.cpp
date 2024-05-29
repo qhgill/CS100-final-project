@@ -3,7 +3,7 @@
 Incinerate::Incinerate()
 {
     this->spellClass = new string("Incinerate");
-    this->spellLevelThreshold = 2;
+    this->spellLevelThreshold = 3;
 }
 
 void Incinerate::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)

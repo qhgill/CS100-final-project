@@ -3,7 +3,7 @@
 LifeLeech::LifeLeech()
 {
     this->spellClass = new string("LifeLeech");
-    this->spellLevelThreshold = 3;
+    this->spellLevelThreshold = 2;
 }
 
 void LifeLeech::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)

@@ -34,19 +34,19 @@ TEST(mageGetterTests, getClassNameTest){
 TEST(mageSpellGetterTests, getFirstClassNameTest){
     Mage mage;
     Spell* returnedSpell = mage.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Mage");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "ArcaneBlast");
 }
 
 TEST(mageSpellGetterTests, getSecondClassNameTest){
     Mage mage;
     Spell* returnedSpell = mage.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Mage");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "LifeLeech");
 }
 
 TEST(mageSpellGetterTests, getThirdClassNameTest){
     Mage mage;
     Spell* returnedSpell = mage.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Mage");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Incinerate");
 }
 
 TEST(mageSpellGetterTests, getFirstSpellLevelThreshold){

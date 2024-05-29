@@ -2,7 +2,7 @@
 
 PickPocket::PickPocket()
 {
-    this->spellClass = new string("Rogue");
+    this->spellClass = new string("Pickpocket");
     this->spellLevelThreshold = 2;
 }
 

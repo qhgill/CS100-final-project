@@ -34,19 +34,19 @@ TEST(warriorGetterTests, getClassNameTest){
 TEST(warriorSpellGetterTests, getFirstClassNameTest){
     Warrior warrior;
     Spell* returnedSpell = warrior.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Warrior");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Slam");
 }
 
 TEST(warriorSpellGetterTests, getSecondClassNameTest){
     Warrior warrior;
     Spell* returnedSpell = warrior.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Warrior");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Shatter");
 }
 
 TEST(warriorSpellGetterTests, getThirdClassNameTest){
     Warrior warrior;
     Spell* returnedSpell = warrior.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Warrior");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Bludgeon");
 }
 
 TEST(warriorSpellGetterTests, getFirstSpellLevelThreshold){
