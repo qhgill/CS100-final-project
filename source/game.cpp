@@ -21,10 +21,14 @@ void Game::runGame(){
     while(isRunning){
         currentScreen->displayScreen();
         std::cin >> userInput;
+        if(!std::cin.good()){
+            userInput = 0;
+        }
         currentScreen = currentScreen->processOption(userInput, this->isRunning);
         if(currentScreen != previousScreen){
             delete previousScreen;
             previousScreen = currentScreen;
         }
+        std::cin.clear();
     }
 }

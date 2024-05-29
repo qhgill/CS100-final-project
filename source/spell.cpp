@@ -1,16 +1,8 @@
 #include "../header/spell.h"
 
-Spell::Spell()
-{
-    this->spellClass = "";
-    this->spellLevelThreshold = -1;
-}
+Spell::Spell(): spellClass(""), spellLevelThreshold(-1) {}
 
-Spell::Spell(const std::string& sc, int slt)
-{
-    this->spellClass = sc;
-    this->spellLevelThreshold = slt;
-}
+Spell::Spell(const std::string& sc, int slt): spellClass(sc), spellLevelThreshold(slt){}
 
 
 std::string Spell::getSpellClass() const
