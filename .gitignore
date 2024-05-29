@@ -35,6 +35,8 @@ testing/runInventoryTests
 testing/runCityTests
 testing/runBossTests
 testing/runOrcBossTests
+testing/runMageTests
+testing/runWarriorTests
 lib/
 
 # Remove after implementation of cmake equivalent

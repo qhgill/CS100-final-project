@@ -1,9 +1,11 @@
 #pragma once
 #include <string>
 #include "./screen.h"
+using std::string;
 
 class CharacterSelect: public Screen{
     public:
-        Screen* processOption(int);
+        CharacterSelect(string dispFile, User* cUser);
+        Screen* processOption(int, bool);
         void displayScreen();
 };
