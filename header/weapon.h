@@ -1,18 +1,17 @@
 #pragma once
 #include <string>
 #include "item.h"
-using std::string;
 
 class Weapon: public Item
 {
     private:
         int damage;
-        string damageType;
+        std::string damageType;
     public:
-        Weapon(): damage(0), damageType("physical"), Item("a", 0, "weapon") {}
-        Weapon( string name, int level, int damage_, string damageType_ );
-        int getDamage() { return damage; }
-        string getDamageType() { return damageType; }
-        int calcDamage(int lvl) { return lvl*damage; }
-        virtual int calcValue() { return 0; }
+        Weapon();
+        Weapon( const std::string& name, int level, int damage_, const std::string& damageType_ );
+        int getDamage();
+        std::string getDamageType();
+        int calcDamage(int lvl);
+        virtual int calcValue();
 };

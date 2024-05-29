@@ -27,9 +27,11 @@ add_executable(runScreenTests
     screensTest.cpp
     ../source/screen.cpp
 )
+
+# please use itemTests.cpp file...
 add_executable(runItemTests
+    itemTests.cpp 
     ../source/item.cpp
-    armorTests.cpp
 )
 
 add_executable(runRogueTests
@@ -76,6 +78,8 @@ add_executable(runUserTests
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
     ../source/statsManager.cpp
+    ../source/itemManager.cpp
+    ../source/encounterManager.cpp
 )
 
 add_executable(runStatsManagerTests
@@ -89,17 +93,19 @@ add_executable(runStatsManagerTests
     ../source/spell.cpp
 )
 
-
 add_executable(runItemManagerTests
     itemManagerTests.cpp
+    ../source/itemManager.cpp
     ../source/item.cpp
     ../source/weapon.cpp
     ../source/armor.cpp
     ../source/trinket.cpp
     ../source/character.cpp
 )
+
 add_executable(runEncounterManagerTests
     encounterManagerTests.cpp
+    ../source/encounterManager.cpp
 )
 
 add_executable(runGameTests
@@ -114,6 +120,8 @@ add_executable(runGameTests
     ../source/armor.cpp
     ../source/weapon.cpp
     ../source/trinket.cpp
+    ../source/encounterManager.cpp
+    ../source/itemManager.cpp
 )
 
 add_executable(runTravelTests
@@ -128,6 +136,8 @@ add_executable(runTravelTests
     ../source/armor.cpp
     ../source/weapon.cpp
     ../source/trinket.cpp
+    ../source/encounterManager.cpp
+    ../source/itemManager.cpp
 )
 
 add_executable(runCityTests
@@ -142,6 +152,8 @@ add_executable(runCityTests
     ../source/weapon.cpp
     ../source/armor.cpp
     ../source/trinket.cpp
+    ../source/encounterManager.cpp
+    ../source/itemManager.cpp
 )
 
 add_executable(runInventoryTests
@@ -156,6 +168,32 @@ add_executable(runInventoryTests
     ../source/trinket.cpp
     ../source/armor.cpp
     ../source/weapon.cpp
+    ../source/encounterManager.cpp
+    ../source/itemManager.cpp
+)
+
+add_executable ( runBossTests
+    bossTests.cpp
+    ../source/enemy.cpp
+    ../source/boss.cpp
+    ../source/bosspart1.cpp
+    ../source/bosspart2.cpp
+    ../source/bosspart3.cpp
+    ../source/bosspart4.cpp
+)
+
+add_executable( runOrcBossTests
+    orcBossTests.cpp
+    ../source/orcBoss.cpp
+    ../source/boss.cpp
+    ../source/statsManager.cpp
+    ../source/enemy.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
@@ -175,3 +213,5 @@ target_link_libraries(runEncounterManagerTests gtest gtest_main)
 target_link_libraries(runTravelTests gtest gtest_main)
 target_link_libraries(runInventoryTests gtest gtest_main)
 target_link_libraries(runCityTests gtest gtest_main)
+target_link_libraries(runBossTests gtest gtest_main)
+target_link_libraries(runOrcBossTests gtest gtest_main)

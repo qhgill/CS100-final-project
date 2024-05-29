@@ -1,6 +1,6 @@
 #pragma once
-#include "./screen.h"
 #include <string>
+#include "./screen.h"
 
 class CharacterSelect: public Screen{
     public:

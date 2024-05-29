@@ -35,4 +35,9 @@ testing/runInventoryTests
 testing/runCityTests
 testing/runMageTests
 testing/runWarriorTests
+testing/runBossTests
+testing/runOrcBossTests
 lib/
+
+# Remove after implementation of cmake equivalent
+testing/all_tests.sh

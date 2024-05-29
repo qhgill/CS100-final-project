@@ -3,11 +3,10 @@
 #include "../header/screens/screen.h"
 #include "../header/screens/city.h"
 #include "../header/user.h"
-#include <string>
 
 class MockScreen : public Screen{
   public:
-    MockScreen(string filename, User* user): Screen(filename, user){}
+    MockScreen(std::string filename, User* user): Screen(filename, user){}
     MOCK_METHOD((Screen*), processOption, (int, bool), (override));
     MOCK_METHOD((void), displayScreen, (), (override));
 };

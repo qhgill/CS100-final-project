@@ -27,7 +27,7 @@ TEST(rogueGetterTests, getMRTest){
 
 TEST(rogueGetterTests, getClassNameTest){
     Rogue rogue;
-    string testName = rogue.getClassName();
+    std::string testName = rogue.getClassName();
     EXPECT_EQ(testName, "Rogue");
 }
 

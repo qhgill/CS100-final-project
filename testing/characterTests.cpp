@@ -36,7 +36,7 @@ TEST(getterTests, getMRTest){
 
 TEST(getterTests, getClassNameTest){
     Character char1(1,1,1,1,"class1", nullptr, nullptr, nullptr);
-    string testName = char1.getClassName();
+    std::string testName = char1.getClassName();
     EXPECT_EQ(testName, "class1");
 }
 

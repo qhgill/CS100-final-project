@@ -1,7 +1,7 @@
 #pragma once
-#include "./screen.h"
-#include <string>
 #include <iostream>
+#include <string>
+#include "./screen.h"
 
 class City: public Screen
 {
@@ -11,7 +11,7 @@ class City: public Screen
         Trinket* cityTrinket;
         Armor* cityArmor;
     public:
-        City(string dispFile, User* cUser);
+        City(std::string dispFile, User* cUser);
         void displayScreen() override;
         Screen* processOption(int choice, bool isRunning) override;
         Weapon* getCityWeapon();

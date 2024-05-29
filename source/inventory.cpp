@@ -2,14 +2,14 @@
 using std::cout;
 using std::endl;
 
-Inventory::Inventory(string dispFile, User* cUser): Screen(dispFile, cUser){}
+Inventory::Inventory(std::string dispFile, User* cUser): Screen(dispFile, cUser){}
 
 void Inventory::displayScreen(){
     StatsManager* userStatsManager = currentUser->getStatsManager();
     ItemManager* userItemManager = currentUser->getItemManager();
-    vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();
-    vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
-    vector<Trinket*>* userTrinketInventory = userItemManager->getTrinketInventory();
+    std::vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();
+    std::vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
+    std::vector<Trinket*>* userTrinketInventory = userItemManager->getTrinketInventory();
     
     Screen::displayFromFile();
     cout << endl;
@@ -61,9 +61,9 @@ void Inventory::displayScreen(){
 
 Screen* Inventory::processOption(int option, bool isRunning){
     ItemManager* userItemManager = currentUser->getItemManager();
-    vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
-    vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();
-    vector<Trinket*>* userTrinketInventory = userItemManager->getTrinketInventory();
+    std::vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
+    std::vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();
+    std::vector<Trinket*>* userTrinketInventory = userItemManager->getTrinketInventory();
     if(option == 1){
         if(userWeaponInventory->size() == 0){
             return this;
