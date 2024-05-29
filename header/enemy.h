@@ -25,4 +25,6 @@ class Enemy
         void dealDamage(int takeDamage);
         void healself(int healHP);
         void killThis();
+
+        virtual void calculateTurn(StatsManager*) = 0;
 };
