@@ -12,4 +12,6 @@ class Spell
         ~Spell();
         std::string getSpellClass() const;
         int getSpellLevelThreshold() const;
+
+        virtual void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) = 0;
 };

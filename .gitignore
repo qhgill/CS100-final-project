@@ -33,6 +33,8 @@ testing/runCityTests
 testing/runItemManagerTests
 testing/runInventoryTests
 testing/runCityTests
+testing/runMageTests
+testing/runWarriorTests
 testing/runBossTests
 testing/runOrcBossTests
 testing/runMageTests
