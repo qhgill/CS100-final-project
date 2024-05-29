@@ -101,6 +101,7 @@ add_executable(runGameTests
     ../source/trinket.cpp
     ../source/encounterManager.cpp
     ../source/itemManager.cpp
+    ../source/spell.cpp
 )
 
 add_executable(runTravelTests

@@ -2,6 +2,6 @@
 
 BackStab::BackStab()
 {
-    this->spellClass = new std::string("Rogue");
+    this->spellClass = "Rogue";
     this->spellLevelThreshold = 1;
 }

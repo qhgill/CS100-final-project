@@ -2,24 +2,20 @@
 
 Spell::Spell()
 {
-    this->spellClass = new std::string("");
+    this->spellClass = "";
     this->spellLevelThreshold = -1;
 }
 
 Spell::Spell(const std::string& sc, int slt)
 {
-    this->spellClass = new std::string(sc);
+    this->spellClass = sc;
     this->spellLevelThreshold = slt;
 }
 
-Spell::~Spell()
-{
-    delete this->spellClass;
-}
 
 std::string Spell::getSpellClass() const
 {
-    return *spellClass;
+    return spellClass;
 }
 
 int Spell::getSpellLevelThreshold() const

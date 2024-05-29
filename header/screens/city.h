@@ -12,6 +12,9 @@ class City: public Screen
         Armor* cityArmor;
     public:
         City(std::string dispFile, User* cUser);
+        ~City();
+        City(City&) = delete;
+        City operator=(City&) = delete;
         void displayScreen() override;
         Screen* processOption(int choice, bool isRunning) override;
         Weapon* getCityWeapon();

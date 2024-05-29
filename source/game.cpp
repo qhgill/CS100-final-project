@@ -7,6 +7,15 @@ Game::Game()
     currentScreen = new StartMenu("", currentUser);
     previousScreen = currentScreen;
 }
+Game::~Game(){
+    delete currentUser;
+    if(previousScreen != currentScreen){
+        delete currentScreen;
+        delete previousScreen;
+    } else {
+        delete currentScreen;
+    }
+}
 void Game::runGame(){
     int userInput;
     while(isRunning){

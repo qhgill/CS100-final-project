@@ -2,6 +2,6 @@
 
 CutThroat::CutThroat()
 {
-    this->spellClass = new std::string("Rogue");
+    this->spellClass = "Rogue";
     this->spellLevelThreshold = 3;
 }
