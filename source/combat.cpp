@@ -90,7 +90,7 @@ Screen* Combat::processOption(int option, bool isRunning){
         } else {
             return this;
         }
-        
+        enemy->calculateTurn(userStats);
         return this;
     } else {
         if(!enemy->getStatus()){
