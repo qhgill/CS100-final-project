@@ -28,7 +28,7 @@ add_executable(runScreenTests
     ../source/screen.cpp
 )
 
-# please use itemTests.cpp file...
+# use itemTests.cpp file
 add_executable(runItemTests
     itemTests.cpp 
     ../source/item.cpp
@@ -165,6 +165,19 @@ add_executable( runOrcBossTests
     orcBossTests.cpp
     ../source/orcBoss.cpp
     ../source/boss.cpp
+    ../source/statsManager.cpp
+    ../source/enemy.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
+)
+
+add_executable( runOrcTests
+    orcTests.cpp
+    ../source/orc.cpp
     ../source/statsManager.cpp
     ../source/enemy.cpp
     ../source/armor.cpp
