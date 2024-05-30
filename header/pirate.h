@@ -8,5 +8,5 @@ class Pirate {
         Pirate();
         Pirate(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isDead, const std::string& name);
 
-        virtual void calculateTurn(StatsManager*);
+        void calculateTurn(StatsManager*);
 };
