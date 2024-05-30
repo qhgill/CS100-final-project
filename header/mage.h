@@ -2,7 +2,7 @@
 #include "character.h"
 #include "arcaneBlast.h"
 #include "incinerate.h"
-#include "lifeLeech.h"
+#include "lifeleech.h"
 
 class Mage : public Character
 {
