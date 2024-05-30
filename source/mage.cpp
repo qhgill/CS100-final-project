@@ -1,8 +1,20 @@
 #include "../header/mage.h"
 
 Mage::Mage() 
-: Character(7, 7, 1, 1, "Mage", new LifeLeech(), new Incinerate(), new ArcaneBlast()) 
-{}
-Mage::Mage(int hp, int dmg, int pr, int mr, std::string cname, Spell* s1, Spell* s2, Spell* s3) 
-: Character(hp, dmg, pr, mr, cname, s1, s2, s3) 
-{}
+{
+    this->baseHP = 7;
+    this->baseDamage = 12;
+    this->basePhysicalResist = 5;
+    this->baseMagicResist = 5;
+    this->className = "Mage";
+    this->firstSpell = new ArcaneBlast();
+    this->secondSpell = new LifeLeech();
+    this->thirdSpell = new Incinerate();
+}
+
+Mage::~Mage() 
+{
+    delete firstSpell;
+    delete secondSpell;
+    delete thirdSpell;
+}

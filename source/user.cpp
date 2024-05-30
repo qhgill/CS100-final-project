@@ -44,10 +44,15 @@ int User::getGold() const{
     return gold;
 }
 
-Character* User::getCharacterClass() 
+Character*& User::getCharacterClass() 
 {
     return this->character;
 }
+
+Character* User::getCharacterClass() const{
+    return this->character;
+}
+
 StatsManager* User::getStatsManager() 
 {
     return this->userStats;

@@ -1,13 +1,12 @@
 #pragma once
-#include <string>
 #include "character.h"
-#include "./lifeleech.h"
-#include "./incinerate.h"
-#include "./arcaneBlast.h"
+#include "arcaneBlast.h"
+#include "incinerate.h"
+#include "lifeLeech.h"
 
-class Mage : public Character 
+class Mage : public Character
 {
-    public:
-        Mage();
-        Mage(int, int, int, int, std::string, Spell*, Spell*, Spell*);
+public:
+    Mage();
+    ~Mage();
 };

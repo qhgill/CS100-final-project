@@ -7,6 +7,7 @@ using ::testing::InSequence;
 class SpellChildStub: public Spell{
     public:
         SpellChildStub(){}
+        MOCK_METHOD((void), doSpell, (int&, int&, int, int&, Enemy*), (override));
 };
 
 TEST(getterTests, getHpTest){
