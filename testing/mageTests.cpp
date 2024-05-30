@@ -27,26 +27,26 @@ TEST(mageGetterTests, getMRTest){
 
 TEST(mageGetterTests, getClassNameTest){
     Mage mage;
-    string testName = mage.getClassName();
-    EXPECT_EQ(testName, "Mage");
+    std::string testName = mage.getClassName();
+    EXPECT_EQ(testName, std::string("Mage").c_str());;
 }
 
 TEST(mageSpellGetterTests, getFirstClassNameTest){
     Mage mage;
     Spell* returnedSpell = mage.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "ArcaneBlast");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("ArcaneBlast").c_str());;
 }
 
 TEST(mageSpellGetterTests, getSecondClassNameTest){
     Mage mage;
     Spell* returnedSpell = mage.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "LifeLeech");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("LifeLeech").c_str());;
 }
 
 TEST(mageSpellGetterTests, getThirdClassNameTest){
     Mage mage;
     Spell* returnedSpell = mage.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Incinerate");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Incinerate").c_str());;
 }
 
 TEST(mageSpellGetterTests, getFirstSpellLevelThreshold){
