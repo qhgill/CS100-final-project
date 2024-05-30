@@ -9,7 +9,7 @@ PirateBoss::PirateBoss(int level, int health, int maxHealth, int damage, int mag
 
 
 void PirateBoss::calculateTurn(StatsManager* sm) {
-    double healthPercent = (health * 1.0) / maxHealth;
+    double healthPercent = (getHealth() * 1.0) / getMaxHealth();
 
     if (healthPercent >= 0.5) { //phase one if 50% or more of health
         calculatePhaseOneTurn(sm);
@@ -21,14 +21,14 @@ void PirateBoss::calculateTurn(StatsManager* sm) {
 
 void PirateBoss::calculatePhaseOneTurn(StatsManager* sm) 
 {
-    int pirateDamage = damage;
-    sm.takeDamage(pirateDamage, "physical");
+    int pirateDamage = getDamage();
+    sm->takeDamage(pirateDamage, "physical");
     return;
 };
 
 void PirateBoss::calculatePhaseTwoTurn(StatsManager* sm) 
 {
-    int pirateDamage = damage * 1.5; // maybe increase damage based off of player gold
-    sm.takeDamage(pirateDamage, "physical");
+    int pirateDamage = getDamage() * 1.5; // maybe increase damage based off of player gold
+    sm->takeDamage(pirateDamage, "physical");
     return;
 };

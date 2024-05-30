@@ -7,7 +7,7 @@ class PirateBoss : public Boss
         PirateBoss(); 
         PirateBoss(int, int, int, int, int, int, bool, const std::string&);
 
-        virtual void calculateTurn(StatsManager*);
+        void calculateTurn(StatsManager*);
         virtual void calculatePhaseOneTurn(StatsManager*);
         virtual void calculatePhaseTwoTurn(StatsManager*);
 };
