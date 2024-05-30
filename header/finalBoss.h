@@ -1,10 +1,10 @@
 #pragma once
 #include "./boss.h"
 
-class BossPart4 : public Boss 
+class FinalBoss : public Boss 
 {
     public:
-        BossPart4();
+        FinalBoss();
         virtual void calculatePhaseOneTurn(StatsManager*);
         virtual void calculatePhaseTwoTurn(StatsManager*);
 };
