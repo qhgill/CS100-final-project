@@ -37,6 +37,7 @@ add_executable(runItemTests
 add_executable(runRogueTests
     rogueTests.cpp
     ../source/character.cpp
+    ../source/enemy.cpp
     ../source/spell.cpp
     ../source/rogue.cpp
     ../source/backstab.cpp
@@ -47,6 +48,7 @@ add_executable(runRogueTests
 add_executable(runWarriorTests
     warriorTests.cpp
     ../source/character.cpp
+    ../source/enemy.cpp
     ../source/spell.cpp
     ../source/warrior.cpp
     ../source/slam.cpp
@@ -59,6 +61,7 @@ add_executable(runMageTests
     ../source/character.cpp
     ../source/spell.cpp
     ../source/mage.cpp
+    ../source/enemy.cpp
     ../source/arcaneBlast.cpp
     ../source/lifeLeech.cpp
     ../source/incinerate.cpp
@@ -67,6 +70,7 @@ add_executable(runMageTests
 add_executable(runUserTests
     userTests.cpp
     ../source/user.cpp
+    ../source/enemy.cpp
     ../source/item.cpp
     ../source/weapon.cpp
     ../source/armor.cpp

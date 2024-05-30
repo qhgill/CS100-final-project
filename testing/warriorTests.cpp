@@ -27,26 +27,26 @@ TEST(warriorGetterTests, getMRTest){
 
 TEST(warriorGetterTests, getClassNameTest){
     Warrior warrior;
-    string testName = warrior.getClassName();
-    EXPECT_EQ(testName, "Warrior");
+    std::string testName = warrior.getClassName();
+    EXPECT_EQ(testName, std::string("Warrior").c_str());
 }
 
 TEST(warriorSpellGetterTests, getFirstClassNameTest){
     Warrior warrior;
     Spell* returnedSpell = warrior.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Slam");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Slam").c_str());
 }
 
 TEST(warriorSpellGetterTests, getSecondClassNameTest){
     Warrior warrior;
     Spell* returnedSpell = warrior.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Shatter");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Shatter").c_str());
 }
 
 TEST(warriorSpellGetterTests, getThirdClassNameTest){
     Warrior warrior;
     Spell* returnedSpell = warrior.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Bludgeon");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Bludgeon").c_str());
 }
 
 TEST(warriorSpellGetterTests, getFirstSpellLevelThreshold){

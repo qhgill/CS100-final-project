@@ -2,7 +2,7 @@
 
 LifeLeech::LifeLeech()
 {
-    this->spellClass = new string("LifeLeech");
+    this->spellClass = new std::string("LifeLeech");
     this->spellLevelThreshold = 2;
 }
 
