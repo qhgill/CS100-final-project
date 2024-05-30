@@ -37,6 +37,9 @@ testing/runMageTests
 testing/runWarriorTests
 testing/runBossTests
 testing/runOrcBossTests
+testing/runMageTests
+testing/runWarriorTests
+testing/runCharacterSelectTests
 lib/
 
 # Remove after implementation of cmake equivalent
