@@ -77,7 +77,7 @@ TEST(calcTests, pirateCalculateTurnTest) {
 }
 
 TEST(calcTests, finalBossCalculateTurnTest) {
-  FinalBoss tempBoss(10, 10, 10, 10, 10, 10, false, "Joe");
+  FinalBoss tempBoss(10, 10, 10, 10, 10, 10, false, "Captain Hook");
 
   Character character;
   Weapon weapon("knife", 5, 5, "physical");
