@@ -240,12 +240,23 @@ add_executable( runOrcTests
     ../source/orc.cpp
     ../source/enemy.cpp
     ../source/statsManager.cpp
-    ../source/enemy.cpp
     ../source/armor.cpp
     ../source/weapon.cpp
     ../source/trinket.cpp
     ../source/character.cpp
     ../source/spell.cpp
+    ../source/item.cpp
+)
+
+add_executable ( runRoyalGuardTests
+    royalGuardTests.cpp
+    ../source/royalGuard.cpp
+    ../source/enemy.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
     ../source/item.cpp
 )
 
@@ -301,3 +312,4 @@ target_link_libraries(runBossTests gtest gtest_main)
 target_link_libraries(runOrcBossTests gtest gtest_main)
 target_link_libraries(runCharacterSelectTests gtest gtest_main)
 target_link_libraries(runOrcTests gtest gtest_main)
+target_link_libraries(runRoyalGuardTests gtest gtest_main)
