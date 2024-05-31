@@ -28,7 +28,6 @@ add_executable(runScreenTests
     ../source/screen.cpp
 )
 
-# please use itemTests.cpp file...
 add_executable(runItemTests
     itemTests.cpp 
     ../source/item.cpp
@@ -63,7 +62,7 @@ add_executable(runMageTests
     ../source/mage.cpp
     ../source/enemy.cpp
     ../source/arcaneBlast.cpp
-    ../source/lifeLeech.cpp
+    ../source/lifeleech.cpp
     ../source/incinerate.cpp
 )
 
@@ -118,6 +117,21 @@ add_executable(runGameTests
     ../source/user.cpp
     ../source/screen.cpp
     ../source/character.cpp
+    ../source/characterSelect.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/enemy.cpp
     ../source/startMenu.cpp
     ../source/statsManager.cpp
     ../source/item.cpp
@@ -215,11 +229,26 @@ add_executable( runOrcBossTests
     ../source/item.cpp
 )
 
+add_executable( runOrcTests
+    orcTests.cpp
+    ../source/orc.cpp
+    ../source/enemy.cpp
+    ../source/statsManager.cpp
+    ../source/enemy.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
+)
+
 add_executable(runCharacterSelectTests
     characterSelectTesting.cpp
     ../source/screen.cpp
     ../source/characterSelect.cpp
     ../source/inGameMenu.cpp
+    ../source/enemy.cpp
     ../source/user.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
@@ -237,7 +266,7 @@ add_executable(runCharacterSelectTests
     ../source/bludgeon.cpp
     ../source/arcaneBlast.cpp
     ../source/incinerate.cpp
-    ../source/lifeLeech.cpp
+    ../source/lifeleech.cpp
     ../source/backstab.cpp
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
@@ -265,3 +294,4 @@ target_link_libraries(runCityTests gtest gtest_main)
 target_link_libraries(runBossTests gtest gtest_main)
 target_link_libraries(runOrcBossTests gtest gtest_main)
 target_link_libraries(runCharacterSelectTests gtest gtest_main)
+target_link_libraries(runOrcTests gtest gtest_main)
