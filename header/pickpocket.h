@@ -4,5 +4,6 @@
 class PickPocket : public Spell
 {
     public:
-        PickPocket();
+    PickPocket();
+    void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) override;
 };

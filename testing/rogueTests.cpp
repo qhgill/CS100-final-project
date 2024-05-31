@@ -10,7 +10,7 @@ TEST(rogueGetterTests, getHpTest){
 TEST(rogueGetterTests, getDamageTest){
     Rogue rogue;
     int testDamage = rogue.getBaseDamage();
-    EXPECT_EQ(testDamage, 15);
+    EXPECT_EQ(testDamage, 12);
 }
 
 TEST(rogueGetterTests, getPRTest){
@@ -22,7 +22,7 @@ TEST(rogueGetterTests, getPRTest){
 TEST(rogueGetterTests, getMRTest){
     Rogue rogue;
     int testMR = rogue.getBaseMagicResist();
-    EXPECT_EQ(testMR, 1);
+    EXPECT_EQ(testMR, 2);
 }
 
 TEST(rogueGetterTests, getClassNameTest){
@@ -34,19 +34,19 @@ TEST(rogueGetterTests, getClassNameTest){
 TEST(rogueSpellGetterTests, getFirstClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Rogue");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Backstab");
 }
 
 TEST(rogueSpellGetterTests, getSecondClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Rogue");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Pickpocket");
 }
 
 TEST(rogueSpellGetterTests, getThirdClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Rogue");
+    EXPECT_EQ(returnedSpell->getSpellClass(), "Cutthroat");
 }
 
 TEST(rogueSpellGetterTests, getFirstSpellLevelThreshold){

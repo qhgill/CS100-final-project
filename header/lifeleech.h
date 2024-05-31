@@ -1,8 +1,9 @@
 #pragma once
-#include "./spell.h"
+#include "spell.h"
 
 class LifeLeech : public Spell
 {
     public:
-        LifeLeech();
+    LifeLeech();
+    void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) override;
 };
