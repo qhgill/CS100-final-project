@@ -211,13 +211,13 @@ add_executable ( runBossTests
     ../source/bosspart1.cpp
     ../source/bosspart2.cpp
     ../source/pirateBoss.cpp
-    ../source/bosspart4.cpp
     ../source/trinket.cpp
     ../source/armor.cpp
     ../source/weapon.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
     ../source/item.cpp
+    ../source/finalBoss.cpp
 )
 
 add_executable( runOrcBossTests
@@ -251,12 +251,23 @@ add_executable( runOrcTests
     ../source/orc.cpp
     ../source/enemy.cpp
     ../source/statsManager.cpp
-    ../source/enemy.cpp
     ../source/armor.cpp
     ../source/weapon.cpp
     ../source/trinket.cpp
     ../source/character.cpp
     ../source/spell.cpp
+    ../source/item.cpp
+)
+
+add_executable ( runRoyalGuardTests
+    royalGuardTests.cpp
+    ../source/royalGuard.cpp
+    ../source/enemy.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
     ../source/item.cpp
 )
 
@@ -313,3 +324,4 @@ target_link_libraries(runOrcBossTests gtest gtest_main)
 target_link_libraries(runPirateTests gtest gtest_main)
 target_link_libraries(runCharacterSelectTests gtest gtest_main)
 target_link_libraries(runOrcTests gtest gtest_main)
+target_link_libraries(runRoyalGuardTests gtest gtest_main)
