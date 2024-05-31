@@ -28,7 +28,6 @@ add_executable(runScreenTests
     ../source/screen.cpp
 )
 
-# please use itemTests.cpp file...
 add_executable(runItemTests
     itemTests.cpp 
     ../source/item.cpp
@@ -37,6 +36,7 @@ add_executable(runItemTests
 add_executable(runRogueTests
     rogueTests.cpp
     ../source/character.cpp
+    ../source/enemy.cpp
     ../source/spell.cpp
     ../source/rogue.cpp
     ../source/backstab.cpp
@@ -44,9 +44,32 @@ add_executable(runRogueTests
     ../source/cutthroat.cpp
 )
 
+add_executable(runWarriorTests
+    warriorTests.cpp
+    ../source/character.cpp
+    ../source/enemy.cpp
+    ../source/spell.cpp
+    ../source/warrior.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+)
+
+add_executable(runMageTests
+    mageTests.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/mage.cpp
+    ../source/enemy.cpp
+    ../source/arcaneBlast.cpp
+    ../source/lifeleech.cpp
+    ../source/incinerate.cpp
+)
+
 add_executable(runUserTests
     userTests.cpp
     ../source/user.cpp
+    ../source/enemy.cpp
     ../source/item.cpp
     ../source/weapon.cpp
     ../source/armor.cpp
@@ -80,6 +103,7 @@ add_executable(runItemManagerTests
     ../source/weapon.cpp
     ../source/armor.cpp
     ../source/trinket.cpp
+    ../source/character.cpp
 )
 
 add_executable(runEncounterManagerTests
@@ -93,6 +117,21 @@ add_executable(runGameTests
     ../source/user.cpp
     ../source/screen.cpp
     ../source/character.cpp
+    ../source/characterSelect.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/enemy.cpp
     ../source/startMenu.cpp
     ../source/statsManager.cpp
     ../source/item.cpp
@@ -101,7 +140,20 @@ add_executable(runGameTests
     ../source/trinket.cpp
     ../source/encounterManager.cpp
     ../source/itemManager.cpp
+    ../source/characterSelect.cpp
+    ../source/warrior.cpp
+    ../source/mage.cpp
+    ../source/rogue.cpp
     ../source/spell.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/shatter.cpp
+    ../source/slam.cpp
+    ../source/bludgeon.cpp
+    ../source/incinerate.cpp
+    ../source/arcaneBlast.cpp
+    ../source/enemy.cpp
 )
 
 add_executable(runTravelTests
@@ -158,8 +210,14 @@ add_executable ( runBossTests
     ../source/boss.cpp
     ../source/bosspart1.cpp
     ../source/bosspart2.cpp
-    ../source/bosspart3.cpp
-    ../source/bosspart4.cpp
+    ../source/pirateBoss.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/statsManager.cpp
+    ../source/character.cpp
+    ../source/item.cpp
+    ../source/finalBoss.cpp
 )
 
 add_executable( runOrcBossTests
@@ -176,6 +234,108 @@ add_executable( runOrcBossTests
     ../source/item.cpp
 )
 
+
+add_executable( runPirateTests
+    pirateTests.cpp
+    ../source/pirate.cpp
+    ../source/enemy.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/statsManager.cpp
+    ../source/character.cpp
+    ../source/item.cpp
+)
+add_executable( runOrcTests
+    orcTests.cpp
+    ../source/orc.cpp
+    ../source/enemy.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
+)
+
+add_executable ( runRoyalGuardTests
+    royalGuardTests.cpp
+    ../source/royalGuard.cpp
+    ../source/enemy.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/item.cpp
+)
+
+add_executable(runCharacterSelectTests
+    characterSelectTesting.cpp
+    ../source/screen.cpp
+    ../source/characterSelect.cpp
+    ../source/inGameMenu.cpp
+    ../source/enemy.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/character.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/itemManager.cpp
+    ../source/item.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/encounterManager.cpp
+    ../source/enemy.cpp
+)
+
+add_executable(runCombatTests
+    combatTests.cpp
+    ../source/combat.cpp
+    ../source/screen.cpp
+    ../source/characterSelect.cpp
+    ../source/inGameMenu.cpp
+    ../source/enemy.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/character.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/itemManager.cpp
+    ../source/item.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/encounterManager.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -183,6 +343,8 @@ target_link_libraries(runEnemyTests gmock gtest gtest_main)
 target_link_libraries(runItemTests gmock gtest gtest_main)
 target_link_libraries(runWeaponTests gtest gtest_main)
 target_link_libraries(runRogueTests gtest gtest_main)
+target_link_libraries(runWarriorTests gtest gtest_main)
+target_link_libraries(runMageTests gtest gtest_main)
 target_link_libraries(runUserTests gtest gtest_main)
 target_link_libraries(runStatsManagerTests gtest gtest_main)
 target_link_libraries(runGameTests gtest gtest_main)
@@ -193,3 +355,8 @@ target_link_libraries(runInventoryTests gtest gtest_main)
 target_link_libraries(runCityTests gtest gtest_main)
 target_link_libraries(runBossTests gtest gtest_main)
 target_link_libraries(runOrcBossTests gtest gtest_main)
+target_link_libraries(runPirateTests gtest gtest_main)
+target_link_libraries(runCharacterSelectTests gtest gtest_main)
+target_link_libraries(runOrcTests gtest gtest_main)
+target_link_libraries(runCombatTests gtest gtest_main)
+target_link_libraries(runRoyalGuardTests gtest gtest_main)

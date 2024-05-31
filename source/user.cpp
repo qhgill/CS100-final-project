@@ -35,6 +35,10 @@ int User::getXp() const
 {
     return this->xp;
 }
+int& User::getXp()
+{
+    return this->xp;
+}
 
 int& User::getGold(){
     return gold;
@@ -44,10 +48,15 @@ int User::getGold() const{
     return gold;
 }
 
-Character* User::getCharacterClass() 
+Character*& User::getCharacterClass() 
 {
     return this->character;
 }
+
+Character* User::getCharacterClass() const{
+    return this->character;
+}
+
 StatsManager* User::getStatsManager() 
 {
     return this->userStats;

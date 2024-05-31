@@ -26,9 +26,11 @@ class User
         ~User();
         int getLevel() const;
         int getXp() const;
+        int& getXp();
         int& getGold();
         int getGold() const;
-        Character* getCharacterClass(); 
+        Character*& getCharacterClass(); 
+        Character* getCharacterClass() const;
         StatsManager* getStatsManager();
         ItemManager* getItemManager();
         void levelUp();

@@ -5,3 +5,10 @@ BackStab::BackStab()
     this->spellClass = "Rogue";
     this->spellLevelThreshold = 1;
 }
+
+void BackStab::doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy* e)
+{
+         int overallDamage = playerDamage;
+         e->dealDamage(10/overallDamage);
+         //deal flat physical damage based on overall damage
+}

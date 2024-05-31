@@ -1,8 +1,9 @@
 #pragma once
-#include "./spell.h"
+#include "spell.h"
 
 class Incinerate : public Spell
 {
     public:
-        Incinerate();
+    Incinerate();
+    void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) override;
 };
