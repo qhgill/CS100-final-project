@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+
 #include "enemy.h"
 
 class Spell 
