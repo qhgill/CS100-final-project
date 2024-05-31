@@ -1,16 +1,17 @@
-#include "../header/bosspart4.h"
+#include "../header/finalBoss.h"
 
-BossPart4::BossPart4() 
-{
+FinalBoss::FinalBoss() : 
+{}
 
-}
+FinalBoss::FinalBoss() : 
+{}
 
-void BossPart4::calculatePhaseOneTurn(StatsManager*) 
+void FinalBoss::calculatePhaseOneTurn(StatsManager*) 
 {
     return;
 };
 
-void BossPart4::calculatePhaseTwoTurn(StatsManager*) 
+void FinalBoss::calculatePhaseTwoTurn(StatsManager*) 
 {
     return;
 };
