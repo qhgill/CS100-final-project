@@ -45,7 +45,7 @@ TEST(calcTests, pirateCalculateTurnTest) {
   Weapon weapon("knife", 5, 5, "physical");
   Armor armor("helmet", 5, 5, 5, 5);           
   Trinket trinket("locket", 5, 5);  
-  StatsManager* sm;
+  StatsManager* sm = new StatsManager();
 
   sm->updateStats(&character, &weapon, &armor, &trinket, 1);
   //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 5 + (1 * 10) = 25
