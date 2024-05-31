@@ -37,6 +37,7 @@ testing/runMageTests
 testing/runWarriorTests
 testing/runBossTests
 testing/runOrcBossTests
+testing/runPirateTests
 testing/runMageTests
 testing/runWarriorTests
 testing/runCharacterSelectTests
