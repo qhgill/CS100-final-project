@@ -8,7 +8,7 @@ Pirate::Pirate(int level, int health, int maxHealth, int damage, int magicResist
 {}
 
 void Pirate::calculateTurn(StatsManager* sm) {
-    int pirateDamage = damage;
-    sm.takeDamage(damage, "physical");
+    int pirateDamage = getDamage();
+    sm->takeDamage(pirateDamage, "physical");
     return;
 }

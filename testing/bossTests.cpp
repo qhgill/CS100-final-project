@@ -25,7 +25,7 @@ TEST(getterTests, inheritanceTest) {
     ASSERT_EQ(tempBoss.getName(), "");
 }
 
-TEST(getterTests, pirateInheritanceTest) {
+TEST(getterTests, pirateBossInheritanceTest) {
     PirateBoss tempBoss(5, 5, 5, 5, 5, 5, false, "Captain Hook");
 
     ASSERT_EQ(tempBoss.getLevel(), 5);
