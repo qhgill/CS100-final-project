@@ -1,10 +1,10 @@
 #include "../header/royalGuard.h"
 
-RoyalGuard::RoyalGuard(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isdead, std::string name)
-: level(level), health(health), maxHealth(maxHealth), damage(damage), magicResist(magicResist), physicalResist(physcialResist), isdead(isdead), name(name)
+RoyalGuard::RoyalGuard(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isdead, const std::string& name)
+: Enemy(level, health, maxHealth, damage, magicResist, physicalResist, isDead, name)
 {}
 
-RoyalGuard::RoyalGuard() : level(0), health(0), maxHealth(0), damage(0), magicResist(0), physicalResist(0), isdead(false), name("")
+RoyalGuard::RoyalGuard() : Enemy(0, 0, 0, 0, 0, 0, false, "")
 {}
 
 void calculateTurn(StatsManager* sm) {

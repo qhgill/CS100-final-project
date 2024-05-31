@@ -27,5 +27,5 @@ class Enemy
         void healself(int healHP);
         void killThis();
 
-        virtual void calculateTurn(StatsManager*);
+        void calculateTurn(StatsManager*);
 };
