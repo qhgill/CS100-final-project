@@ -4,5 +4,6 @@
 class CutThroat : public Spell
 {
     public:
-        CutThroat();
+    CutThroat();
+    void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) override;
 };
