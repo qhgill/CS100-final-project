@@ -152,7 +152,6 @@ add_executable(runGameTests
     ../source/slam.cpp
     ../source/bludgeon.cpp
     ../source/incinerate.cpp
-    ../source/lifeLeech.cpp
     ../source/arcaneBlast.cpp
     ../source/enemy.cpp
 )
