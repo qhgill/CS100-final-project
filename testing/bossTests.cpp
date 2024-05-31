@@ -56,12 +56,16 @@ TEST(calcTests, pirateCalculateTurnTest) {
   PirateBoss tempBoss(10, 10, 10, 10, 10, 10, false, "Captain Hook");
 
   Character character;
+  int baseDMG = character.getBaseDamage();
+  int baseHP = character.getBaseHP();
+  int baseMR = character.getBaseMagicResist();
+  int basePR = character.getBasePhysicalResist();
   Weapon weapon("knife", 5, 5, "physical");
   Armor armor("helmet", 5, 5, 5, 5);           
   Trinket trinket("locket", 5, 5);  
   StatsManager* sm = new StatsManager();
 
-    sm->updateStats(&character, &weapon, &armor, &trinket, 1);
+    sm->updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
   //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 5 + (1 * 10) = 25
 
   //  currentMR   =   characterBaseMagicResist + armorMagicResistBonus = 1 + 5 = 6
@@ -71,7 +75,7 @@ TEST(calcTests, pirateCalculateTurnTest) {
   ASSERT_EQ(sm->getCurrentHP(), 21);
 
   tempBoss.dealDamage(6);
-  sm->updateStats(&character, &weapon, &armor, &trinket, 1);
+  sm->updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
   tempBoss.calculateTurn(sm);
   ASSERT_EQ(sm->getCurrentHP(), 16);
 }
@@ -80,12 +84,16 @@ TEST(calcTests, finalBossCalculateTurnTest) {
   FinalBoss tempBoss(10, 10, 10, 10, 10, 10, false, "Captain Hook");
 
   Character character;
+  int baseDMG = character.getBaseDamage();
+  int baseHP = character.getBaseHP();
+  int baseMR = character.getBaseMagicResist();
+  int basePR = character.getBasePhysicalResist();
   Weapon weapon("knife", 5, 5, "physical");
   Armor armor("helmet", 5, 5, 5, 5);           
   Trinket trinket("locket", 5, 5);  
   StatsManager* sm = new StatsManager();
 
-  sm->updateStats(&character, &weapon, &armor, &trinket, 1);
+  sm->updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
   //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 5 + (1 * 10) = 25
 
   //  currentMR   =   characterBaseMagicResist + armorMagicResistBonus = 1 + 5 = 6
@@ -95,7 +103,7 @@ TEST(calcTests, finalBossCalculateTurnTest) {
   ASSERT_EQ(sm->getCurrentHP(), 21);
 
   tempBoss.dealDamage(8);
-  sm->updateStats(&character, &weapon, &armor, &trinket, 1);
+  sm->updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
   tempBoss.calculateTurn(sm);
   ASSERT_EQ(sm->getCurrentHP(), 13);
 
