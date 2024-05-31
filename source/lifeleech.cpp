@@ -1,4 +1,4 @@
-#include "../header/lifeLeech.h"
+#include "../header/lifeleech.h"
 
 LifeLeech::LifeLeech()
 {
