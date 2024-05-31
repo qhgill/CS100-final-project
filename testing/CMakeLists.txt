@@ -179,7 +179,14 @@ add_executable ( runBossTests
     ../source/bosspart1.cpp
     ../source/bosspart2.cpp
     ../source/bosspart3.cpp
-    ../source/bosspart4.cpp
+    ../source/finalBoss.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
+    ../source/statsManager.cpp
 )
 
 add_executable( runOrcBossTests
