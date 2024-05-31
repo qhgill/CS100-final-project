@@ -2,7 +2,7 @@
 
 Slam::Slam()
 {
-    this->spellClass = new std::string("Slam");
+    this->spellClass = "Slam";
     this->spellLevelThreshold = 1;
 }
 

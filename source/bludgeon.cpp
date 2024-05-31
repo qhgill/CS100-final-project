@@ -2,7 +2,7 @@
 
 Bludgeon::Bludgeon()
 {
-    this->spellClass = new std::string("Bludgeon");
+    this->spellClass = "Bludgeon";
     this->spellLevelThreshold = 3;
 }
 
