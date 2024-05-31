@@ -20,6 +20,7 @@ Screen* CharacterSelect::processOption(int option, bool isrunning){
     } else {
         return this;
     }
-    currentUser->getStatsManager()->updateStats(currentUser->getCharacterClass(), currentUser->getItemManager()->getEquippedWeapon(), currentUser->getItemManager()->getEquippedArmor(), currentUser->getItemManager()->getEquippedTrinket(), currentUser->getLevel());
+    Character* userCharacter = currentUser->getCharacterClass();
+    currentUser->getStatsManager()->updateStats(userCharacter->getBaseDamage(), userCharacter->getBaseHP(), userCharacter->getBaseMagicResist(), userCharacter->getBasePhysicalResist(), currentUser->getItemManager()->getEquippedWeapon(), currentUser->getItemManager()->getEquippedArmor(), currentUser->getItemManager()->getEquippedTrinket(), currentUser->getLevel());
     return new InGameMenu("gameMenuScreen.txt", currentUser);
 }

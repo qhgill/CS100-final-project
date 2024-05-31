@@ -17,7 +17,7 @@ TEST(getterTests, constructorInitializationTest) {
 TEST(OrcBossTest, CalculatePhaseOneTurnTest) {
     OrcBoss* orcBoss = new OrcBoss();
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(nullptr, nullptr, nullptr, nullptr, 1); 
+    statsManager->updateStats(1,1,1,1, nullptr, nullptr, nullptr, 1); 
 
     int initialHP = statsManager->getCurrentHP();
     int initialPR = statsManager->getCurrentPR();
@@ -34,7 +34,7 @@ TEST(OrcBossTest, CalculatePhaseOneTurnTest) {
 TEST(OrcBossTest, CalculatePhaseTwoTurnTest) {
     OrcBoss* orcBoss = new OrcBoss();
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(nullptr, nullptr, nullptr, nullptr, 1);
+    statsManager->updateStats(1,1,1,1, nullptr, nullptr, nullptr, 1);
 
     int initialHP = statsManager->getCurrentHP();
     int initialPR = statsManager->getCurrentPR();

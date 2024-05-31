@@ -4,6 +4,10 @@ OrcBoss::OrcBoss()
 : Boss(8, 100, 100, 21, 3, 14, false, "General Bob")
 {}
 
+void OrcBoss::calculateTurn(StatsManager* statsManager){
+    //
+}
+
 void OrcBoss::calculatePhaseOneTurn(StatsManager* statsManager) 
 {
     // Move 1a

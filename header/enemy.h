@@ -1,4 +1,5 @@
 #pragma once 
+#include "./statsManager.h"
 #include <string>
 //#include "./statsManager.h"
 
@@ -15,6 +16,7 @@ class Enemy
         std::string name;
     public:
         Enemy(int level_, int health_, int maxHealth_, int damage_, int magicResist_, int physicalResist_, bool isdead_, std::string name_);
+        Enemy();
         int getLevel();
         int getHealth();
         int getMaxHealth();
@@ -26,6 +28,5 @@ class Enemy
         void dealDamage(int takeDamage);
         void healself(int healHP);
         void killThis();
-
-        //void calculateTurn(StatsManager*);
+        virtual void calculateTurn(StatsManager*) = 0;
 };

@@ -4,6 +4,9 @@ Enemy::Enemy(int level_, int health_, int maxHealth_, int damage_, int magicResi
 : level(level_), health(health_), maxHealth(maxHealth_), damage(damage_), magicResist(magicResist_), physicalResist(physicalResist_), isdead(isdead_), name(name_) 
 {}
 
+Enemy::Enemy(): level(1), health(10), maxHealth(10), damage(2), magicResist(1), physicalResist(1), isdead(false), name("enemy")
+{}
+
 int Enemy::getLevel() 
 {
     return level;

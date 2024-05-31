@@ -4,18 +4,18 @@ StatsManager::StatsManager()
 : maxHP(0), currentHP(0), currentDMG(0), currentMR(0), currentPR(0) 
 {}
 
-void StatsManager::updateStats(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) 
+void StatsManager::updateStats(int baseDmg, int baseHP, int baseMR, int basePR, Weapon* weapon, Armor* armor, Trinket* trinket, int level) 
 {
-    this->maxHP = character->getBaseHP() + armor->getHealth() + (level * 10); // characterBaseHealth + armorHealthBonus + (userLevel * 10)
+    this->maxHP = baseHP + armor->getHealth() + (level * 10); // characterBaseHealth + armorHealthBonus + (userLevel * 10)
     this->currentHP = maxHP;
-    this->currentDMG = character->getBaseDamage() + weapon->getDamage() + (level * 5); // characterBaseDamage + weaponDamage + (userLevel * 5)
-    this->resetMRandPR(character, weapon, armor, trinket, level);
+    this->currentDMG = baseDmg + weapon->getDamage() + (level * 5); // characterBaseDamage + weaponDamage + (userLevel * 5)
+    this->resetMRandPR(baseMR, basePR, weapon, armor, trinket, level);
 }
 
-void StatsManager::resetMRandPR(Character* character, Weapon* weapon, Armor* armor, Trinket* trinket, int level) 
+void StatsManager::resetMRandPR(int baseMR, int basePR, Weapon* weapon, Armor* armor, Trinket* trinket, int level) 
 {
-    this->currentMR = character->getBaseMagicResist() + armor->getMagRes(); // characterBaseMagicResist + armorMagicResistBonus
-    this->currentPR = character->getBasePhysicalResist() + armor->getPhyRes(); // characterBasePhysicalResist + armorPhysicalResistBonus
+    this->currentMR = baseMR + armor->getMagRes(); // characterBaseMagicResist + armorMagicResistBonus
+    this->currentPR = basePR + armor->getPhyRes(); // characterBasePhysicalResist + armorPhysicalResistBonus
 }
 
 int StatsManager::getCurrentMR() const 
@@ -44,6 +44,11 @@ int& StatsManager::getCurrentHP()
 }
 
 int StatsManager::getCurrentDMG() const 
+{
+    return this->currentDMG;
+}
+
+int& StatsManager::getCurrentDMG()
 {
     return this->currentDMG;
 }

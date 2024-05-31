@@ -35,6 +35,10 @@ int User::getXp() const
 {
     return this->xp;
 }
+int& User::getXp()
+{
+    return this->xp;
+}
 
 int& User::getGold(){
     return gold;

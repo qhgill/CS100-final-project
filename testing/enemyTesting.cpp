@@ -1,51 +1,57 @@
 #include <gtest/gtest.h>
 #include "../header/enemy.h"
 
+class MockEnemy: public Enemy{
+    public: 
+    MockEnemy(int lvl, int hp, int mxhp, int dmg, int mr, int pr, bool isdead, std::string name):Enemy(lvl, hp, mxhp, dmg, mr, pr, isdead, name){}
+    MOCK_METHOD((void), calculateTurn, (StatsManager*), (override));
+};
+
 TEST(enemyGetterTests, getLevelTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getLevel(), 1);
 }
 
 TEST(enemyGetterTests, getHealthTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getHealth(), 1);
 }
 
 TEST(enemyGetterTests, getMaxHealthTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getMaxHealth(), 1);
 }
 
 TEST(enemyGetterTests, getDamageTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getDamage(), 1);
 }
 
 TEST(enemyGetterTests, getMagicResistTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getMagicResist(), 1);
 }
 
 TEST(enemyGetterTests, getPhysicalResistTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getPhysicalResist(), 1);
 }
 
 TEST(enemyGetterTests, getStatusTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_TRUE(!(monster1.getStatus()));
 }
 
 TEST(enemyGetterTests, getNameTest)
 {
-    Enemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
+    MockEnemy monster1(1, 1, 1, 1, 1, 1, false, "Bill");
     EXPECT_EQ(monster1.getName(), "Bill");
 }
 

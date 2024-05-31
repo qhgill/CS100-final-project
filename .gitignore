@@ -42,6 +42,8 @@ testing/runMageTests
 testing/runWarriorTests
 testing/runCharacterSelectTests
 testing/runOrcTests
+testing/runCombatTests
+source/mainExecutable
 testing/runRoyalGuardTests
 lib/
 

@@ -2,13 +2,16 @@
 #include "../header/statsManager.h"
 
 TEST(StatsManagerGetterTests, updateStatsTest) {
-    Character character;                        // baseHP(10), baseDamage(5), basePhysicalResist(1), baseMagicResist(1)
+    int baseHP = 10; //baseHP(10)
+    int baseDMG = 5; //baseDamage(5)
+    int baseMR = 1; //baseMagicResist(1)
+    int basePR = 1;  //basePhysicalResist(1)                  
     Weapon weapon("fists", 1, 10, "physical");  // itemName, itemLvl, dmg, dmgType
     Armor armor("cloth", 1, 1, 2, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
     Trinket trinket("locket", 1, 2);            // itemName, itemLvl, pierceValue
     StatsManager statsManager; 
     
-    statsManager.updateStats(&character, &weapon, &armor, &trinket, 1);
+    statsManager.updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
     //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 1 + (1 * 10) = 21
     //  currentHP   =   <= maxHP = 21
     //  currentDMG  =   characterBaseDamage + weaponDamage + (userLevel * 5) = 5 + 10 + (1 * 5) = 20
@@ -23,32 +26,38 @@ TEST(StatsManagerGetterTests, updateStatsTest) {
 }
 
 TEST(StatsManagerMutatorTests, resetMRandPRTest) {
-    Character character;                        // baseHP(10), baseDamage(5), basePhysicalResist(1), baseMagicResist(1)
+    int baseHP = 10; //baseHP(10)
+    int baseDMG = 5; //baseDamage(5)
+    int baseMR = 1; //baseMagicResist(1)
+    int basePR = 1;  //basePhysicalResist(1) 
     Weapon weapon("fists", 1, 10, "physical");  // itemName, itemLvl, dmg, dmgType
     Armor armor("cloth", 1, 1, 2, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
     Trinket trinket("locket", 1, 2);            // itemName, itemLvl, pierceValue
     StatsManager statsManager; 
     
-    statsManager.updateStats(&character, &weapon, &armor, &trinket, 1);
+    statsManager.updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
     //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 1 + (1 * 10) = 21
     //  currentHP   =   <= maxHP = 21
     //  currentDMG  =   characterBaseDamage + weaponDamage + (userLevel * 5) = 5 + 10 + (1 * 5) = 20
     //  currentMR   =   characterBaseMagicResist + armorMagicResistBonus = 1 + 0 = 1
     //  currentPR   =   characterBasePhysicalResist + armorPhysicalResistBonus = 1 + 2 = 3
     
-    statsManager.resetMRandPR(&character, &weapon, &armor, &trinket, 1);
+    statsManager.resetMRandPR(baseMR, basePR, &weapon, &armor, &trinket, 1);
     EXPECT_EQ(statsManager.getCurrentMR(), 1);  // 10 base + 2 armor
     EXPECT_EQ(statsManager.getCurrentPR(), 3);  // 5 base + 0 armor
 }
 
 TEST(StatsManagerMutatorTests, takeDamageTest) {
-    Character character;                        // baseHP(10), baseDamage(5), basePhysicalResist(1), baseMagicResist(1)
+    int baseHP = 10; //baseHP(10)
+    int baseDMG = 5; //baseDamage(5)
+    int baseMR = 1; //baseMagicResist(1)
+    int basePR = 1;  //basePhysicalResist(1) 
     Weapon weapon("fists", 1, 10, "physical");  // itemName, itemLvl, dmg, dmgType
     Armor armor("cloth", 1, 1, 2, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
     Trinket trinket("locket", 1, 2);            // itemName, itemLvl, pierceValue
     StatsManager statsManager; 
     
-    statsManager.updateStats(&character, &weapon, &armor, &trinket, 1);
+    statsManager.updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
     //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 1 + (1 * 10) = 21
     //  currentHP   =   <= maxHP = 21
     //  currentDMG  =   characterBaseDamage + weaponDamage + (userLevel * 5) = 5 + 10 + (1 * 5) = 20
@@ -62,13 +71,16 @@ TEST(StatsManagerMutatorTests, takeDamageTest) {
 }
 
 TEST(StatsManagerMutatorTests, healSelfTest) {
-    Character character;                        // baseHP(10), baseDamage(5), basePhysicalResist(1), baseMagicResist(1)
+    int baseHP = 10; //baseHP(10)
+    int baseDMG = 5; //baseDamage(5)
+    int baseMR = 1; //baseMagicResist(1)
+    int basePR = 1;  //basePhysicalResist(1) 
     Weapon weapon("fists", 1, 10, "physical");  // itemName, itemLvl, dmg, dmgType
     Armor armor("cloth", 1, 1, 2, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
     Trinket trinket("locket", 1, 2);            // itemName, itemLvl, pierceValue
     StatsManager statsManager; 
     
-    statsManager.updateStats(&character, &weapon, &armor, &trinket, 1);
+    statsManager.updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
     //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 1 + (1 * 10) = 21
     //  currentHP   =   <= maxHP = 21
     //  currentDMG  =   characterBaseDamage + weaponDamage + (userLevel * 5) = 5 + 10 + (1 * 5) = 20
@@ -83,13 +95,16 @@ TEST(StatsManagerMutatorTests, healSelfTest) {
 }
 
 TEST(StatsManagerMutatorTests, reduceMRandPRTest) {
-    Character character;                        // baseHP(10), baseDamage(5), basePhysicalResist(1), baseMagicResist(1)
+    int baseHP = 10; //baseHP(10)
+    int baseDMG = 5; //baseDamage(5)
+    int baseMR = 1; //baseMagicResist(1)
+    int basePR = 1;  //basePhysicalResist(1) 
     Weapon weapon("fists", 1, 10, "physical");  // itemName, itemLvl, dmg, dmgType
     Armor armor("cloth", 1, 1, 2, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
     Trinket trinket("locket", 1, 2);            // itemName, itemLvl, pierceValue
     StatsManager statsManager; 
     
-    statsManager.updateStats(&character, &weapon, &armor, &trinket, 1);
+    statsManager.updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
     //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 1 + (1 * 10) = 21
     //  currentHP   =   <= maxHP = 21
     //  currentDMG  =   characterBaseDamage + weaponDamage + (userLevel * 5) = 5 + 10 + (1 * 5) = 20

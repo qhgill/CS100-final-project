@@ -5,6 +5,7 @@ class OrcBoss : public Boss
 {
     public:
         OrcBoss(); 
-        virtual void calculatePhaseOneTurn(StatsManager*);
-        virtual void calculatePhaseTwoTurn(StatsManager*);
+        void calculatePhaseOneTurn(StatsManager*);
+        void calculatePhaseTwoTurn(StatsManager*);
+        void calculateTurn(StatsManager*);
 };
