@@ -140,6 +140,21 @@ add_executable(runGameTests
     ../source/trinket.cpp
     ../source/encounterManager.cpp
     ../source/itemManager.cpp
+    ../source/characterSelect.cpp
+    ../source/warrior.cpp
+    ../source/mage.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/shatter.cpp
+    ../source/slam.cpp
+    ../source/bludgeon.cpp
+    ../source/incinerate.cpp
+    ../source/lifeLeech.cpp
+    ../source/arcaneBlast.cpp
+    ../source/enemy.cpp
 )
 
 add_executable(runTravelTests
@@ -256,6 +271,7 @@ add_executable(runCharacterSelectTests
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
     ../source/encounterManager.cpp
+    ../source/enemy.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
