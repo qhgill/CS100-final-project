@@ -4,5 +4,6 @@
 class BackStab : public Spell
 {
     public:
-        BackStab();
+    BackStab();
+    void doSpell(int &playerHP, int &playerDamage, int playerLevel, int &playerGold, Enemy*) override;
 };
