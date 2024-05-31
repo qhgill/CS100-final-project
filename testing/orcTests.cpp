@@ -22,7 +22,7 @@ TEST(damageTests, damageEffectsTest) {
     Trinket trinket("locket", 1, 2);            // itemName, itemLvl, pierceValue
     StatsManager statsManager; 
     
-    statsManager.updateStats(&character, &weapon, &armor, &trinket, 1);
+    statsManager.updateStats(character.getBaseDamage(), character.getBaseHP(), character.getBaseMagicResist(), character.getBasePhysicalResist(), &weapon, &armor, &trinket, 1);
     
     // Pre-Turn Stats
     EXPECT_EQ(statsManager.getCurrentHP(), 21);

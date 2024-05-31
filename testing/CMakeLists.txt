@@ -152,7 +152,6 @@ add_executable(runGameTests
     ../source/slam.cpp
     ../source/bludgeon.cpp
     ../source/incinerate.cpp
-    ../source/lifeLeech.cpp
     ../source/arcaneBlast.cpp
     ../source/enemy.cpp
 )
@@ -274,6 +273,40 @@ add_executable(runCharacterSelectTests
     ../source/enemy.cpp
 )
 
+add_executable(runCombatTests
+    combatTests.cpp
+    ../source/combat.cpp
+    ../source/screen.cpp
+    ../source/characterSelect.cpp
+    ../source/inGameMenu.cpp
+    ../source/enemy.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/character.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/itemManager.cpp
+    ../source/item.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/encounterManager.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -295,3 +328,4 @@ target_link_libraries(runBossTests gtest gtest_main)
 target_link_libraries(runOrcBossTests gtest gtest_main)
 target_link_libraries(runCharacterSelectTests gtest gtest_main)
 target_link_libraries(runOrcTests gtest gtest_main)
+target_link_libraries(runCombatTests gtest gtest_main)

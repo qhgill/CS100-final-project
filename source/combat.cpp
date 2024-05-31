@@ -3,9 +3,9 @@ using std::cout;
 using std::endl;
 
 Combat::Combat(string dispFile, User* cUser)
-: Screen(dispFile, cUser), inCombat(true), enemyLastMoveStr("Enemy hasn't made a move yet"), userLastMoveStr("You haven't made a move yet"){
+: Screen(dispFile, cUser), inCombat(true), enemyLastMoveStr("Enemy hasn't made a move yet"), userLastMoveStr("You haven't made a move yet"), rewardsStr("10 gold, 10xp"){
     isBossFight = (currentUser->getEncounterManager()->getEncounterCount() == 10);
-    //enemy = new goblin;  need to update this when enemy subclasses are introduced
+    enemy = new Orc(); //will randomize based on progress next update to this module
 }
 
 Combat::~Combat(){
@@ -55,8 +55,10 @@ Screen* Combat::processOption(int option, bool isRunning){
     if(inCombat){
         Character* userCharacterClass = currentUser->getCharacterClass();
         StatsManager* userStats = currentUser->getStatsManager();
+        int userLevel = currentUser->getLevel();
         if(option == 1){
             enemy->dealDamage(userStats->getCurrentDMG());
+            userLastMoveStr = "you attacked the enemy with your weapon";
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
                 inCombat = false;
@@ -64,7 +66,10 @@ Screen* Combat::processOption(int option, bool isRunning){
             }
         } else if(option == 2){
             if(userCharacterClass->getFirstSpell()->getSpellLevelThreshold() <= currentUser->getLevel()){
-                //do spell
+                userCharacterClass->getFirstSpell()->doSpell(userStats->getCurrentHP(), userStats->getCurrentDMG(), currentUser->getLevel(), currentUser->getGold(), enemy);
+                userLastMoveStr = "You used your first spell on the enemy!";
+            } else {
+                userLastMoveStr = "You tried to user your first spell on the enemy, but your level isn't high enough!";
             }
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
@@ -73,7 +78,10 @@ Screen* Combat::processOption(int option, bool isRunning){
             }
         } else if(option == 3){
             if(userCharacterClass->getSecondSpell()->getSpellLevelThreshold() <= currentUser->getLevel()){
-                //do spell
+                userCharacterClass->getSecondSpell()->doSpell(userStats->getCurrentHP(), userStats->getCurrentDMG(), currentUser->getLevel(), currentUser->getGold(), enemy);
+                userLastMoveStr = "You used your second spell on the enemy!";
+            } else {
+                userLastMoveStr = "You tried to user your second spell on the enemy, but your level isn't high enough!";
             }
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
@@ -82,7 +90,10 @@ Screen* Combat::processOption(int option, bool isRunning){
             }
         } else if(option == 4){
             if(userCharacterClass->getThirdSpell()->getSpellLevelThreshold() <= currentUser->getLevel()){
-                //do spell
+                userCharacterClass->getThirdSpell()->doSpell(userStats->getCurrentHP(), userStats->getCurrentDMG(), currentUser->getLevel(), currentUser->getGold(), enemy);
+                userLastMoveStr = "You used your third spell on the enemy!";
+            } else {
+                userLastMoveStr = "You tried to user your third spell on the enemy, but your level isn't high enough!";
             }
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
@@ -95,14 +106,32 @@ Screen* Combat::processOption(int option, bool isRunning){
             return this;
         }
         enemy->calculateTurn(userStats);
+        enemyLastMoveStr = "the enemy attacked you!"; //fix later, calculate turn should be changed to return a description string of the move
         return this;
     } else {
         if(!enemy->getStatus()){
-            //reset player stats, maybe go back to travel and reset health to what it was before instead of just killing all progress?
-            return new StartMenu("startMenu.txt", currentUser);
+            currentUser->getStatsManager()->getCurrentHP() = currentUser->getStatsManager()->getMaxHP();
+            return new Travel("travelScreen.txt", currentUser);
         } else {
-            //update player stats and inventory
+            ItemManager* userItems = currentUser->getItemManager();
+            Character* userCharacter = currentUser->getCharacterClass();
+            currentUser->getGold() += 10;
+            currentUser->getStatsManager()->resetMRandPR(userCharacter->getBaseMagicResist(), userCharacter->getBasePhysicalResist(), userItems->getEquippedWeapon(), userItems->getEquippedArmor(), userItems->getEquippedTrinket(), currentUser->getLevel());
+            currentUser->getXp() += 10;
+            //when item drops are figured out update with item drop functionality
             return new Travel("travelScreen.txt", currentUser);
         }
     }
+}
+
+string Combat::getEnemyLastMoveStr() const{
+    return enemyLastMoveStr;
+}
+
+string Combat::getUserLastMoveStr() const{
+    return userLastMoveStr;
+}
+
+string Combat::getRewardsStr() const{
+    return rewardsStr;
 }
