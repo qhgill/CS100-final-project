@@ -3,8 +3,8 @@
 FinalBoss::FinalBoss() : Boss(0, 0, 0, 0, 0, 0, false, "")
 {}
 
-FinalBoss::FinalBoss() : Boss(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isdead, const std::string& name)
-: Boss(level, health, maxHealth, damage, magicResist, physicalResist, isDead, name)
+FinalBoss::FinalBoss(int level, int health, int maxHealth, int damage, int magicResist, int physicalResist, bool isdead, const std::string& name)
+: Boss(level, health, maxHealth, damage, magicResist, physicalResist, isdead, name)
 {}
 
 void FinalBoss::calculateTurn(StatsManager* sm) {
@@ -21,7 +21,7 @@ void FinalBoss::calculatePhaseOneTurn(StatsManager* sm)
 {
     int joeDamage = getDamage();
 
-    if (sm->getMagicResist() > sm->getPhysicalResist()) {
+    if (sm->getCurrentMR() > sm->getCurrentPR()) {
         sm->takeDamage(joeDamage, "physical");
     } else {
         sm->takeDamage(joeDamage, "magical");
@@ -32,7 +32,7 @@ void FinalBoss::calculatePhaseTwoTurn(StatsManager* sm)
 {
     int joeDamage = getDamage();
 
-    if (sm->getMagicResist() > sm->getPhysicalResist()) {
+    if (sm->getCurrentMR() > sm->getCurrentPR()) {
         joeDamage *= 2;
         sm->takeDamage(joeDamage, "physical"); //one big attack
     } else {

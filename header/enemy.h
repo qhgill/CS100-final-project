@@ -1,6 +1,6 @@
 #pragma once 
 #include <string>
-#include "./statsManager.h"
+//#include "./statsManager.h"
 
 class Enemy
 {
@@ -27,5 +27,5 @@ class Enemy
         void healself(int healHP);
         void killThis();
 
-        void calculateTurn(StatsManager*);
+        //void calculateTurn(StatsManager*);
 };

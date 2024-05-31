@@ -34,7 +34,7 @@ TEST(getterTests, finalBossInheritanceTest) {
     ASSERT_EQ(tempBoss.getMagicResist(), 5);
     ASSERT_EQ(tempBoss.getPhysicalResist(), 5);
     ASSERT_EQ(tempBoss.getStatus(), false);
-    ASSERT_EQ(tempBoss.getName(), "Captain Hook");
+    ASSERT_EQ(tempBoss.getName(), "Joe");
 }
 
 TEST(calcTests, finalBossCalculateTurnTest) {
