@@ -1,6 +1,7 @@
 #pragma once 
 #include "./statsManager.h"
 #include <string>
+//#include "./statsManager.h"
 
 class Enemy
 {

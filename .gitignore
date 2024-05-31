@@ -37,12 +37,14 @@ testing/runMageTests
 testing/runWarriorTests
 testing/runBossTests
 testing/runOrcBossTests
+testing/runPirateTests
 testing/runMageTests
 testing/runWarriorTests
 testing/runCharacterSelectTests
 testing/runOrcTests
 testing/runCombatTests
 source/mainExecutable
+testing/runRoyalGuardTests
 lib/
 
 # Remove after implementation of cmake equivalent
