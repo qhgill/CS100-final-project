@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include "../header/enemy.h"
 
 class MockEnemy: public Enemy{

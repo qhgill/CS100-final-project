@@ -2,7 +2,7 @@
 
 PickPocket::PickPocket()
 {
-    this->spellClass = new std::string("Pickpocket");
+    this->spellClass = "Rogue";
     this->spellLevelThreshold = 2;
 }
 

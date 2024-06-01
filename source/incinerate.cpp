@@ -2,7 +2,7 @@
 
 Incinerate::Incinerate()
 {
-    this->spellClass = new std::string("Incinerate");
+    this->spellClass = "Incinerate";
     this->spellLevelThreshold = 3;
 }
 

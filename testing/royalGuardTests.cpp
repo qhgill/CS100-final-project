@@ -27,13 +27,17 @@ TEST(calcTests, royalGuardCalcTurnTest) {
     RoyalGuard guard(4, 4, 4, 4, 4, 4, false, "Knight guy");
 
     Character character;
+    int baseDMG = character.getBaseDamage();
+    int baseHP = character.getBaseHP();
+    int baseMR = character.getBaseMagicResist();
+    int basePR = character.getBasePhysicalResist();
     Weapon weapon("knife", 5, 5, "physical");
     Armor armor("helmet", 1, 5, 1, 2);  
     Armor armorTwo("boots", 1, 5, 2, 1);         
     Trinket trinket("locket", 5, 5);  
     StatsManager* sm = new StatsManager();
 
-    sm->updateStats(&character, &weapon, &armor, &trinket, 1);
+    sm->updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armor, &trinket, 1);
     //  maxHP       =   characterBaseHealth + armorHealthBonus + (userLevel * 10) = 10 + 5 + (1 * 10) = 25
 
     //  currentMR   =   characterBaseMagicResist + armorMagicResistBonus = 1 + 2 = 3
@@ -45,7 +49,7 @@ TEST(calcTests, royalGuardCalcTurnTest) {
     guard.calculateTurn(sm);
     EXPECT_EQ(sm->getCurrentHP(), 23);
 
-    sm->updateStats(&character, &weapon, &armorTwo, &trinket, 1);
+    sm->updateStats(baseDMG, baseHP, baseMR, basePR, &weapon, &armorTwo, &trinket, 1);
     guard.calculateTurn(sm);
     EXPECT_EQ(sm->getCurrentHP(), 23);
 }

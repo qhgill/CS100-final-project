@@ -2,7 +2,7 @@
 
 Shatter::Shatter()
 {
-    this->spellClass = new std::string("Shatter");
+    this->spellClass = "Shatter";
     this->spellLevelThreshold = 2;
 }
 

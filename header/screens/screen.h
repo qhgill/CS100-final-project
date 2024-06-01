@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "./user.h"
+#include "../user.h"
 
 class Screen {
     protected:

@@ -2,7 +2,7 @@
 
 ArcaneBlast::ArcaneBlast()
 {
-    this->spellClass = new std::string("ArcaneBlast");
+    this->spellClass = "ArcaneBlast";
     this->spellLevelThreshold = 1;
 }
 
