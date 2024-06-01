@@ -16,6 +16,9 @@ class Character
     public:
         Character();
         Character(int hp, int dmg, int pr, int mr, std::string cname, Spell* s1, Spell* s2, Spell* s3);
+        ~Character();
+        Character(Character&) = delete;
+        Character operator=(Character&) = delete;
         int getBaseHP();
         int getBaseDamage();
         int getBasePhysicalResist();

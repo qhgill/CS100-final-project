@@ -4,7 +4,17 @@ using std::cout;
 using std::endl;
 
 City::City(std::string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(new Armor()), cityTrinket(new Trinket()), cityWeapon(new Weapon()){}
-
+City::~City(){
+    if(cityArmor != nullptr){
+        delete cityArmor;
+    }
+    if(cityWeapon != nullptr){
+        delete cityWeapon;
+    }
+    if(cityTrinket != nullptr){
+        delete cityTrinket;
+    }
+}
 Screen* City::processOption(int userOption, bool isRunning)
 { 
     if(userOption == 1){

@@ -2,7 +2,7 @@
 
 BackStab::BackStab()
 {
-    this->spellClass = new std::string("Backstab");
+    this->spellClass = "Rogue";
     this->spellLevelThreshold = 1;
 }
 

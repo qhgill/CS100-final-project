@@ -13,5 +13,8 @@ class Game
         bool isRunning;
     public:
         Game();
+        ~Game();
+        Game(Game&) = delete;
+        Game operator=(Game&) = delete;
         void runGame();
 };

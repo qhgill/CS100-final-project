@@ -7,6 +7,12 @@ Character::Character(int hp, int dmg, int pr, int mr, std::string cname, Spell* 
 Character::Character()
 : baseHP(10), baseDamage(5), basePhysicalResist(1), baseMagicResist(1), className(""), firstSpell(nullptr), secondSpell(nullptr), thirdSpell(nullptr)
 {}
+Character::~Character(){
+    delete firstSpell;
+    delete secondSpell;
+    delete thirdSpell;
+}
+
 int Character::getBaseHP()
 {
     return baseHP;
