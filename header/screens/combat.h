@@ -7,6 +7,10 @@
 #include "../enemy.h"
 #include "../orc.h"
 #include "../orcBoss.h"
+#include "../pirate.h"
+#include "../pirateBoss.h"
+#include "../royalGuard.h"
+#include "../finalBoss.h"
 using std::string;
 
 class Combat: public Screen{

@@ -1,4 +1,4 @@
-#include "../header/screens/characterSelect.h"
+#include "../header/screens/screen.h"
 
 CharacterSelect::CharacterSelect(string dispFile, User* cUser): Screen(dispFile, cUser){}
 
@@ -10,7 +10,7 @@ void CharacterSelect::displayScreen(){
     cout << "[3] Rogue" << endl;
 }
 
-Screen* CharacterSelect::processOption(int option, bool isrunning){
+Screen* CharacterSelect::processOption(int option, bool& isrunning){
     if(option == 1){
         currentUser->getCharacterClass() = new Warrior();
     } else if(option == 2){

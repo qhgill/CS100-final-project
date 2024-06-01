@@ -16,6 +16,7 @@ class User
         int level;
         int xp;
         int gold;
+        int storyAct;
         Character* character;
         StatsManager* userStats;
         ItemManager* userItems;
@@ -29,6 +30,8 @@ class User
         int& getXp();
         int& getGold();
         int getGold() const;
+        int getStoryAct() const;
+        void incrementStoryAct();
         Character*& getCharacterClass(); 
         Character* getCharacterClass() const;
         StatsManager* getStatsManager();

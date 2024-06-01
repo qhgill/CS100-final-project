@@ -1,4 +1,4 @@
-#include "../header/screens/startMenu.h"
+#include "../header/screens/screen.h"
 
 void StartMenu::displayScreen()
 {
@@ -8,7 +8,7 @@ void StartMenu::displayScreen()
     std::cout << "2. Exit\n";
 }
 
-Screen* StartMenu::processOption(int option, bool isRunning)
+Screen* StartMenu::processOption(int option, bool& isRunning)
 {
     if (option == 2){
         isRunning = false;

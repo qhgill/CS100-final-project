@@ -1,4 +1,4 @@
-#include "../header/screens/inventory.h"
+#include "../header/screens/screen.h"
 using std::cout;
 using std::endl;
 
@@ -59,7 +59,7 @@ void Inventory::displayScreen(){
     cout << "[4] back to menu" << endl << endl;
 }
 
-Screen* Inventory::processOption(int option, bool isRunning){
+Screen* Inventory::processOption(int option, bool& isRunning){
     ItemManager* userItemManager = currentUser->getItemManager();
     std::vector<Weapon*>* userWeaponInventory = userItemManager->getWeaponInventory();
     std::vector<Armor*>* userArmorInventory = userItemManager->getArmorInventory();

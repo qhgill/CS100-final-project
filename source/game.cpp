@@ -1,4 +1,6 @@
 #include "../header/game.h"
+using std::cin;
+
 
 Game::Game()
 {
@@ -17,18 +19,21 @@ Game::~Game(){
     }
 }
 void Game::runGame(){
-    int userInput;
     while(isRunning){
+        int userInput;
+        cin.clear();
         currentScreen->displayScreen();
-        std::cin >> userInput;
-        if(!std::cin.good()){
+        cin >> userInput;
+        cin.ignore();
+        if(!cin.good()){
             userInput = 0;
+            cin.ignore(100000000000);
+            cin.clear();
         }
         currentScreen = currentScreen->processOption(userInput, this->isRunning);
         if(currentScreen != previousScreen){
             delete previousScreen;
             previousScreen = currentScreen;
         }
-        std::cin.clear();
     }
 }

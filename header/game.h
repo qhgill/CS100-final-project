@@ -2,7 +2,6 @@
 #include <iostream>
 #include "user.h"
 #include "screens/screen.h"
-#include "screens/startMenu.h"
 
 class Game 
 {

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "./screen.h"
+#include "./travel.h"
 
 class City: public Screen
 {
