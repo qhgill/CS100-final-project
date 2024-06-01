@@ -45,6 +45,7 @@ testing/runOrcTests
 testing/runCombatTests
 source/mainExecutable
 testing/runRoyalGuardTests
+testing/runInGameMenuTests
 lib/
 
 # Remove after implementation of cmake equivalent

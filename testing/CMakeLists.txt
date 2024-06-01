@@ -450,6 +450,48 @@ add_executable(runCombatTests
     ../source/startMenu.cpp
 )
 
+add_executable(runInGameMenuTests
+    inGameMenuTesting.cpp
+    ../source/inGameMenu.cpp
+    ../source/combat.cpp
+    ../source/screen.cpp
+    ../source/characterSelect.cpp
+    ../source/enemy.cpp
+    ../source/user.cpp
+    ../source/statsManager.cpp
+    ../source/character.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/itemManager.cpp
+    ../source/item.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/armor.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/encounterManager.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/inventory.cpp
+    ../source/startMenu.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -474,3 +516,4 @@ target_link_libraries(runCharacterSelectTests gtest gtest_main)
 target_link_libraries(runOrcTests gtest gtest_main)
 target_link_libraries(runCombatTests gtest gtest_main)
 target_link_libraries(runRoyalGuardTests gtest gtest_main)
+target_link_libraries(runInGameMenuTests gtest gtest_main)
