@@ -118,6 +118,9 @@ add_executable(runGameTests
     ../source/screen.cpp
     ../source/character.cpp
     ../source/characterSelect.cpp
+    ../source/inGameMenu.cpp
+    ../source/travel.cpp
+    ../source/inventory.cpp
     ../source/mage.cpp
     ../source/warrior.cpp
     ../source/rogue.cpp
@@ -154,6 +157,15 @@ add_executable(runGameTests
     ../source/incinerate.cpp
     ../source/arcaneBlast.cpp
     ../source/enemy.cpp
+    ../source/combat.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
 )
 
 add_executable(runTravelTests
@@ -161,7 +173,9 @@ add_executable(runTravelTests
     ../source/screen.cpp
     ../source/user.cpp
     ../source/travel.cpp
+    ../source/inventory.cpp
     ../source/inGameMenu.cpp
+    ../source/combat.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
     ../source/item.cpp
@@ -170,38 +184,118 @@ add_executable(runTravelTests
     ../source/trinket.cpp
     ../source/encounterManager.cpp
     ../source/itemManager.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/spell.cpp
+    ../source/characterSelect.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/startMenu.cpp
 )
 
 add_executable(runCityTests
     cityTests.cpp
     ../source/screen.cpp
+    ../source/city.cpp
     ../source/user.cpp
     ../source/travel.cpp
-    ../source/city.cpp
+    ../source/inventory.cpp
+    ../source/inGameMenu.cpp
+    ../source/combat.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
     ../source/item.cpp
-    ../source/weapon.cpp
     ../source/armor.cpp
+    ../source/weapon.cpp
     ../source/trinket.cpp
     ../source/encounterManager.cpp
     ../source/itemManager.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/spell.cpp
+    ../source/characterSelect.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/startMenu.cpp
 )
 
 add_executable(runInventoryTests
     inventoryTests.cpp
     ../source/screen.cpp
-    ../source/inventory.cpp
     ../source/user.cpp
-    ../source/statsManager.cpp
+    ../source/travel.cpp
+    ../source/inventory.cpp
     ../source/inGameMenu.cpp
+    ../source/combat.cpp
+    ../source/statsManager.cpp
     ../source/character.cpp
     ../source/item.cpp
-    ../source/trinket.cpp
     ../source/armor.cpp
     ../source/weapon.cpp
+    ../source/trinket.cpp
     ../source/encounterManager.cpp
     ../source/itemManager.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/spell.cpp
+    ../source/characterSelect.cpp
+    ../source/mage.cpp
+    ../source/warrior.cpp
+    ../source/rogue.cpp
+    ../source/spell.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/arcaneBlast.cpp
+    ../source/incinerate.cpp
+    ../source/lifeleech.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/startMenu.cpp
 )
 
 add_executable ( runBossTests
@@ -276,7 +370,6 @@ add_executable(runCharacterSelectTests
     ../source/screen.cpp
     ../source/characterSelect.cpp
     ../source/inGameMenu.cpp
-    ../source/enemy.cpp
     ../source/user.cpp
     ../source/statsManager.cpp
     ../source/character.cpp
@@ -300,6 +393,19 @@ add_executable(runCharacterSelectTests
     ../source/cutthroat.cpp
     ../source/encounterManager.cpp
     ../source/enemy.cpp
+    ../source/inventory.cpp
+    ../source/travel.cpp
+    ../source/combat.cpp
+    ../source/enemy.cpp
+    ../source/orc.cpp
+    ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/startMenu.cpp
 )
 
 add_executable(runCombatTests
@@ -334,6 +440,14 @@ add_executable(runCombatTests
     ../source/enemy.cpp
     ../source/orc.cpp
     ../source/travel.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/inventory.cpp
+    ../source/startMenu.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)

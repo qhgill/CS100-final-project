@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "../header/screens/screen.h"
-#include "../header/screens/inventory.h"
 
 TEST(inventoryTests, displayTest){
     StatsManager* stats = new StatsManager();
@@ -13,6 +12,7 @@ TEST(inventoryTests, displayTest){
 }
 
 TEST(inventoryTests, processOptionOne){
+    bool dummyRunning = true;
     StatsManager* stats = new StatsManager();
     ItemManager* items = new ItemManager();
     EncounterManager* encounters = new EncounterManager();
@@ -21,11 +21,12 @@ TEST(inventoryTests, processOptionOne){
     Character* character = new Character();
     User* user = new User(1,1, encounters, character, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
-    EXPECT_EQ(inventory->processOption(1, true), inventory);
+    EXPECT_EQ(inventory->processOption(1, dummyRunning), inventory);
     EXPECT_EQ(items->getEquippedWeapon(), newWeapon);
 }
 
 TEST(inventoryTests, processOptionTwo){
+    bool dummyRunning = true;
     StatsManager* stats = new StatsManager();
     ItemManager* items = new ItemManager();
     EncounterManager* encounters = new EncounterManager();
@@ -34,12 +35,13 @@ TEST(inventoryTests, processOptionTwo){
     Character* character = new Character();
     User* user = new User(1,1, encounters, character, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
-    EXPECT_EQ(inventory->processOption(2, true), inventory);
+    EXPECT_EQ(inventory->processOption(2, dummyRunning), inventory);
     EXPECT_EQ(items->getEquippedArmor(), newArmor);
 }
 
 
 TEST(inventoryTests, processOptionThree){
+    bool dummyRunning = true;
     StatsManager* stats = new StatsManager();
     ItemManager* items = new ItemManager();
     EncounterManager* encounters = new EncounterManager();
@@ -48,18 +50,19 @@ TEST(inventoryTests, processOptionThree){
     Character* character = new Character();
     User* user = new User(1,1, encounters, character, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
-    EXPECT_EQ(inventory->processOption(3, true), inventory);
+    EXPECT_EQ(inventory->processOption(3, dummyRunning), inventory);
     EXPECT_EQ(items->getEquippedTrinket(), newTrinket);
 }
 
 TEST(inventoryTests, processOptionFour){
+    bool dummyRunning = true;
     StatsManager* stats = new StatsManager();
     ItemManager* items = new ItemManager();
     EncounterManager* encounters = new EncounterManager();
     Character* character = new Character();
     User* user = new User(1,1, encounters, character, stats, items);
     Screen* inventory = new Inventory("inventoryScreen.txt", user);
-    EXPECT_NE(inventory->processOption(4, true), inventory);
+    EXPECT_NE(inventory->processOption(4, dummyRunning), inventory);
 }
 
 int main(int argc, char **argv) {
