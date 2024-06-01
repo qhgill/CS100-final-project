@@ -1,4 +1,5 @@
 #include "../header/game.h"
+#include <limits>
 using std::cin;
 
 
@@ -21,14 +22,12 @@ Game::~Game(){
 void Game::runGame(){
     while(isRunning){
         int userInput;
-        cin.clear();
         currentScreen->displayScreen();
         cin >> userInput;
-        cin.ignore();
-        if(!cin.good()){
-            userInput = 0;
-            cin.ignore(100000000000);
+        if(cin.fail()){
             cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            userInput = 0;
         }
         currentScreen = currentScreen->processOption(userInput, this->isRunning);
         if(currentScreen != previousScreen){
