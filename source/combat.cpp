@@ -3,35 +3,41 @@ using std::cout;
 using std::endl;
 
 Combat::Combat(string dispFile, User* cUser)
-: Screen(dispFile, cUser), inCombat(true), enemyLastMoveStr("Enemy hasn't made a move yet"), userLastMoveStr("You haven't made a move yet"), rewardsStr("10 gold, 10xp"){
+: Screen(dispFile, cUser), inCombat(true), isBossFight(false), enemyLastMoveStr("Enemy hasn't made a move yet"), userLastMoveStr("You haven't made a move yet"), rewardsStr("10 gold"){
     isBossFight = (currentUser->getEncounterManager()->getEncounterCount() == 10);
     int storyAct = currentUser->getStoryAct();
     int encounterCount = currentUser->getEncounterManager()->getEncounterCount();
+    int userLevel = currentUser->getLevel();
     if(storyAct == 1){
         if(encounterCount != 10){
-            enemy = new Orc(); //replace with goblin when implemented
+            enemy = new Orc(userLevel); //replace with goblin when implemented
         } else {
             enemy = new OrcBoss(); // "
+            isBossFight = true;
         }
     } else if(storyAct == 2){
         if(encounterCount != 10){
-            enemy = new Orc(); 
+            enemy = new Orc(userLevel); 
         } else {
             enemy = new OrcBoss();
+            isBossFight = true;
         }
     } else if(storyAct == 3){
         if(encounterCount != 10){
-            enemy = new Pirate();
+            enemy = new Pirate(userLevel);
         } else {
             enemy = new PirateBoss();
+            isBossFight = true;
         }
     } else if(storyAct == 4){
         if(encounterCount != 10){
-            enemy = new RoyalGuard();
+            enemy = new RoyalGuard(userLevel);
         } else {
             enemy = new FinalBoss();
+            isBossFight = true;
         }
     }
+    rewardsStr = rewardsStr + " " + std::to_string(enemy->getLevel()*10) + " exp";
 }
 
 Combat::~Combat(){
@@ -40,7 +46,7 @@ Combat::~Combat(){
 
 void Combat::displayScreen(){
     Screen::displayFromFile();
-    cout << "you have entered a fight with a level" << enemy->getLevel() << " " << enemy->getName() << "!";
+    cout << "you have entered a fight with a level " << enemy->getLevel() << " " << enemy->getName() << "!";
     if(isBossFight){
         cout << " This is a bossfight!";
     }
@@ -56,12 +62,12 @@ void Combat::displayScreen(){
             cout << "(LEVEL NOT HIGH ENOUGH)";
         }
         cout << endl;
-        cout << "[3] Use your second spell" << currentUser->getCharacterClass()->getSecondSpell()->getSpellClass();
+        cout << "[3] Use your second spell: " << currentUser->getCharacterClass()->getSecondSpell()->getSpellClass();
         if(currentUser->getLevel() < currentUser->getCharacterClass()->getSecondSpell()->getSpellLevelThreshold()){
             cout << "(LEVEL NOT HIGH ENOUGH)";
         }
         cout << endl;
-        cout << "[4] Use your third spell" << currentUser->getCharacterClass()->getThirdSpell()->getSpellClass();
+        cout << "[4] Use your third spell: " << currentUser->getCharacterClass()->getThirdSpell()->getSpellClass();
         if(currentUser->getLevel() < currentUser->getCharacterClass()->getThirdSpell()->getSpellLevelThreshold()){
             cout << "(LEVEL NOT HIGH ENOUGH)";
         }
@@ -143,10 +149,15 @@ Screen* Combat::processOption(int option, bool& isRunning){
             return new Travel("travelScreen.txt", currentUser);
         } else {
             ItemManager* userItems = currentUser->getItemManager();
+            StatsManager* userStats = currentUser->getStatsManager();
             Character* userCharacter = currentUser->getCharacterClass();
             currentUser->getGold() += 10;
             currentUser->getStatsManager()->resetMRandPR(userCharacter->getBaseMagicResist(), userCharacter->getBasePhysicalResist(), userItems->getEquippedWeapon(), userItems->getEquippedArmor(), userItems->getEquippedTrinket(), currentUser->getLevel());
-            currentUser->getXp() += 10;
+            currentUser->getXp() += enemy->getLevel()*10;
+            if(currentUser->getXp() >= currentUser->getLevel()*50){
+                currentUser->levelUp();
+                userStats->updateStats(userCharacter->getBaseDamage(), userCharacter->getBaseHP(), userCharacter->getBaseMagicResist(), userCharacter->getBasePhysicalResist(), userItems->getEquippedWeapon(), userItems->getEquippedArmor(), userItems->getEquippedTrinket(), currentUser->getLevel());
+            }
             //when item drops are figured out update with item drop functionality
             return new Travel("travelScreen.txt", currentUser);
         }
