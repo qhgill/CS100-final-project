@@ -37,11 +37,13 @@ testing/runMageTests
 testing/runWarriorTests
 testing/runBossTests
 testing/runOrcBossTests
+testing/runGoblinBossTests
 testing/runPirateTests
 testing/runMageTests
 testing/runWarriorTests
 testing/runCharacterSelectTests
 testing/runOrcTests
+testing/runGoblinTests
 testing/runCombatTests
 source/mainExecutable
 testing/runRoyalGuardTests
