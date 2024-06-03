@@ -159,7 +159,11 @@ Screen* Combat::processOption(int option, bool& isRunning){
                 userStats->updateStats(userCharacter->getBaseDamage(), userCharacter->getBaseHP(), userCharacter->getBaseMagicResist(), userCharacter->getBasePhysicalResist(), userItems->getEquippedWeapon(), userItems->getEquippedArmor(), userItems->getEquippedTrinket(), currentUser->getLevel());
             }
             //when item drops are figured out update with item drop functionality
-            return new Travel("travelScreen.txt", currentUser);
+            if(isBossFight){
+                return new City("cityScreen.txt", currentUser);
+            } else {
+                return new Travel("travelScreen.txt", currentUser);
+            }
         }
     }
 }

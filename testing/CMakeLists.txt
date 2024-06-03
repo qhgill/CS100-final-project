@@ -166,6 +166,7 @@ add_executable(runGameTests
     ../source/royalGuard.cpp
     ../source/finalBoss.cpp
     ../source/boss.cpp
+    ../source/city.cpp
 )
 
 add_executable(runTravelTests
@@ -209,6 +210,7 @@ add_executable(runTravelTests
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
     ../source/startMenu.cpp
+    ../source/city.cpp
 )
 
 add_executable(runCityTests
@@ -296,6 +298,7 @@ add_executable(runInventoryTests
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
     ../source/startMenu.cpp
+    ../source/city.cpp
 )
 
 add_executable ( runBossTests
@@ -406,6 +409,7 @@ add_executable(runCharacterSelectTests
     ../source/finalBoss.cpp
     ../source/boss.cpp
     ../source/startMenu.cpp
+    ../source/city.cpp
 )
 
 add_executable(runCombatTests
@@ -448,6 +452,7 @@ add_executable(runCombatTests
     ../source/boss.cpp
     ../source/inventory.cpp
     ../source/startMenu.cpp
+    ../source/city.cpp
 )
 
 add_executable(runInGameMenuTests
@@ -490,6 +495,7 @@ add_executable(runInGameMenuTests
     ../source/boss.cpp
     ../source/inventory.cpp
     ../source/startMenu.cpp
+    ../source/city.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
