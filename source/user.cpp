@@ -12,6 +12,7 @@ User::~User()
     delete character;
     delete userStats;
     delete userItems;
+    delete encounters;
 }
 int User::getStoryAct() const{
     return storyAct;

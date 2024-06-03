@@ -17,7 +17,5 @@ Screen* StartMenu::processOption(int option, bool& isRunning)
         return new CharacterSelect("characterSelectScreen.txt", currentUser);
     } else {
         return this;  
-    }
-    
-    
+    }   
 }
