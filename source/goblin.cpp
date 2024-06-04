@@ -1,12 +1,18 @@
 #include "../header/goblin.h"
 
-Goblin::Goblin() : Enemy(2, 15, 15, 5, 5, 5, false, "Goblin") 
+Goblin::Goblin() : Enemy(2, 15, 15, 3, 5, 5, false, "Goblin") 
 {}
 
 void Goblin::calculateTurn(StatsManager* userStats)
 {
     //lifesteal with physical attack
-    this->healself(3);
-    userStats->takeDamage(3, "physical");
+    this->healself(this->getDamage());
+    userStats->takeDamage(this->getDamage(), "physical");
+
+    if(this->getHealth() > this->getMaxHealth())
+    {
+        this->dealDamage(this->getHealth() - this->getMaxHealth());
+        //sets current health to maxhealth
+    }
     
 }
