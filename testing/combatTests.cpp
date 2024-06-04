@@ -34,7 +34,7 @@ TEST(combatTests, testOptionTwo){
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
     Screen* resultScreen = testCombat->processOption(2, dummyRunning);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used your first spell on the enemy!");
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used Slam on the enemy!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
@@ -45,7 +45,7 @@ TEST(combatTests, testOptionThreeLowLvl){
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
     Screen* resultScreen = testCombat->processOption(3, dummyRunning);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to user your second spell on the enemy, but your level isn't high enough!");
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to use Shatter on the enemy, but your level isn't high enough!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
@@ -57,7 +57,7 @@ TEST(combatTests, testOptionThreeHighLvl){
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
     Screen* resultScreen = testCombat->processOption(3, dummyRunning);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used your second spell on the enemy!");
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used Shatter on the enemy!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 TEST(combatTests, testOptionFourLowLvl){
@@ -67,7 +67,7 @@ TEST(combatTests, testOptionFourLowLvl){
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
     Screen* resultScreen = testCombat->processOption(4, dummyRunning);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to user your third spell on the enemy, but your level isn't high enough!");
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to use Bludgeon on the enemy, but your level isn't high enough!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
@@ -80,7 +80,7 @@ TEST(combatTests, testOptionFourHighLvl){
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
     Screen* resultScreen = testCombat->processOption(4, dummyRunning);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used your third spell on the enemy!");
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used Bludgeon on the enemy!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 

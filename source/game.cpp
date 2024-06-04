@@ -7,7 +7,7 @@ Game::Game()
 {
     isRunning = true;
     currentUser = new User();
-    currentScreen = new StartMenu("", currentUser);
+    currentScreen = new StartMenu("startMenu.txt", currentUser);
     previousScreen = currentScreen;
 }
 Game::~Game(){

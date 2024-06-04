@@ -14,7 +14,6 @@ Screen* Travel::processOption(int option, bool& isRunning){
     if(option == 1){
         Screen* nextCombat = new Combat("combatScreen.txt", currentUser);
         return nextCombat;
-        return this;
     } else if(option == 2){
         Screen* menuScreen = new InGameMenu("gameMenuScreen.txt", currentUser);
         return menuScreen;
