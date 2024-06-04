@@ -28,6 +28,7 @@ class Screen {
         void displayFromFile();
         virtual Screen* processOption(int option, bool& isRunning) = 0;
         virtual void displayScreen() = 0;
+        virtual ~Screen();
 };
 
 class City: public Screen

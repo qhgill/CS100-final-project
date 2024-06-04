@@ -3,10 +3,7 @@ using std::cout;
 using std::endl;
 
 Combat::Combat(string dispFile, User* cUser)
-: Screen(dispFile, cUser), inCombat(true), isBossFight(false) {//, enemyLastMoveStr("Enemy hasn't made a move yet"), userLastMoveStr("You haven't made a move yet"), rewardsStr("10 gold"){
-    // enemyLastMoveStr = "Enemy hasn't made a move yet";
-    // userLastMoveStr = "You haven't made a move yet";
-    // rewardsStr = "10 gold";
+: Screen(dispFile, cUser), inCombat(true), isBossFight(false), enemyLastMoveStr("Enemy hasn't made a move yet"), userLastMoveStr("You haven't made a move yet"), rewardsStr("10 gold"){
     isBossFight = (currentUser->getEncounterManager()->getEncounterCount() == 10);
     int storyAct = currentUser->getStoryAct();
     int encounterCount = currentUser->getEncounterManager()->getEncounterCount();
@@ -49,7 +46,7 @@ Combat::~Combat(){
 
 void Combat::displayScreen(){
     Screen::displayFromFile();
-    cout << "you have entered a fight with a level " << enemy->getLevel() << " " ;//<< enemy->getName() << "!";
+    cout << "you have entered a fight with a level " << enemy->getLevel() << " " << enemy->getName() << "!";
     if(isBossFight){
         cout << " This is a bossfight!";
     }
@@ -93,7 +90,7 @@ Screen* Combat::processOption(int option, bool& isRunning){
         int userLevel = currentUser->getLevel();
         if(option == 1){
             enemy->dealDamage(userStats->getCurrentDMG());
-            //userLastMoveStr = "you attacked the enemy with your weapon";
+            userLastMoveStr = "you attacked the enemy with your weapon";
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
                 inCombat = false;
@@ -102,9 +99,9 @@ Screen* Combat::processOption(int option, bool& isRunning){
         } else if(option == 2){
             if(userCharacterClass->getFirstSpell()->getSpellLevelThreshold() <= currentUser->getLevel()){
                 userCharacterClass->getFirstSpell()->doSpell(userStats->getCurrentHP(), userStats->getCurrentDMG(), currentUser->getLevel(), currentUser->getGold(), enemy);
-                //userLastMoveStr = "You used " + userCharacterClass->getFirstSpell()->getSpellClass() + " on the enemy!";
+                userLastMoveStr = "You used " + userCharacterClass->getFirstSpell()->getSpellClass() + " on the enemy!";
             } else {
-                //userLastMoveStr = "You tried to use " + userCharacterClass->getFirstSpell()->getSpellClass() + " on the enemy, but your level isn't high enough!";
+                userLastMoveStr = "You tried to use " + userCharacterClass->getFirstSpell()->getSpellClass() + " on the enemy, but your level isn't high enough!";
             }
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
@@ -114,9 +111,9 @@ Screen* Combat::processOption(int option, bool& isRunning){
         } else if(option == 3){
             if(userCharacterClass->getSecondSpell()->getSpellLevelThreshold() <= currentUser->getLevel()){
                 userCharacterClass->getSecondSpell()->doSpell(userStats->getCurrentHP(), userStats->getCurrentDMG(), currentUser->getLevel(), currentUser->getGold(), enemy);
-                //userLastMoveStr = "You used " + userCharacterClass->getSecondSpell()->getSpellClass() + " on the enemy!";
+                userLastMoveStr = "You used " + userCharacterClass->getSecondSpell()->getSpellClass() + " on the enemy!";
             } else {
-                //userLastMoveStr = "You tried to use " + userCharacterClass->getSecondSpell()->getSpellClass() + " on the enemy, but your level isn't high enough!";
+                userLastMoveStr = "You tried to use " + userCharacterClass->getSecondSpell()->getSpellClass() + " on the enemy, but your level isn't high enough!";
             }
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
@@ -126,9 +123,9 @@ Screen* Combat::processOption(int option, bool& isRunning){
         } else if(option == 4){
             if(userCharacterClass->getThirdSpell()->getSpellLevelThreshold() <= currentUser->getLevel()){
                 userCharacterClass->getThirdSpell()->doSpell(userStats->getCurrentHP(), userStats->getCurrentDMG(), currentUser->getLevel(), currentUser->getGold(), enemy);
-                //userLastMoveStr = "You used " + userCharacterClass->getThirdSpell()->getSpellClass() + " on the enemy!";
+                userLastMoveStr = "You used " + userCharacterClass->getThirdSpell()->getSpellClass() + " on the enemy!";
             } else {
-                //userLastMoveStr = "You tried to use " + userCharacterClass->getThirdSpell()->getSpellClass() + " on the enemy, but your level isn't high enough!";
+                userLastMoveStr = "You tried to use " + userCharacterClass->getThirdSpell()->getSpellClass() + " on the enemy, but your level isn't high enough!";
             }
             if(enemy->getHealth() <= 0){
                 enemy->killThis();
@@ -136,12 +133,12 @@ Screen* Combat::processOption(int option, bool& isRunning){
                 return this;
             }
         } else if(option == 5){
-            //userLastMoveStr = "You tried to flee and failed!";
+            userLastMoveStr = "You tried to flee and failed!";
         } else {
             return this;
         }
         enemy->calculateTurn(userStats);
-        //enemyLastMoveStr = "the enemy attacked you!"; //fix later, calculate turn should be changed to return a description string of the move
+        enemyLastMoveStr = "the enemy attacked you!"; //fix later, calculate turn should be changed to return a description string of the move
         if(currentUser->getStatsManager()->getCurrentHP() <= 0){
             inCombat = false;
         }

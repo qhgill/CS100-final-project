@@ -4,6 +4,8 @@ Screen::Screen(std::string dispFile, User* user)
 : filename(dispFile), currentUser(user)
 {}
 
+Screen::~Screen(){}
+
 void Screen::displayFromFile()
 {
     std::ifstream fileStream("./source/res/" + this->filename);
