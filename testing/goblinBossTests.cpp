@@ -9,7 +9,7 @@ TEST(getterTests, constructorInitializationTest)
     EXPECT_EQ(goblinBoss.getLevel(), 5);
     EXPECT_EQ(goblinBoss.getHealth(), 60);
     EXPECT_EQ(goblinBoss.getMaxHealth(), 60);
-    EXPECT_EQ(goblinBoss.getDamage(), 12);
+    EXPECT_EQ(goblinBoss.getDamage(), 5);
     EXPECT_EQ(goblinBoss.getMagicResist(), 10);
     EXPECT_EQ(goblinBoss.getPhysicalResist(), 15);
     EXPECT_EQ(goblinBoss.getName(), "Commander Joe");
@@ -17,55 +17,61 @@ TEST(getterTests, constructorInitializationTest)
 
 TEST(GoblinBossTest, CalculatePhaseOneTurnTest) 
 {
-    GoblinBoss* goblinBoss = new GoblinBoss(); 
+    GoblinBoss goblinBoss; 
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,10,1,1, nullptr, nullptr, nullptr, 1); 
+    Weapon weapon("fists", 0, 0, "physical");  // itemName, itemLvl, dmg, dmgType
+    Armor armor("cloth", 0, 0, 0, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
+    Trinket trinket("locket", 0, 0);            // itemName, itemLvl, pierceValue
+    statsManager->updateStats(1,10,1,1, &weapon, &armor, &trinket, 1); 
 
-    goblinBoss->dealDamage(15); //should put hp down to 45
+    goblinBoss.dealDamage(15); //should put hp down to 45, which is above 30
 
-    goblinBoss->calculatePhaseOneTurn(statsManager);
+    goblinBoss.calculateTurn(statsManager);
 
-    EXPECT_EQ(statsManager->getCurrentHP(), 2);
-    EXPECT_EQ(goblinBoss->getHealth(), 55);
+    EXPECT_EQ(statsManager->getCurrentHP(), 12);
+    EXPECT_EQ(goblinBoss.getHealth(), 55);
 
-    delete goblinBoss;
     delete statsManager;
 }
 
 TEST(GoblinBossTest, CalculatePhaseTwoTurnTest_HighHP) 
 {
-    GoblinBoss* goblinBoss = new GoblinBoss(); 
+    GoblinBoss goblinBoss;
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,10,1,1, nullptr, nullptr, nullptr, 1); 
+    Weapon weapon("fists", 0, 0, "physical");  // itemName, itemLvl, dmg, dmgType
+    Armor armor("cloth", 0, 0, 0, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
+    Trinket trinket("locket", 0, 0);            // itemName, itemLvl, pierceValue
+    statsManager->updateStats(1,10,1,1, &weapon, &armor, &trinket, 1); 
 
-    goblinBoss->dealDamage(15); //should put hp down to 45
+    goblinBoss.dealDamage(35); //should put hp down to 25, which is below 30
 
-    goblinBoss->calculatePhaseOneTurn(statsManager);
+    goblinBoss.calculateTurn(statsManager);
 
     EXPECT_EQ(statsManager->getCurrentHP(), 2);
-    EXPECT_EQ(goblinBoss->getHealth(), 55);
+    EXPECT_EQ(goblinBoss.getHealth(), 45);
 
-    delete goblinBoss;
     delete statsManager;
 }
 TEST(OrcBossTest, CalculatePhaseTwoTurnTest_LowHP) 
 {
-    GoblinBoss* goblinBoss = new GoblinBoss();
+    GoblinBoss goblinBoss;
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,60,1,1, nullptr, nullptr, nullptr, 1);
+    Weapon weapon("fists", 0, 0, "physical");  // itemName, itemLvl, dmg, dmgType
+    Armor armor("cloth", 0, 0, 0, 0);           // itemName, itemLvl, healthBonus, physicalResist, magicalResist
+    Trinket trinket("locket", 0, 0);            // itemName, itemLvl, pierceValue
+    statsManager->updateStats(1,50,1,1, &weapon, &armor, &trinket, 1); 
 
     int initialHP = statsManager->getCurrentHP();
 
-    goblinBoss->dealDamage(55);
+    goblinBoss.dealDamage(55);
 
-    goblinBoss->calculatePhaseTwoTurn(statsManager);
+    goblinBoss.calculateTurn(statsManager);
 
     EXPECT_EQ(statsManager->getCurrentHP(), 10);
     EXPECT_EQ(statsManager->getCurrentPR(), 0);
     EXPECT_EQ(statsManager->getCurrentMR(), 0);
-    EXPECT_EQ(goblinBoss->getHealth(), 55);
+    EXPECT_EQ(goblinBoss.getHealth(), 55);
     
-    delete goblinBoss;
     delete statsManager;
 }
 
