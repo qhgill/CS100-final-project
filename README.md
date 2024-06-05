@@ -83,9 +83,39 @@ The overall screen layout has an ASCII image at the top either showing the title
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ start screen
+
+ ![screenshotStartScreen](./readmeImages/finaldeliverableimages/finaldeliverablestartscreen.PNG)
+
+ character select screen
+
+ ![screenshotCharSelectScreen](./readmeImages/finaldeliverableimages/finaldeliverablecharacterselectscreen.PNG)
+
+ menu screen
+
+ ![screenshotMenuScreen](./readmeImages/finaldeliverableimages/finaldeliverablemenuscreen.PNG)
+
+ inventory screen
+
+ ![screenshotInventoryScreen](./readmeImages/finaldeliverableimages/finaldeliverableinventoryscreen.PNG)
+
+ combat screen(s)
+
+ ![screenshotCombatScreen](./readmeImages/finaldeliverableimages/finaldeliverablecombatscreen.PNG)
+
+ ![screenshotCombatScreen2](./readmeImages/finaldeliverableimages/finaldeliverablecombatscreen2.PNG)
+
+ city screen
+
+ ![screenshotCityScreen](./readmeImages/finaldeliverableimages/finaldeliverablecityscreen.PNG)
+
  ## Installation/Usage
- > Instructions on installing and running your application
+ 1. Clone the repository(if you want to run the tests clone recursively)
+ 2. run cd final-project-qgill001-dhann013-jliu659-bwatt004
+ 3. run cmake .
+ 4. run make
+ 5. run ./source/mainExecutable
+ 6. enjoy the game!
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ We used Googletest to unit test our project. Each time a feature was implemented, the person who implemented it created tests to verify the functionality of the feature/component. There are some cases where tests were implemented later when functionality was more clear and other cases where more tests were added when functionality for those classes changed. Tests were also added towards the end of the project to ensure code coverage was as close to 100% as possible.
  
