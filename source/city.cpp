@@ -25,7 +25,7 @@ Screen* City::processOption(int userOption, bool& isRunning)
             currentUser->getStatsManager()->getCurrentHP() = currentUser->getStatsManager()->getMaxHP();
         }
         return this;
-    } else if(userOption == 2 || currentUser->getGold() - cityWeapon->calcValue() < 0){
+    } else if(userOption == 2 && currentUser->getGold() - cityWeapon->calcValue() < 0){
         if(cityWeapon == nullptr){
             return this;
         } else {
@@ -34,8 +34,8 @@ Screen* City::processOption(int userOption, bool& isRunning)
             cityWeapon = nullptr;
             return this;
         }
-    } else if(userOption == 3){
-        if(cityArmor == nullptr || currentUser->getGold() - cityArmor->calcValue() < 0){
+    } else if(userOption == 3 && currentUser->getGold() - cityArmor->calcValue() < 0){
+        if(cityArmor == nullptr){
             return this;
         } else {
             currentUser->getGold() -= cityArmor->calcValue();
@@ -43,8 +43,8 @@ Screen* City::processOption(int userOption, bool& isRunning)
             cityArmor = nullptr;
             return this;
         }
-    } else if(userOption == 4){
-        if(cityTrinket == nullptr || currentUser->getGold() - cityTrinket->calcValue() < 0){
+    } else if(userOption == 4 && currentUser->getGold() - cityTrinket->calcValue() < 0){
+        if(cityTrinket == nullptr){
             return this;
         } else {
             currentUser->getGold() -= cityTrinket->calcValue();
