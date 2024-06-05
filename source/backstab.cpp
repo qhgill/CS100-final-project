@@ -2,7 +2,7 @@
 
 BackStab::BackStab()
 {
-    this->spellClass = "Rogue";
+    this->spellClass = "backstab";
     this->spellLevelThreshold = 1;
 }
 

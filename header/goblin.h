@@ -6,5 +6,6 @@ class Goblin : public Enemy
 {
     public:
         Goblin();
+        Goblin(int level);
         virtual void calculateTurn(StatsManager*);
 };

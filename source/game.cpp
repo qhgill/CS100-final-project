@@ -1,10 +1,13 @@
 #include "../header/game.h"
+#include <limits>
+using std::cin;
+
 
 Game::Game()
 {
     isRunning = true;
     currentUser = new User();
-    currentScreen = new StartMenu("", currentUser);
+    currentScreen = new StartMenu("startMenu.txt", currentUser);
     previousScreen = currentScreen;
 }
 Game::~Game(){
@@ -17,11 +20,13 @@ Game::~Game(){
     }
 }
 void Game::runGame(){
-    int userInput;
     while(isRunning){
+        int userInput;
         currentScreen->displayScreen();
-        std::cin >> userInput;
-        if(!std::cin.good()){
+        cin >> userInput;
+        if(cin.fail()){
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             userInput = 0;
         }
         currentScreen = currentScreen->processOption(userInput, this->isRunning);
@@ -29,6 +34,5 @@ void Game::runGame(){
             delete previousScreen;
             previousScreen = currentScreen;
         }
-        std::cin.clear();
     }
 }

@@ -1,9 +1,11 @@
-#include "../header/screens/city.h"
-#include "../header/screens/travel.h"
+#include "../header/screens/screen.h"
 using std::cout;
 using std::endl;
 
-City::City(std::string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(new Armor()), cityTrinket(new Trinket()), cityWeapon(new Weapon()){}
+City::City(std::string dispFile, User* cUser): Screen(dispFile, cUser), tavernUsed(false), cityArmor(new Armor()), cityTrinket(new Trinket()), cityWeapon(new Weapon()){
+    currentUser->getEncounterManager()->resetEncounterCount();
+    currentUser->incrementStoryAct();
+}
 City::~City(){
     if(cityArmor != nullptr){
         delete cityArmor;
@@ -15,7 +17,7 @@ City::~City(){
         delete cityTrinket;
     }
 }
-Screen* City::processOption(int userOption, bool isRunning)
+Screen* City::processOption(int userOption, bool& isRunning)
 { 
     if(userOption == 1){
         if(tavernUsed == false){

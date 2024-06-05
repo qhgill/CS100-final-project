@@ -7,6 +7,10 @@ RoyalGuard::RoyalGuard(int level, int health, int maxHealth, int damage, int mag
 RoyalGuard::RoyalGuard() : Enemy(0, 0, 0, 0, 0, 0, false, "")
 {}
 
+RoyalGuard::RoyalGuard(int level)
+:Enemy(level, level*20, level*20, level*3, level, level*3, false, "Royal Guard")
+{}
+
 void RoyalGuard::calculateTurn(StatsManager* sm) {
     int royalGuardDamage = getDamage();
 

@@ -6,5 +6,6 @@ class Orc : public Enemy
 {
     public:
         Orc();
+        Orc(int level);
         virtual void calculateTurn(StatsManager* sm);
 };

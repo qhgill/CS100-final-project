@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../header/screens/combat.h"
+#include "../header/screens/screen.h"
 
 TEST(combatTests, constructorTest){
     User* testUser = new User();
@@ -19,71 +19,78 @@ TEST(combatTests, displayTest){
 
 TEST(combatTests, testOptionOne){
     User* testUser = new User();
+    bool dummyRunning = true;
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(1, true);
+    Screen* resultScreen = testCombat->processOption(1, dummyRunning);
     EXPECT_EQ(testCombat->getUserLastMoveStr(), "you attacked the enemy with your weapon");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
 TEST(combatTests, testOptionTwo){
     User* testUser = new User();
+    bool dummyRunning = true;
     testUser->getCharacterClass() = new Warrior();
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(2, true);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used your first spell on the enemy!");
+    Screen* resultScreen = testCombat->processOption(2, dummyRunning);
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used Slam on the enemy!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
 TEST(combatTests, testOptionThreeLowLvl){
     User* testUser = new User();
+    bool dummyRunning = true;
     testUser->getCharacterClass() =  new Warrior();
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(3, true);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to user your second spell on the enemy, but your level isn't high enough!");
+    Screen* resultScreen = testCombat->processOption(3, dummyRunning);
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to use Shatter on the enemy, but your level isn't high enough!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
 TEST(combatTests, testOptionThreeHighLvl){
     User* testUser = new User();
+    bool dummyRunning = true;
     testUser->getCharacterClass() =  new Warrior();
     testUser->levelUp();
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(3, true);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used your second spell on the enemy!");
+    Screen* resultScreen = testCombat->processOption(3, dummyRunning);
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used Shatter on the enemy!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 TEST(combatTests, testOptionFourLowLvl){
     User* testUser = new User();
+    bool dummyRunning = true;
     testUser->getCharacterClass() =  new Warrior();
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(4, true);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to user your third spell on the enemy, but your level isn't high enough!");
+    Screen* resultScreen = testCombat->processOption(4, dummyRunning);
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to use Bludgeon on the enemy, but your level isn't high enough!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
 TEST(combatTests, testOptionFourHighLvl){
     User* testUser = new User();
+    bool dummyRunning = true;
     testUser->getCharacterClass() = new Warrior();
     testUser->levelUp();
     testUser->levelUp();
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(4, true);
-    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used your third spell on the enemy!");
+    Screen* resultScreen = testCombat->processOption(4, dummyRunning);
+    EXPECT_EQ(testCombat->getUserLastMoveStr(), "You used Bludgeon on the enemy!");
     EXPECT_EQ(equalTester, resultScreen);
 }
 
 TEST(combatTests, testOptionFive){
     User* testUser = new User();
+    bool dummyRunning = true;
     testUser->getCharacterClass() =  new Warrior();
     Combat* testCombat = new Combat("combatScreen.txt", testUser);
     Screen* equalTester = testCombat;
-    Screen* resultScreen = testCombat->processOption(5, true);
+    Screen* resultScreen = testCombat->processOption(5, dummyRunning);
     EXPECT_EQ(testCombat->getUserLastMoveStr(), "You tried to flee and failed!");
     EXPECT_EQ(equalTester, resultScreen);
 }
