@@ -167,6 +167,8 @@ add_executable(runGameTests
     ../source/finalBoss.cpp
     ../source/boss.cpp
     ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 add_executable(runTravelTests
@@ -211,6 +213,8 @@ add_executable(runTravelTests
     ../source/cutthroat.cpp
     ../source/startMenu.cpp
     ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 add_executable(runCityTests
@@ -255,6 +259,8 @@ add_executable(runCityTests
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
     ../source/startMenu.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 add_executable(runInventoryTests
@@ -299,6 +305,8 @@ add_executable(runInventoryTests
     ../source/cutthroat.cpp
     ../source/startMenu.cpp
     ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 add_executable ( runBossTests
@@ -436,6 +444,8 @@ add_executable(runCharacterSelectTests
     ../source/boss.cpp
     ../source/startMenu.cpp
     ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 add_executable(runCombatTests
@@ -479,6 +489,8 @@ add_executable(runCombatTests
     ../source/inventory.cpp
     ../source/startMenu.cpp
     ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 add_executable(runInGameMenuTests
@@ -522,6 +534,8 @@ add_executable(runInGameMenuTests
     ../source/inventory.cpp
     ../source/startMenu.cpp
     ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
 )
 
 target_link_libraries(runCharacterTests gmock gtest gtest_main)

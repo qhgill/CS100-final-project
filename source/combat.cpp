@@ -10,9 +10,9 @@ Combat::Combat(string dispFile, User* cUser)
     int userLevel = currentUser->getLevel();
     if(storyAct == 1){
         if(encounterCount != 10){
-            enemy = new Orc(userLevel); //replace with goblin when implemented
+            enemy = new Goblin(userLevel); 
         } else {
-            enemy = new OrcBoss(); // "
+            enemy = new GoblinBoss();
             isBossFight = true;
         }
     } else if(storyAct == 2){
@@ -158,6 +158,7 @@ Screen* Combat::processOption(int option, bool& isRunning){
                 currentUser->levelUp();
                 userStats->updateStats(userCharacter->getBaseDamage(), userCharacter->getBaseHP(), userCharacter->getBaseMagicResist(), userCharacter->getBasePhysicalResist(), userItems->getEquippedWeapon(), userItems->getEquippedArmor(), userItems->getEquippedTrinket(), currentUser->getLevel());
             }
+            currentUser->getEncounterManager()->incrementEncounterCount();
             //when item drops are figured out update with item drop functionality
             if(isBossFight){
                 return new City("cityScreen.txt", currentUser);

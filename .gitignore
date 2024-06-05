@@ -46,6 +46,7 @@ testing/runOrcTests
 testing/runGoblinTests
 testing/runCombatTests
 source/mainExecutable
+source/valgrindExec
 testing/runRoyalGuardTests
 testing/runInGameMenuTests
 lib/

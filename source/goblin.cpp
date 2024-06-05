@@ -3,6 +3,8 @@
 Goblin::Goblin() : Enemy(2, 15, 15, 3, 5, 5, false, "Goblin") 
 {}
 
+Goblin::Goblin(int level) : Enemy(level, level*15, level*15, level*3, 5, 5, false, "Goblin"){}
+
 void Goblin::calculateTurn(StatsManager* userStats)
 {
     //lifesteal with physical attack

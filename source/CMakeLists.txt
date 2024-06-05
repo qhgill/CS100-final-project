@@ -42,4 +42,6 @@ add_executable(mainExecutable
     user.cpp
     warrior.cpp
     weapon.cpp
+    goblin.cpp
+    goblinBoss.cpp
 )

@@ -8,6 +8,8 @@
 #include "../mage.h"
 #include "../rogue.h"
 #include "../enemy.h"
+#include "../goblin.h"
+#include "../goblinBoss.h"
 #include "../orc.h"
 #include "../orcBoss.h"
 #include "../pirate.h"
