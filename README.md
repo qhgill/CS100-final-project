@@ -15,26 +15,28 @@ The user begins at the Start Menu Screen which prompts the user to start the gam
 
 ![Screen Navigation Diagram](./readmeImages/screenNavigation.PNG)
 
-### Screen Layouts
+### Screen Layouts/Output
 The overall screen layout has an ASCII image at the top either showing the title of the page or an image for context, below it relevent information about the current state of the game is displayed, and below that options are listed for the player to choose from
 
-![startscreen](./readmeImages/startscreen.PNG)
+ ![screenshotStartScreen](./readmeImages/finaldeliverableimages/finaldeliverablestartscreen.PNG)
 
-* the starting screen displays the title of the game and a quick summary of the story, as well as prompting the user to continue
+* the starting screen displays the title of the game and a prompt for the user to start the game or quit
 
-![charselect](./readmeImages/characterselect.PNG)
+![screenshotCharSelectScreen](./readmeImages/finaldeliverableimages/finaldeliverablecharacterselectscreen.PNG)
 
-* the character select screen displays the options the player has to choose from for character class, and prompts the user to input a character corresponding to one of the choices to choose a character
+* the character select screen displays the options the player has to choose from for character class, and prompts the user to input a number corresponding to their chosen character class
 
-![menuscreen](./readmeImages/menuscreen.PNG)
+ ![screenshotMenuScreen](./readmeImages/finaldeliverableimages/finaldeliverablemenuscreen.PNG)
 
 * the menu screen displays "menu" as well as all of the options available while in the menu screen: returning to the game, quitting the game, or opening inventory
 
-![travel](./readmeImages/travelscreen.PNG)
+![screenshotCityScreen](./readmeImages/finaldeliverableimages/finaldeliverablecityscreen.PNG)
 
-* the travel screen is meant to provide downtime for the player in between combat encounters, on the travelling screen the user will be given some context as to what they are doing and options to continue to the next encounter or open their menu
+* the travel screen is meant to provide downtime for the player in between combat encounters, on the travelling screen the user can open their menu or continue to the next combat encounter.
 
-![combat](./readmeImages/combatscreen.PNG)
+ ![screenshotCombatScreen](./readmeImages/finaldeliverableimages/finaldeliverablecombatscreen.PNG)
+
+ ![screenshotCombatScreen2](./readmeImages/finaldeliverableimages/finaldeliverablecombatscreen2.PNG)
 
 * the combat screen is entered whenever the player comes across a combat encounter, it displays information about their opponent, information about the last move made, and displays the options the user has to take action during the encounter, at the end of the combat encounter, a summary of progress and rewards is given, and the option to continue is shown
 
@@ -42,9 +44,9 @@ The overall screen layout has an ASCII image at the top either showing the title
 
 * the city screen serves as a space in between each section of the game and as a place for the user to do things like buy and sell equipment that aren't available in other places, making each city a place where key non-combat decisions are made, as well as a way for the backend to track the player's macro progress through the game. the city screen will display the name of the city, a short block of context, and prompt the user to choose an action while in the city
 
-![inventory](./readmeImages/inventoryscreen.PNG)
+![screenshotInventoryScreen](./readmeImages/finaldeliverableimages/finaldeliverableinventoryscreen.PNG)
 
-* the inventory screen is accessible through the menu screen and serves as a place for the user to view their current stats and equipped items, as well as any additional items they may have gotten through combat encounters. the screen displays this information above options the user can make while in the inventory screen. If the player chooses to equip an item, these options will change to allow the player to equip a specific item from their inventory
+* the inventory screen is accessible through the menu screen and serves as a place for the user to view their current stats and equipped items, as well as any additional items they may have gotten. the screen displays this information above options the user can make while in the inventory screen.
 
 
 
@@ -75,17 +77,17 @@ The overall screen layout has an ASCII image at the top either showing the title
   * Interface Segregation principle: Our class diagram adheres to the Interface segregation principle through the boss subclass. Each boss has a set of seperate functions for different phases of a fight, differing slightly from regular enemies, as a result, we split the interface for bosses to have an extra class in between the enemy parent class and the lowest level of individual boss classes. This follows Interface Segregation principle because it means regular enemies are not forced to implement functions that only bosses need. 
   * Liskov Substitution Principle: Our class diagram adheres to the Liskov Substitution principle through examples like our spell and enemy class. Although they are both abstract classes, any child class of these parent classes can replace one another. Our program uses spell pointers and enemy pointers to store different subclasses of each class, and due to the inheritence structure, any spell pointer can store any spell subclass, and any enemy pointer can store any enemy subclass. This is also the case for our screen subclasses, each screen subclass can replace each other within a pointer for the parent class.
  
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
- 
+ # Final deliverable
  ## Screenshots
- > Screenshots of the input/output after running your application
+ Please refer to screen layouts section for screenshots of the game running 
+
  ## Installation/Usage
- > Instructions on installing and running your application
+ 1. Clone the repository(if you want to run the tests clone recursively)
+ 2. run cd final-project-qgill001-dhann013-jliu659-bwatt004
+ 3. run cmake .
+ 4. run make
+ 5. run ./source/mainExecutable
+ 6. enjoy the game!
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ We used Googletest to unit test our project. Each time a feature was implemented, the person who implemented it created tests to verify the functionality of the feature/component. There are some cases where tests were implemented later when functionality was more clear and other cases where more tests were added when functionality for those classes changed. Tests were also added towards the end of the project to ensure code coverage was as close to 100% as possible.
  

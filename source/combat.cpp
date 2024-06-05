@@ -49,6 +49,15 @@ void Combat::displayScreen(){
     cout << "you have entered a fight with a level " << enemy->getLevel() << " " << enemy->getName() << "!";
     if(isBossFight){
         cout << " This is a bossfight!";
+        if(currentUser->getStoryAct() == 1){
+            cout << "JAMES PUT STORY HERE FOR BOSS 1" << endl;
+        } else if(currentUser->getStoryAct() == 2){
+            cout << "JAMES PUT STORY HERE FOR BOSS 2" << endl;
+        } else if(currentUser->getStoryAct() == 3){
+            cout << "JAMES PUT STORY HERE FOR BOSS 3" << endl;
+        } else if(currentUser->getStoryAct() == 4){
+            cout << "JAMES PUT STORY HERE FOR BOSS 4" << endl;
+        }
     }
     cout << endl;
     cout << "Enemy HP: " << enemy->getHealth() << "/" << enemy->getMaxHealth()   << "         " << "Your HP: " << currentUser->getStatsManager()->getCurrentHP() << "/" << currentUser->getStatsManager()->getMaxHP() << endl;
@@ -78,6 +87,17 @@ void Combat::displayScreen(){
             cout << "You died! press any key to continue" << endl;
         } else {
             cout << "You won! Here's what you got: " << rewardsStr << endl;
+            if(isBossFight){
+                if(currentUser->getStoryAct() == 1){
+                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 1" << endl;
+                } else if(currentUser->getStoryAct() == 2){
+                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 2" << endl;
+                } else if(currentUser->getStoryAct() == 3){
+                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 3" << endl;
+                } else if(currentUser->getStoryAct() == 4){
+                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 4" << endl;
+                }
+            }
             cout << "press any key to continue" << endl;
         }
     }
