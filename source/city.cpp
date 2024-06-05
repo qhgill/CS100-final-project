@@ -25,7 +25,7 @@ Screen* City::processOption(int userOption, bool& isRunning)
             currentUser->getStatsManager()->getCurrentHP() = currentUser->getStatsManager()->getMaxHP();
         }
         return this;
-    } else if(userOption == 2 || currentUser->getGold() - cityWeapon->calcValue() < 0){
+    } else if(userOption == 2 && cityWeapon != nullptr && currentUser->getGold() - cityWeapon->calcValue() > 0){
         if(cityWeapon == nullptr){
             return this;
         } else {
@@ -34,8 +34,8 @@ Screen* City::processOption(int userOption, bool& isRunning)
             cityWeapon = nullptr;
             return this;
         }
-    } else if(userOption == 3){
-        if(cityArmor == nullptr || currentUser->getGold() - cityArmor->calcValue() < 0){
+    } else if(userOption == 3 && cityArmor != nullptr && currentUser->getGold() - cityArmor->calcValue() > 0){
+        if(cityArmor == nullptr){
             return this;
         } else {
             currentUser->getGold() -= cityArmor->calcValue();
@@ -43,8 +43,8 @@ Screen* City::processOption(int userOption, bool& isRunning)
             cityArmor = nullptr;
             return this;
         }
-    } else if(userOption == 4){
-        if(cityTrinket == nullptr || currentUser->getGold() - cityTrinket->calcValue() < 0){
+    } else if(userOption == 4 && cityTrinket != nullptr && currentUser->getGold() - cityTrinket->calcValue() > 0){
+        if(cityTrinket == nullptr){
             return this;
         } else {
             currentUser->getGold() -= cityTrinket->calcValue();
@@ -60,20 +60,20 @@ Screen* City::processOption(int userOption, bool& isRunning)
         if(userItemManager->getWeaponInventory()->size() == 0 && userItemManager->getArmorInventory()->size() == 0 && userItemManager->getTrinketInventory()->size() == 0){
             return this;
         } else {
-            for(int i = userWeapons->size() - 1; i >= 0; i--){
-                currentUser->getGold() += userWeapons->at(i)->calcValue();
-                delete userWeapons->at(i);
-                userWeapons->pop_back();
+            while(userWeapons->size() > 0){
+                currentUser->getGold() += userWeapons->at(0)->calcValue();
+                delete userWeapons->at(0);
+                userWeapons->erase(userWeapons->begin());
             }
-            for(int i = userArmor->size() - 1; i >= 0; i--){
-                currentUser->getGold() += userArmor->at(i)->calcValue();
-                delete userWeapons->at(i);
-                userArmor->pop_back();
+            while(userArmor->size() > 0){
+                currentUser->getGold() += userArmor->at(0)->calcValue();
+                delete userArmor->at(0);
+                userArmor->erase(userArmor->begin());
             }
-            for(int i = userTrinkets->size() - 1; i >= 0; i--){
-                currentUser->getGold() += userTrinkets->at(i)->calcValue();
-                delete userTrinkets->at(i);
-                userTrinkets->pop_back();
+            while(userTrinkets->size() > 0){
+                currentUser->getGold() += userTrinkets->at(0)->calcValue();
+                delete userTrinkets->at(0);
+                userTrinkets->erase(userTrinkets->begin());
             }
             return this;
         }

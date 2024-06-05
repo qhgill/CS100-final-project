@@ -15,6 +15,7 @@ void Inventory::displayScreen(){
     cout << endl;
     cout << "Level: " << currentUser->getLevel() << endl;
     cout << "xp: " << currentUser->getXp() << endl;
+    cout << "gold: " << currentUser->getGold() << endl;
     cout << "current HP: " << userStatsManager->getCurrentHP() << "/" << userStatsManager->getMaxHP() << endl;
     cout << "Magic Resist: " << userStatsManager->getCurrentMR() << endl;
     cout << "Physical Resist: " << userStatsManager->getCurrentPR() << endl;

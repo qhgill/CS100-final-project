@@ -25,6 +25,7 @@ TEST(cityTests, testOption2){
     City* testCity2 = new City("cityScreen.txt", testUser);
     Screen* resultCity = testCity->processOption(2, dummyRunning);
     EXPECT_EQ(testCity, resultCity);
+    testUser->getGold() += 1000;
     resultCity = testCity2->processOption(2, dummyRunning);
     EXPECT_EQ(testCity2->getCityWeapon(), nullptr);
 }
@@ -36,6 +37,7 @@ TEST(cityTests, testOption3){
     City* testCity2 = new City("cityScreen.txt", testUser);
     Screen* resultCity = testCity->processOption(3, dummyRunning);
     EXPECT_EQ(testCity, resultCity);
+    testUser->getGold() += 1000;
     resultCity = testCity2->processOption(3, dummyRunning);
     EXPECT_EQ(testCity2->getCityArmor(), nullptr);
 }
@@ -47,6 +49,7 @@ TEST(cityTests, testOption4){
     City* testCity2 = new City("cityScreen.txt", testUser);
     Screen* resultCity = testCity->processOption(4, dummyRunning);
     EXPECT_EQ(testCity, resultCity);
+    testUser->getGold() += 1000;
     resultCity = testCity2->processOption(4, dummyRunning);
     EXPECT_EQ(testCity2->getCityTrinket(), nullptr);
 }

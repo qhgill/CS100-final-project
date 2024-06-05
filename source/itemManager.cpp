@@ -8,8 +8,20 @@ ItemManager::ItemManager(std::vector<Weapon*>* weapons, std::vector<Armor*>* arm
 {}
 ItemManager::~ItemManager() 
 {
+    while(weaponInventory->size() > 0){
+        delete weaponInventory->at(0);
+        weaponInventory->erase(weaponInventory->begin());
+    }
     delete weaponInventory;
+    while(armorInventory->size() > 0){
+        delete armorInventory->at(0);
+        armorInventory->erase(armorInventory->begin());
+    }
     delete armorInventory;
+    while(trinketInventory->size() > 0){
+        delete trinketInventory->at(0);
+        trinketInventory->erase(trinketInventory->begin());
+    }
     delete trinketInventory;
     delete equippedWeapon;
     delete equippedArmor;
