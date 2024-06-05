@@ -331,6 +331,19 @@ add_executable( runOrcBossTests
     ../source/item.cpp
 )
 
+add_executable( runGoblinBossTests
+    goblinBossTests.cpp
+    ../source/goblinBoss.cpp
+    ../source/boss.cpp
+    ../source/statsManager.cpp
+    ../source/enemy.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
+)
 
 add_executable( runPirateTests
     pirateTests.cpp
@@ -346,6 +359,19 @@ add_executable( runPirateTests
 add_executable( runOrcTests
     orcTests.cpp
     ../source/orc.cpp
+    ../source/enemy.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/item.cpp
+)
+
+add_executable( runGoblinTests
+    goblinTests.cpp
+    ../source/goblin.cpp
     ../source/enemy.cpp
     ../source/statsManager.cpp
     ../source/armor.cpp
@@ -517,9 +543,11 @@ target_link_libraries(runInventoryTests gtest gtest_main)
 target_link_libraries(runCityTests gtest gtest_main)
 target_link_libraries(runBossTests gtest gtest_main)
 target_link_libraries(runOrcBossTests gtest gtest_main)
+target_link_libraries(runGoblinBossTests gtest gtest_main)
 target_link_libraries(runPirateTests gtest gtest_main)
 target_link_libraries(runCharacterSelectTests gtest gtest_main)
 target_link_libraries(runOrcTests gtest gtest_main)
+target_link_libraries(runGoblinTests gtest gtest_main)
 target_link_libraries(runCombatTests gtest gtest_main)
 target_link_libraries(runRoyalGuardTests gtest gtest_main)
 target_link_libraries(runInGameMenuTests gtest gtest_main)
