@@ -17,6 +17,7 @@ class Enemy
     public:
         Enemy(int level_, int health_, int maxHealth_, int damage_, int magicResist_, int physicalResist_, bool isdead_, std::string name_);
         Enemy();
+        virtual ~Enemy();
         int getLevel();
         int getHealth();
         int getMaxHealth();
