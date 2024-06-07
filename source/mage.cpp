@@ -13,8 +13,4 @@ Mage::Mage()
 }
 
 Mage::~Mage() 
-{
-    delete firstSpell;
-    delete secondSpell;
-    delete thirdSpell;
-}
+{}

@@ -34,19 +34,19 @@ TEST(rogueGetterTests, getClassNameTest){
 TEST(rogueSpellGetterTests, getFirstClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Backstab");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Backstab").c_str());
 }
 
 TEST(rogueSpellGetterTests, getSecondClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Pickpocket");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("PickPocket").c_str());
 }
 
 TEST(rogueSpellGetterTests, getThirdClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Cutthroat");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Cutthroat").c_str());
 }
 
 TEST(rogueSpellGetterTests, getFirstSpellLevelThreshold){

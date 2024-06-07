@@ -13,8 +13,4 @@ Warrior::Warrior()
 }
 
 Warrior::~Warrior() 
-{
-    delete firstSpell;
-    delete secondSpell;
-    delete thirdSpell;
-}
+{}

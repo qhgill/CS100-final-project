@@ -538,6 +538,7 @@ add_executable(runInGameMenuTests
     ../source/goblinBoss.cpp
 )
 
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
