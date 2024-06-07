@@ -780,6 +780,33 @@ TEST(mageSpellGetterTests, getThirdSpellLevelThreshold){
     Spell* returnedSpell = mage.getThirdSpell();
     EXPECT_EQ(returnedSpell->getSpellLevelThreshold(), 3);
 }
+
+TEST(mageSpellTests, testFirstDoSpell){
+    Mage mage;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(mage.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(mageSpellTests, testSecondDoSpell){
+    Mage mage;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(mage.getSecondSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(mageSpellTests, testThirdDoSpell){
+    Mage mage;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(mage.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
 //******************************************************
 #include "../header/orcBoss.h"
 #include "../header/statsManager.h"
@@ -990,6 +1017,33 @@ TEST(rogueSpellGetterTests, getThirdSpellLevelThreshold){
     Rogue rogue;
     Spell* returnedSpell = rogue.getThirdSpell();
     EXPECT_EQ(returnedSpell->getSpellLevelThreshold(), 3);
+}
+
+TEST(rogueSpellTests, testFirstDoSpell){
+    Rogue rogue;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(rogue.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(rogueSpellTests, testSecondDoSpell){
+    Rogue rogue;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(rogue.getSecondSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(rogueSpellTests, testThirdDoSpell){
+    Rogue rogue;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(rogue.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 //******************************************************
 #include "../header/enemy.h"
@@ -1401,6 +1455,33 @@ TEST(warriorSpellGetterTests, getThirdSpellLevelThreshold){
     Warrior warrior;
     Spell* returnedSpell = warrior.getThirdSpell();
     EXPECT_EQ(returnedSpell->getSpellLevelThreshold(), 3);
+}
+
+TEST(warriorSpellTests, testFirstDoSpell){
+    Warrior warrior;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(warrior.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(warriorSpellTests, testSecondDoSpell){
+    Warrior warrior;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(warrior.getSecondSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(warriorSpellTests, testThirdDoSpell){
+    Warrior warrior;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(warrior.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 //******************************************************
 #include "../header/weapon.h"

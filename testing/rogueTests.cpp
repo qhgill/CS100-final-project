@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../header/rogue.h"
+#include "../header/orc.h"
 
 TEST(rogueGetterTests, getHpTest){
     Rogue rogue;
@@ -65,6 +66,33 @@ TEST(rogueSpellGetterTests, getThirdSpellLevelThreshold){
     Rogue rogue;
     Spell* returnedSpell = rogue.getThirdSpell();
     EXPECT_EQ(returnedSpell->getSpellLevelThreshold(), 3);
+}
+
+TEST(rogueSpellTests, testFirstDoSpell){
+    Rogue rogue;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(rogue.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(rogueSpellTests, testSecondDoSpell){
+    Rogue rogue;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(rogue.getSecondSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(rogueSpellTests, testThirdDoSpell){
+    Rogue rogue;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(rogue.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 
 int main(int argc, char **argv) {

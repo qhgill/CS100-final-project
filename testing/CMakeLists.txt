@@ -44,6 +44,12 @@ add_executable(runRogueTests
     ../source/backstab.cpp
     ../source/pickpocket.cpp
     ../source/cutthroat.cpp
+    ../source/orc.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/item.cpp
 )
 
 add_executable(runWarriorTests
@@ -55,6 +61,12 @@ add_executable(runWarriorTests
     ../source/slam.cpp
     ../source/shatter.cpp
     ../source/bludgeon.cpp
+    ../source/orc.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/item.cpp
 )
 
 add_executable(runMageTests
@@ -66,6 +78,12 @@ add_executable(runMageTests
     ../source/arcaneBlast.cpp
     ../source/lifeleech.cpp
     ../source/incinerate.cpp
+    ../source/orc.cpp
+    ../source/statsManager.cpp
+    ../source/armor.cpp
+    ../source/weapon.cpp
+    ../source/trinket.cpp
+    ../source/item.cpp
 )
 
 add_executable(runUserTests
