@@ -49,6 +49,7 @@ source/mainExecutable
 source/valgrindExec
 testing/runRoyalGuardTests
 testing/runInGameMenuTests
+testing/runAllTests
 lib/
 
 # Remove after implementation of cmake equivalent

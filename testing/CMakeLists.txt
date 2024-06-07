@@ -540,6 +540,53 @@ add_executable(runInGameMenuTests
     ../source/goblinBoss.cpp
 )
 
+add_executable(runAllTests
+    allTests.cpp
+    ../source/weapon.cpp
+    ../source/item.cpp
+    ../source/character.cpp
+    ../source/spell.cpp
+    ../source/screen.cpp
+    ../source/enemy.cpp
+    ../source/rogue.cpp
+    ../source/backstab.cpp
+    ../source/pickpocket.cpp
+    ../source/cutthroat.cpp
+    ../source/warrior.cpp
+    ../source/slam.cpp
+    ../source/shatter.cpp
+    ../source/bludgeon.cpp
+    ../source/mage.cpp
+    ../source/arcaneBlast.cpp
+    ../source/lifeleech.cpp
+    ../source/incinerate.cpp
+    ../source/user.cpp
+    ../source/armor.cpp
+    ../source/trinket.cpp
+    ../source/statsManager.cpp
+    ../source/itemManager.cpp
+    ../source/encounterManager.cpp
+    ../source/game.cpp
+    ../source/characterSelect.cpp
+    ../source/inGameMenu.cpp
+    ../source/travel.cpp
+    ../source/inventory.cpp
+    ../source/startMenu.cpp
+    ../source/combat.cpp
+    ../source/orc.cpp
+    ../source/orcBoss.cpp
+    ../source/pirate.cpp
+    ../source/pirateBoss.cpp
+    ../source/royalGuard.cpp
+    ../source/finalBoss.cpp
+    ../source/boss.cpp
+    ../source/city.cpp
+    ../source/goblin.cpp
+    ../source/goblinBoss.cpp
+    ../source/bosspart1.cpp
+    ../source/bosspart2.cpp
+)
+
 target_link_libraries(runCharacterTests gmock gtest gtest_main)
 target_link_libraries(runSpellTests gmock gtest gtest_main)
 target_link_libraries(runScreenTests gmock gtest gtest_main)
@@ -567,3 +614,4 @@ target_link_libraries(runGoblinTests gtest gtest_main)
 target_link_libraries(runCombatTests gtest gtest_main)
 target_link_libraries(runRoyalGuardTests gtest gtest_main)
 target_link_libraries(runInGameMenuTests gtest gtest_main)
+target_link_libraries(runAllTests gtest gmock gtest_main)
