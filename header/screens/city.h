@@ -17,7 +17,7 @@ class City: public Screen
         City(City&) = delete;
         City operator=(City&) = delete;
         void displayScreen() override;
-        Screen* processOption(int choice, bool isRunning) override;
+        Screen* processOpcmation(int choice, bool isRunning) override;
         Weapon* getCityWeapon();
         Armor* getCityArmor();
         Trinket* getCityTrinket();

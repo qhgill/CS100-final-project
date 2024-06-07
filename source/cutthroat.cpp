@@ -2,7 +2,7 @@
 
 CutThroat::CutThroat()
 {
-    this->spellClass = "cutthroat";
+    this->spellClass = "Cutthroat";
     this->spellLevelThreshold = 3;
 }
 
