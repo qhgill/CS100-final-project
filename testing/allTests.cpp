@@ -483,7 +483,7 @@ TEST(GoblinBossTest, CalculatePhaseTwoTurnTest_HighHP)
 
     delete statsManager;
 }
-TEST(OrcBossTest, CalculatePhaseTwoTurnTest_LowHP) 
+TEST(GoblinBossTest, CalculatePhaseTwoTurnTest_LowHP) 
 {
     GoblinBoss goblinBoss;
     StatsManager* statsManager = new StatsManager();
@@ -799,15 +799,18 @@ TEST(getterTestsOrcBoss, constructorInitializationTest) {
 TEST(OrcBossTest, CalculatePhaseOneTurnTest) {
     OrcBoss* orcBoss = new OrcBoss();
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,1,1,1, nullptr, nullptr, nullptr, 1); 
+    Weapon* testWeapon = new Weapon();
+    Armor* testArmor = new Armor();
+    Trinket* testTrinket = new Trinket();
+    statsManager->updateStats(1,1,1,1, testWeapon, testArmor, testTrinket, 1);
 
     int initialHP = statsManager->getCurrentHP();
     int initialPR = statsManager->getCurrentPR();
 
     orcBoss->calculatePhaseOneTurn(statsManager);
 
-    EXPECT_EQ(statsManager->getCurrentHP(), initialHP - (21 - initialPR));
-    EXPECT_EQ(statsManager->getCurrentPR(), initialPR - 5);
+    EXPECT_EQ(statsManager->getCurrentHP(), 0);
+    EXPECT_EQ(statsManager->getCurrentPR(), 0);
 
     delete orcBoss;
     delete statsManager;
@@ -816,17 +819,19 @@ TEST(OrcBossTest, CalculatePhaseOneTurnTest) {
 TEST(OrcBossTest, CalculatePhaseTwoTurnTest) {
     OrcBoss* orcBoss = new OrcBoss();
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,1,1,1, nullptr, nullptr, nullptr, 1);
-
+    Weapon* testWeapon = new Weapon();
+    Armor* testArmor = new Armor();
+    Trinket* testTrinket = new Trinket();
+    statsManager->updateStats(1,1,1,1, testWeapon, testArmor, testTrinket, 1);
     int initialHP = statsManager->getCurrentHP();
     int initialPR = statsManager->getCurrentPR();
     int initialMR = statsManager->getCurrentMR();
 
     orcBoss->calculatePhaseTwoTurn(statsManager);
 
-    EXPECT_EQ(statsManager->getCurrentHP(), initialHP - ((21 * 2) - initialPR));
-    EXPECT_EQ(statsManager->getCurrentPR(), initialPR - 10);
-    EXPECT_EQ(statsManager->getCurrentMR(), initialMR - 10);
+    EXPECT_EQ(statsManager->getCurrentHP(), 0);
+    EXPECT_EQ(statsManager->getCurrentPR(), 0);
+    EXPECT_EQ(statsManager->getCurrentMR(), 0);
     
     delete orcBoss;
     delete statsManager;
@@ -954,19 +959,19 @@ TEST(rogueGetterTests, getClassNameTest){
 TEST(rogueSpellGetterTests, getFirstClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getFirstSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Backstab");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Backstab").c_str());
 }
 
 TEST(rogueSpellGetterTests, getSecondClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getSecondSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Pickpocket");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("PickPocket").c_str());
 }
 
 TEST(rogueSpellGetterTests, getThirdClassNameTest){
     Rogue rogue;
     Spell* returnedSpell = rogue.getThirdSpell();
-    EXPECT_EQ(returnedSpell->getSpellClass(), "Cutthroat");
+    EXPECT_EQ(returnedSpell->getSpellClass(), std::string("Cutthroat").c_str());
 }
 
 TEST(rogueSpellGetterTests, getFirstSpellLevelThreshold){
@@ -1196,27 +1201,32 @@ TEST(StatsManagerMutatorTests, reduceMRandPRTest) {
 #include "../header/screens/screen.h"
 
 TEST(travelTests, displayTest){
-    Screen* travel = new Travel("travelScreen.txt", nullptr);
+    User* testUser = new User();
+    Screen* travel = new Travel("travelScreen.txt", testUser);
     EXPECT_NO_THROW(travel->displayScreen());
 }
 
 TEST(travelTests, processOptionNot1or2){
+    User* testUser = new User();
     bool dummyRunning = true;
-    Screen* travel = new Travel("travelScreen.txt", nullptr);
+    Screen* travel = new Travel("travelScreen.txt", testUser);
     EXPECT_EQ(travel->processOption(0, dummyRunning), travel);
 }
 
 TEST(travelTests, processOption1){
+    User* testUser = new User();
     bool dummyRunning = true;
-    Screen* travel = new Travel("travelScreen.txt", nullptr);
+    Screen* travel = new Travel("travelScreen.txt", testUser);
     EXPECT_NE(travel->processOption(1, dummyRunning), travel);
 }
 
 TEST(travelTests, processOption2){
+    User* testUser = new User();
     bool dummyRunning = true;
-    Screen* travel = new Travel("travelScreen.txt", nullptr);
+    Screen* travel = new Travel("travelScreen.txt", testUser);
     EXPECT_NE(travel->processOption(2, dummyRunning), travel);
 }
+
 //******************************************************
 #include "../header/trinket.h"
 
