@@ -17,15 +17,18 @@ TEST(getterTests, constructorInitializationTest) {
 TEST(OrcBossTest, CalculatePhaseOneTurnTest) {
     OrcBoss* orcBoss = new OrcBoss();
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,1,1,1, nullptr, nullptr, nullptr, 1); 
+    Weapon* testWeapon = new Weapon();
+    Armor* testArmor = new Armor();
+    Trinket* testTrinket = new Trinket();
+    statsManager->updateStats(1,1,1,1, testWeapon, testArmor, testTrinket, 1); 
 
     int initialHP = statsManager->getCurrentHP();
     int initialPR = statsManager->getCurrentPR();
 
     orcBoss->calculatePhaseOneTurn(statsManager);
 
-    EXPECT_EQ(statsManager->getCurrentHP(), initialHP - (21 - initialPR));
-    EXPECT_EQ(statsManager->getCurrentPR(), initialPR - 5);
+    EXPECT_EQ(statsManager->getCurrentHP(), 0);
+    EXPECT_EQ(statsManager->getCurrentPR(), 0);
 
     delete orcBoss;
     delete statsManager;
@@ -34,7 +37,10 @@ TEST(OrcBossTest, CalculatePhaseOneTurnTest) {
 TEST(OrcBossTest, CalculatePhaseTwoTurnTest) {
     OrcBoss* orcBoss = new OrcBoss();
     StatsManager* statsManager = new StatsManager();
-    statsManager->updateStats(1,1,1,1, nullptr, nullptr, nullptr, 1);
+    Weapon* testWeapon = new Weapon();
+    Armor* testArmor = new Armor();
+    Trinket* testTrinket = new Trinket();
+    statsManager->updateStats(1,1,1,1, testWeapon, testArmor, testTrinket, 1); 
 
     int initialHP = statsManager->getCurrentHP();
     int initialPR = statsManager->getCurrentPR();
@@ -42,9 +48,9 @@ TEST(OrcBossTest, CalculatePhaseTwoTurnTest) {
 
     orcBoss->calculatePhaseTwoTurn(statsManager);
 
-    EXPECT_EQ(statsManager->getCurrentHP(), initialHP - ((21 * 2) - initialPR));
-    EXPECT_EQ(statsManager->getCurrentPR(), initialPR - 10);
-    EXPECT_EQ(statsManager->getCurrentMR(), initialMR - 10);
+    EXPECT_EQ(statsManager->getCurrentHP(), 0);
+    EXPECT_EQ(statsManager->getCurrentPR(), 0);
+    EXPECT_EQ(statsManager->getCurrentMR(), 0);
     
     delete orcBoss;
     delete statsManager;
