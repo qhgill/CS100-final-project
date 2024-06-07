@@ -92,7 +92,7 @@ TEST(mageSpellTests, testThirdDoSpell){
     int gold = 1;
     int dmg = 1;
     Enemy* enemy = new Orc();
-    EXPECT_NO_THROW(mage.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+    EXPECT_NO_THROW(mage.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 
 int main(int argc, char **argv) {

@@ -805,7 +805,7 @@ TEST(mageSpellTests, testThirdDoSpell){
     int gold = 1;
     int dmg = 1;
     Enemy* enemy = new Orc();
-    EXPECT_NO_THROW(mage.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+    EXPECT_NO_THROW(mage.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 //******************************************************
 #include "../header/orcBoss.h"
@@ -1620,6 +1620,36 @@ TEST(calcTests, finalBossCalculateTurnTest) {
   tempBoss.calculateTurn(sm);
   ASSERT_EQ(sm->getCurrentHP(), 13);
 
+}
+
+TEST(startMenuTests, displayTest){
+    User* testUser = new User();
+    Screen* testScreen = new StartMenu("startMenu.txt", testUser);
+    EXPECT_NO_THROW(testScreen->displayScreen(););
+}
+
+TEST(startMenuTests, testOption1){
+    User* testUser = new User();
+    bool testBool = true;
+    Screen* testScreen = new StartMenu("startMenu.txt", testUser);
+    Screen* resultScreen = testScreen->processOption(1, testBool);
+    EXPECT_NE(testScreen, resultScreen);
+}
+
+TEST(startMenuTests, testOption2){
+    User* testUser = new User();
+    bool testBool = true;
+    Screen* testScreen = new StartMenu("startMenu.txt", testUser);
+    Screen* resultScreen = testScreen->processOption(2, testBool);
+    EXPECT_EQ(testScreen, resultScreen);
+}
+
+TEST(startMenuTests, testOptionOther){
+    User* testUser = new User();
+    bool testBool = true;
+    Screen* testScreen = new StartMenu("startMenu.txt", testUser);
+    Screen* resultScreen = testScreen->processOption(0, testBool);
+    EXPECT_EQ(testScreen, resultScreen);
 }
 
 //******************************************************
