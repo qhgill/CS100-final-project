@@ -13,8 +13,4 @@ Rogue::Rogue()
 }
 
 Rogue::~Rogue() 
-{
-    delete firstSpell;
-    delete secondSpell;
-    delete thirdSpell;
-}
+{}

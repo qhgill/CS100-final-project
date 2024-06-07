@@ -540,6 +540,7 @@ add_executable(runInGameMenuTests
     ../source/goblinBoss.cpp
 )
 
+
 add_executable(runAllTests
     allTests.cpp
     ../source/weapon.cpp
