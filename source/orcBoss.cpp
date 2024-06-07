@@ -5,7 +5,7 @@ OrcBoss::OrcBoss()
 {}
 
 void OrcBoss::calculateTurn(StatsManager* statsManager){
-    //
+    calculatePhaseOneTurn(statsManager);
 }
 
 void OrcBoss::calculatePhaseOneTurn(StatsManager* statsManager) 

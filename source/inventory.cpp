@@ -29,7 +29,7 @@ void Inventory::displayScreen(){
     if(userWeaponInventory->size() == 0){
         cout << "empty" << endl;
     } else {
-        for(unsigned i = 0; i < userItemManager->getArmorInventory()->size() - 1; i++){
+        for(unsigned i = 0; i < userItemManager->getWeaponInventory()->size() - 1; i++){
             cout << userWeaponInventory->at(i)->getName() << ", ";
         }
         cout << userWeaponInventory->at(userWeaponInventory->size()-1)->getName() << endl;
