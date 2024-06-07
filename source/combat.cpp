@@ -50,13 +50,13 @@ void Combat::displayScreen(){
     if(isBossFight){
         cout << " This is a bossfight!";
         if(currentUser->getStoryAct() == 1){
-            cout << "JAMES PUT STORY HERE FOR BOSS 1" << endl;
+            cout << "You found the goblin boss Joe!" << endl;
         } else if(currentUser->getStoryAct() == 2){
-            cout << "JAMES PUT STORY HERE FOR BOSS 2" << endl;
+            cout << "You found the orc boss General Bob!" << endl;
         } else if(currentUser->getStoryAct() == 3){
-            cout << "JAMES PUT STORY HERE FOR BOSS 3" << endl;
+            cout << "You found the pirate boss!" << endl;
         } else if(currentUser->getStoryAct() == 4){
-            cout << "JAMES PUT STORY HERE FOR BOSS 4" << endl;
+            cout << "You found your father!" << endl;
         }
     }
     cout << endl;
@@ -89,13 +89,13 @@ void Combat::displayScreen(){
             cout << "You won! Here's what you got: " << rewardsStr << endl;
             if(isBossFight){
                 if(currentUser->getStoryAct() == 1){
-                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 1" << endl;
+                    cout << "You beat the goblin boss!" << endl;
                 } else if(currentUser->getStoryAct() == 2){
-                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 2" << endl;
+                    cout << "You beat the orc boss!" << endl;
                 } else if(currentUser->getStoryAct() == 3){
-                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 3" << endl;
+                    cout << "you beat the pirate boss!" << endl;
                 } else if(currentUser->getStoryAct() == 4){
-                    cout << "JAMES PUT STORY HERE FOR AFTER BOSS 4" << endl;
+                    cout << "you beat the final boss!" << endl;
                 }
             }
             cout << "press any key to continue" << endl;

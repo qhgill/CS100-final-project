@@ -6,7 +6,7 @@ void Travel::displayScreen(){
     Screen::displayFromFile();
     std::cout << "--------------------------------" << std::endl;
     if(currentUser->getStoryAct() == 1 && currentUser->getEncounterManager()->getEncounterCount() == 0){
-        cout << "JAMES PUT STORY FOR START OF GAME HERE" << endl;
+        cout << "You've been gvien a quest to fight enemies! good luck on your journey!" << endl;
     }
     std::cout << "Select an option: " << std::endl;
     std::cout << "[1] continue to next encounter" << std::endl;
