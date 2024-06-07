@@ -181,6 +181,10 @@ Screen* Combat::processOption(int option, bool& isRunning){
             currentUser->getEncounterManager()->incrementEncounterCount();
             //when item drops are figured out update with item drop functionality
             if(isBossFight){
+                if(currentUser->getStoryAct() == 4){
+                    isRunning = false;
+                    return this;
+                }
                 return new City("cityScreen.txt", currentUser);
             } else {
                 return new Travel("travelScreen.txt", currentUser);

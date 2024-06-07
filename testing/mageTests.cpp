@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../header/mage.h"
+#include "../header/orc.h"
 
 TEST(mageGetterTests, getHpTest){
     Mage mage;
@@ -65,6 +66,33 @@ TEST(mageSpellGetterTests, getThirdSpellLevelThreshold){
     Mage mage;
     Spell* returnedSpell = mage.getThirdSpell();
     EXPECT_EQ(returnedSpell->getSpellLevelThreshold(), 3);
+}
+
+TEST(mageSpellTests, testFirstDoSpell){
+    Mage mage;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(mage.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(mageSpellTests, testSecondDoSpell){
+    Mage mage;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(mage.getSecondSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(mageSpellTests, testThirdDoSpell){
+    Mage mage;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(mage.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 
 int main(int argc, char **argv) {

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "../header/user.h"
-#include <../header/itemManager.h>
+#include "../header/itemManager.h"
 
 TEST(itemManagerConstructor, getterFunctionTests) {
     std::vector<Weapon*>* weapons = new std::vector<Weapon*>;

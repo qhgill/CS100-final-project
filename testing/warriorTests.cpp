@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../header/warrior.h"
+#include "../header/orc.h"
 
 TEST(warriorGetterTests, getHpTest){
     Warrior warrior;
@@ -65,6 +66,33 @@ TEST(warriorSpellGetterTests, getThirdSpellLevelThreshold){
     Warrior warrior;
     Spell* returnedSpell = warrior.getThirdSpell();
     EXPECT_EQ(returnedSpell->getSpellLevelThreshold(), 3);
+}
+
+TEST(warriorSpellTests, testFirstDoSpell){
+    Warrior warrior;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(warrior.getFirstSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(warriorSpellTests, testSecondDoSpell){
+    Warrior warrior;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(warrior.getSecondSpell()->doSpell(hp, dmg, 1, gold, enemy););
+}
+
+TEST(warriorSpellTests, testThirdDoSpell){
+    Warrior warrior;
+    int hp = 1;
+    int gold = 1;
+    int dmg = 1;
+    Enemy* enemy = new Orc();
+    EXPECT_NO_THROW(warrior.getThirdSpell()->doSpell(hp, dmg, 1, gold, enemy););
 }
 
 int main(int argc, char **argv) {
